@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVIX | About Us</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Essential styles for the canvas to be the background */
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: all;
+            background-color: #050505;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot-outline"></div>
+    <!-- Mouse Follower Glow (Background) -->
+    <div class="mouse-follower-glow"></div>
+
+    <!-- Background Atmosphere (Organic Waves) -->
+    <div class="background-shapes">
+        <svg class="organic-shape" width="100%" height="100%" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none">
+            <path d="M0,250 C300,300 600,100 900,250 C1200,400 1440,250 1440,250 L1440,900 L0,900 Z"
+                fill="url(#organic-gradient)" opacity="0.3"></path>
+            <defs>
+                <linearGradient id="organic-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00ccff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#050505;stop-opacity:0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- Layer 1: Cinematic Grain -->
+    <div class="cinematic-grain"></div>
+
+    <!-- Layer 2: Ambient Aurora -->
+    <div class="ambient-aurora">
+        <div class="aurora-orb orb-1"></div>
+        <div class="aurora-orb orb-2"></div>
+        <div class="aurora-orb orb-3"></div>
+    </div>
+
+    <!-- Layer 3: Parallax Typography -->
+    <div class="parallax-typography">
+        <div class="parallax-word word-1">STRATEGY</div>
+        <div class="parallax-word word-2">CREATION</div>
+        <div class="parallax-word word-3">GROWTH</div>
+        <div class="parallax-word word-4">SYSTEM</div>
+    </div>
+
+    <!-- Layer 4: Storytelling Line Container (SVG) -->
+    <div class="storytelling-line-wrapper">
+        <svg class="story-line-svg" xmlns="http://www.w3.org/2000/svg">
+            <!-- Path will be defined/refined in JS or basic CSS -->
+            <path class="story-path" d="M 100 0 Q 200 500 100 1000 T 100 2000" stroke="rgba(0, 204, 255, 0.3)"
+                fill="none" stroke-width="2"></path>
+        </svg>
+    </div>
+
+    <header>
+        <div class="logo">V I V I X</div>
+        <button class="hamburger-menu" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay">
+        <div class="menu-left">
+            <div class="gallery-column col-down">
+            </div>
+            <div class="gallery-column col-up">
+            </div>
+        </div>
+        <div class="menu-right">
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Homepage</a>
+                <a href="vision.html" class="nav-link">Vision & Mission</a>
+
+                <a href="index.html#packages" class="nav-link">Angebote</a>
+                <a href="about.html" class="nav-link">ABOUT US</a>
+            </nav>
+
+            <div class="menu-footer">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vivix.media/" target="_blank" class="social-btn">Instagram</a>
+                    <a href="#" class="social-btn">YouTube</a>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:info@vivix-media.com">info@vivix-media.com</a>
+                    <a href="https://wa.me/message/GJ5I257O4WGEP1" target="_blank">WhatsApp</a>
+                </div>
+                <a href="mailto:contact@vivix-media.com" class="studio-btn">Kontakt <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Sektion 1: Hero (Vertikal) -->
+        <section class="about-hero">
+            <div class="about-hero-bg"></div>
+            <div class="about-hero-content">
+                <h1 class="reveal-on-scroll">Wir sind Vivix.</h1>
+                <p class="hero-subline reveal-on-scroll">Ein Team aus Strategie, Produktion und Postproduktion –
+                    spezialisiert auf Social Media Videos, die Vertrauen aufbauen und messbare Anfragen auslösen.</p>
+                <div class="hero-microline reveal-on-scroll">Wir kommen aus hochwertiger Videoproduktion für starke
+                    Marken, große Events und anspruchsvolle Kunden – und haben daraus ein System entwickelt, das heute
+                    einen klaren Fokus hat: Kurzform-Content, der verkauft.
+                </div>
+                <div class="hero-buttons reveal-on-scroll">
+                    <a href="#contact" class="btn-primary-glow">Kostenloses Probe-Reel anfragen</a>
+                    <a href="https://calendly.com/vivix-agency/intro-call" target="_blank" class="btn-ghost">10-Minuten
+                        Call buchen <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 2: Intro & Was wir machen (Vertikal) -->
+        <section class="about-intro">
+            <div class="intro-grid">
+                <div class="intro-left reveal-on-scroll">
+                    <h2>Von Premium-Produktionen zu Performance-Kurzfilmen</h2>
+                    <p>Vivix ist aus einer einfachen Realität entstanden: Die meisten Unternehmen brauchen keinen „mehr
+                        Content“ – sie brauchen Content, der wirkt. Seit über 5 Jahren produzieren wir Videos – zuerst
+                        für Immobilien, später für Events, Personal Brands und Produkt-Content. In dieser Zeit haben wir
+                        gelernt, was visuell überzeugt – und vor allem, wie man Aufmerksamkeit so aufbaut, dass daraus
+                        Vertrauen entsteht.</p>
+                    <p style="margin-top: 20px;">Heute bündeln wir diese Erfahrung in einem klaren Setup:
+                        Lead-fokussierte Reels & Ads, die nicht nur gut aussehen, sondern Menschen in den nächsten
+                        Schritt bringen (Anfrage, Termin, Beratung).</p>
+                    <div class="intro-cards" style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
+                        <a href="#" class="studio-btn" style="cursor: default;">Reels & Ads</a>
+                        <a href="#" class="studio-btn" style="cursor: default;">Skripte & Hooks</a>
+                        <a href="#" class="studio-btn" style="cursor: default;">Editing</a>
+                        <a href="#" class="studio-btn" style="cursor: default;">Brand-safe Premium Look</a>
+                    </div>
+                </div>
+                <div class="intro-right-image-container tilt-image-container reveal-on-scroll">
+                    <img src="assets/images/portfolio/sharge 1.jpg" alt="Vivix Studio Production Vertical"
+                        class="stretch-image tilt-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 3: Differenzierung (Vertikal) -->
+        <section class="about-diff">
+            <div class="diff-container">
+                <div class="diff-visual tilt-image-container reveal-on-scroll">
+                    <img src="assets/images/portfolio/como 1.jpg" alt="Vivix Studio Production" class="tilt-image">
+                </div>
+                <div class="diff-content reveal-on-scroll">
+                    <h2>Kein Freelancer-Glücksspiel. Ein Team mit System.</h2>
+                    <p>Viele Produktionen hängen an einer Person. Sobald es stressig wird, bricht Output ein. Bei Vivix
+                        ist das anders: Wir arbeiten als eingespieltes Team – mit klaren Rollen, Workflows und
+                        Qualitätskontrolle.</p>
+                    <ul class="diff-list">
+                        <li>verlässlicher Output</li>
+                        <li>gleichbleibender Premium-Standard</li>
+                        <li>saubere Prozesse</li>
+                        <li>skalierbare Umsetzung</li>
+                    </ul>
+                    <p style="margin-top: 20px; color: #ccc;">Kurz: Wir liefern nicht „ein paar Videos“. Wir bauen eine
+                        Video-Engine, die durchhält.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 4: Referenzen (Renamed from Proof - MOVED/UPDATED) -->
+        <section class="about-proof">
+            <div class="proof-container">
+                <div class="proof-block reveal-on-scroll">
+                    <h2>Erfahrung aus großen Brands & großen Momenten</h2>
+                    <p>Wir haben Produktionen umgesetzt, die hohe Ansprüche an Qualität, Geschwindigkeit und Auftreten
+                        haben – von Hospitality und Automotive bis hin zu Events und Popkultur.</p>
+                </div>
+                <div class="proof-block reveal-on-scroll">
+                    <ul class="diff-list"
+                        style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; text-align: left;">
+                        <li>Monaco / Formel 1 (Event-Umfeld)</li>
+                        <li>Waldorf Astoria Berlin</li>
+                        <li>Automotive-Projekte (u. a. Bentley / BMW)</li>
+                        <li>Inhalte im Umfeld von Künstlern & Personal Brands (z. B. Luciano)</li>
+                    </ul>
+                    <p style="margin-top: 30px;">Diese Production-DNA ist die Basis – der Fokus heute ist klar:
+                        Kurzform-Content mit Performance-Logik.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 5: Founder (NEW SECTION) -->
+        <section class="about-diff"> <!-- Reusing diff style for consistency -->
+            <div class="diff-container">
+                <div class="diff-visual tilt-image-container reveal-on-scroll">
+                    <img src="assets/images/about/arsenylysenko.jpg" alt="Arseny Lysenko Founder" class="tilt-image"
+                        style="border-radius: 12px;">
+                </div>
+                <div class="diff-content reveal-on-scroll">
+                    <h2>Arseny Lysenko — Founder</h2>
+                    <p>Arseny hat vor über fünf Jahren begonnen, Social Media Videos zu produzieren – zuerst im Bereich
+                        Immobilien. Von dort entwickelte sich der Weg schnell weiter: Events, Personal Brands,
+                        Produktvideos, Kampagnen und hochwertige Kurzformate.</p>
+                    <p style="margin-top: 20px;">Was ihn auszeichnet, ist die Kombination aus cinematischer Bildsprache
+                        und einem klaren Verständnis dafür, wie Social Media wirklich funktioniert: Aufmerksamkeit
+                        entsteht nicht zufällig – sie wird gebaut. Und genau daraus ist Vivix entstanden: aus dem
+                        Anspruch, Ästhetik mit Wirkung zu verbinden.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="https://www.instagram.com/acecron/" target="_blank" class="studio-btn">Instagram:
+                            @acecron <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 4: Der Prozess (HORIZONTAL SCROLL / STICKY) -->
+        <section class="about-process-wrapper">
+            <div class="process-sticky-container">
+                <div class="process-header" style="position: absolute; top: 10vh; left: 10vw; z-index: 10;">
+                    <h2 style="font-size: 3rem; margin-bottom: 10px; color: #fff;">Wie wir arbeiten</h2>
+                    <p style="font-size: 1.2rem; color: #ccc;">Klarer Prozess. Wenig Aufwand für Ihr Team.</p>
+                </div>
+                <div class="process-strip">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-blob">01</div>
+                        <h3>Analyse & Content-Angles</h3>
+                        <p>Was zieht in Ihrer Zielgruppe wirklich? Wir definieren Themen und Hooks, die funktionieren.
+                        </p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-blob">02</div>
+                        <h3>Skripte & Hooks</h3>
+                        <p>Klare Aussagen statt improvisierter Kamera-Momente. Jedes Skript folgt einer
+                            Performance-Struktur.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-blob">03</div>
+                        <h3>Production</h3>
+                        <p>Effizienter Dreh mit Premium-Setup. Wir sorgen für professionelles Licht, Ton und Führung vor
+                            der Kamera.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="step-blob">04</div>
+                        <h3>Postproduktion & Delivery</h3>
+                        <p>Schnitt, Captions, Motion, Color – ready to post. Sie erhalten fertige Assets, die performen.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- Sektion 6: Final CTA (Vertikal) -->
+        <section class="about-cta">
+            <div class="cta-premium-container">
+                <div class="cta-content reveal-on-scroll" style="text-align:center; max-width: 800px; margin: 0 auto;">
+                    <h2>Wollen wir Ihnen unseren Standard in einem Probe-Reel zeigen?</h2>
+                    <p class="cta-subline">Wir produzieren ein kostenloses Probe-Reel, damit Sie sofort sehen, wie Vivix
+                        aussieht – schnell, sauber und ohne Risiko.</p>
+                    <div class="cta-buttons" style="justify-content: center;">
+                        <a href="#contact" class="btn-primary-glow">Probe-Reel anfragen</a>
+                        <a href="https://calendly.com/vivix-agency/intro-call" target="_blank" class="btn-ghost"
+                            style="border-color: rgba(255,255,255,0.2);">Call buchen <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-glow"></div>
+
+        <!-- Level 1: Magnetic CTA -->
+        <div class="footer-level-1">
+            <h2 class="footer-question">Bereit für Wachstum?</h2>
+            <a href="mailto:contact@vivix-media.com" class="magnetic-btn-wrapper">
+                <div class="magnetic-btn">
+                    <span class="btn-text">KONTAKT</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Level 2: Big Links -->
+        <div class="footer-level-2">
+            <div class="footer-col-left">
+                <a href="mailto:contact@vivix-media.com" class="big-mail-link">contact@vivix-media.com</a>
+            </div>
+            <div class="footer-col-right">
+                <a href="https://www.instagram.com/vivix.media/" target="_blank" class="big-social-link">INSTAGRAM ↗</a>
+            </div>
+        </div>
+
+        <!-- Level 3: Legal -->
+        <div class="footer-level-3">
+            <span class="legal-left">© 2026 Vivix Media</span>
+            <div class="legal-right">
+                <a href="impressum.html" class="legal-link">Impressum</a>
+                <span class="legal-separator">|</span>
+                <a href="privacy.html" class="legal-link">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVIX | Page Not Found</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 404 Specific Inline Styles (moved to style.css for production later, but ensuring structure here) */
+        /* See style.css for implementation */
+    </style>
+</head>
+
+<body style="background-color: #000;">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot-outline"></div>
+
+    <!-- Header (Global) -->
+    <header>
+        <div class="logo">V I V I X</div>
+        <button class="hamburger-menu" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <!-- Menu Overlay (Global) -->
+    <div class="menu-overlay">
+        <div class="menu-left">
+            <div class="gallery-column col-down">
+            </div>
+            <div class="gallery-column col-up">
+            </div>
+        </div>
+        <div class="menu-right">
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Homepage</a>
+                <a href="vision.html" class="nav-link">Vision & Mission</a>
+                <!-- Referenzen removed in previous step -->
+                <a href="index.html#packages" class="nav-link">Angebote</a>
+                <a href="about.html" class="nav-link">ABOUT US</a>
+            </nav>
+
+            <div class="menu-footer">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vivix.media/" target="_blank" class="social-btn">Instagram</a>
+                    <a href="#" class="social-btn">YouTube</a>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:info@vivix-media.com">info@vivix-media.com</a>
+                    <a href="https://wa.me/message/GJ5I257O4WGEP1" target="_blank">WhatsApp</a>
+                </div>
+                <a href="mailto:contact@vivix-media.com" class="studio-btn">Kontakt <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN 404 CONTENT -->
+    <main>
+        <section class="not-found-section">
+            <div class="not-found-container">
+                <h1 class="error-code skew-up">404</h1>
+                <p class="error-text skew-up">PAGE NOT FOUND</p>
+                <div class="skew-up">
+                    <a href="index.html" class="btn-404">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-glow"></div>
+
+        <!-- Level 1: Magnetic CTA -->
+        <div class="footer-level-1">
+            <h2 class="footer-question">Bereit für Wachstum?</h2>
+            <a href="mailto:contact@vivix-media.com" class="magnetic-btn-wrapper">
+                <div class="magnetic-btn">
+                    <span class="btn-text">KONTAKT</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Level 2: Big Links -->
+        <div class="footer-level-2">
+            <div class="footer-col-left">
+                <a href="mailto:contact@vivix-media.com" class="big-mail-link">contact@vivix-media.com</a>
+            </div>
+            <div class="footer-col-right">
+                <a href="https://www.instagram.com/vivix.media/" target="_blank" class="big-social-link">INSTAGRAM ↗</a>
+            </div>
+        </div>
+
+        <!-- Level 3: Legal -->
+        <div class="footer-level-3">
+            <span class="legal-left">© 2026 Vivix Media</span>
+            <div class="legal-right">
+                <a href="impressum.html" class="legal-link">Impressum</a>
+                <span class="legal-separator">|</span>
+                <a href="privacy.html" class="legal-link">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="assets/js/content.js"></script> <!-- Reusing for menu population -->
+    <script src="assets/js/script.js"></script> <!-- Reusing for menu interaction -->
+
+    <script>
+        // Specific 404 Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            // "The Reveal" - Skew Up Effect
+            // Start state is handled in CSS (opacity: 0, transform).
+            // We animate TO the final state.
+
+            gsap.to('.skew-up', {
+                y: 0,
+                opacity: 1,
+                rotateX: 0, // Optional slight unfold
+                skewY: 0,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power4.out",
+                delay: 0.2
+                // Removed clearProps to prevent reverting to opacity: 0
+            });
+        });
+    </script>
+</body>
+
+</html>
