@@ -1,1116 +1,781 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIVIX — Cinematic Content Studio</title>
+<meta name="description" content="VIVIX ist ein Content- und Markenstudio aus Berlin. Cinematische Reels, Ads &amp; Markenfilme für Personal Brands, Gastronomie und Events.">
+<meta name="theme-color" content="#070708">
+<link rel="canonical" href="https://vivix-media.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VIVIX — Cinematic Content Studio">
+<meta property="og:description" content="Aufmerksamkeit ist flüchtig. Vertrauen bleibt. Cinematische Reels, Ads &amp; Markenfilme.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#070708;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+img{display:block;}
+::selection{background:#ff1e2d;color:#fff;}
+a{color:inherit;}
+@keyframes vxMarq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+#vx-rev-track::-webkit-scrollbar{display:none;}
+@keyframes vxFloatA{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-18px) rotate(-.5deg);}}
+@keyframes vxFloatB{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(15px) rotate(.5deg);}}
+@keyframes vxKen{0%{transform:scale(1.04) translateY(0);}100%{transform:scale(1.14) translateY(-2%);}}
 
-    <script>!function () { window.semaphore = window.semaphore || [], window.ketch = function () { window.semaphore.push(arguments) }; var e = new URLSearchParams(document.location.search), n = document.createElement("script"); n.type = "text/javascript", n.src = "https://global.ketchcdn.com/web/v3/config/gmi_project_development/website_smart_tag/boot.js", n.defer = n.async = !0, document.getElementsByTagName("head")[0].appendChild(n) }();</script>
+/* ---- hover states (were style-hover attributes in the design source) ---- */
+.vx-navlink:hover{color:#ff1e2d;}
+.vx-btn-pill:hover{opacity:.85;}
+.vx-btn-red:hover{transform:translateY(-2px);box-shadow:0 16px 52px rgba(255,30,45,.6);}
+.vx-btn-red-sm:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,30,45,.6);}
+.vx-btn-ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.32);}
+.vx-btn-dark:hover{transform:translateY(-2px);}
+.vx-btn-outline-dark:hover{background:rgba(7,7,8,.08);}
+.vx-link-red:hover{color:#ff5560;}
+.vx-arrow:hover{background:#ff1e2d;border-color:#ff1e2d;}
+.vx-foot-mail:hover{color:#ff1e2d;}
+.vx-foot-link:hover{color:#fff;}
+.vx-legal:hover{color:#A8A8AE;}
+.vx-arrow:focus-visible,a:focus-visible,.vx-more:focus-visible{outline:2px solid #ff1e2d;outline-offset:3px;}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIVIX | Video Production Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Essential styles for the canvas to be the background */
-        #canvas-container {
-            position: absolute;
-            /* Changed from fixed to absolute */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            /* Behind content */
-            pointer-events: all;
-            background-color: #000;
-        }
+/* ---- work grids: two rows, rest behind a toggle ---- */
+/* the cap lands exactly on a row boundary, so no fade is needed — the button carries the affordance */
+/* max-height is the only property that can animate to a content-derived height here;
+   it runs once per click, so the layout cost is acceptable */
+.vx-clamp{position:relative;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1);}
+.vx-more-wrap{display:flex;justify-content:center;margin-top:clamp(22px,3vh,34px);}
+.vx-more{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F0EEEA;background:transparent;padding:14px 32px;border-radius:100px;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .25s,border-color .25s;}
 
-        /* Ensure main content sits above */
-        main {
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+/* ---- responsive ---- */
+@media(max-width:880px){.vx-nav{display:none!important;}}
+@media(max-width:760px){
+  .vx-float{display:none!important;}
+  /* the float column is hidden on phones — collapse its grid track too */
+  .vx-split{grid-template-columns:1fr!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
+}
+</style>
 </head>
-
 <body>
-    <!-- Removed Old fixed canvas container location -->
 
-    <!-- Removed old organic blobs and wavy lines as requested for clean look -->
+<!-- shared wordmark: one set of paths, referenced by intro / header / footer -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true" focusable="false"><defs>
+  <filter id="vx-rough" x="-15%" y="-40%" width="130%" height="180%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <g id="vx-wm" fill="none" stroke="#F3F0E9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9 C 7.5 8.6 8.5 11 11.5 17.5 L 20 37 C 21 39.4 23 39.4 24 37 L 32.5 17.5 C 35 11.5 36 9 38 9.3"/>
+    <path d="M50 9.5 C 49.8 18 49.9 30 50 38.6"/>
+    <path d="M62 9 C 63.5 8.6 64.5 11 67.5 17.5 L 76 37 C 77 39.4 79 39.4 80 37 L 88.5 17.5 C 91 11.5 92 9 94 9.3"/>
+    <path d="M106 9.5 C 105.8 18 105.9 30 106 38.6"/>
+    <path d="M120 9.8 C 122 10 125 14 131 21 C 137 28 143 34 149 38.8"/>
+    <path d="M150 9.8 C 148 10 145 14 139 21 C 133 28 127 34 121 38.8"/>
+  </g>
+</defs></svg>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot-outline"></div>
-    <!-- Mouse Follower Glow (Background) -->
-    <div class="mouse-follower-glow"></div>
+<div id="top" style="background:#070708;color:#F3F0E9;font-family:Archivo,system-ui,sans-serif;overflow-x:hidden;position:relative;">
 
-    <header>
-        <div class="logo">V I V I X</div>
-        <button class="hamburger-menu" aria-label="Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </header>
+<!-- INTRO -->
+<div id="vx-intro" style="position:fixed;inset:0;z-index:900;background:#060607;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:transform .95s cubic-bezier(.76,0,.24,1);">
+  <svg viewBox="0 0 168 48" style="width:clamp(240px,52vw,520px);height:auto;overflow:visible;filter:drop-shadow(0 0 22px rgba(255,30,45,.5));" role="img" aria-label="VIVIX"><use href="#vx-wm" stroke-width="2.1" filter="url(#vx-rough)"/></svg>
+</div>
 
-    <div class="menu-overlay">
-        <div class="menu-left">
-            <div class="gallery-column col-down">
-            </div>
-            <div class="gallery-column col-up">
-            </div>
-        </div>
-        <div class="menu-right">
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link">Homepage</a>
-                <a href="vision.html" class="nav-link">Vision & Mission</a>
+<!-- HEADER -->
+<header id="vx-header" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(16px,4vw,52px);transition:background .45s ease,backdrop-filter .45s ease,border-color .45s ease;background:transparent;border-bottom:1px solid rgba(255,255,255,0);">
+  <a href="#top" style="display:inline-flex;align-items:center;gap:11px;text-decoration:none;" aria-label="VIVIX — zum Seitenanfang">
+    <svg viewBox="0 0 168 48" style="height:26px;width:92px;overflow:visible;filter:drop-shadow(0 0 6px rgba(255,30,45,.5));flex:none;" role="img" aria-label="VIVIX"><use href="#vx-wm" stroke-width="2.4" filter="url(#vx-rough)"/></svg>
+  </a>
+  <nav class="vx-nav" style="display:flex;align-items:center;gap:clamp(20px,2.6vw,40px);">
+    <a class="vx-navlink" href="#arbeiten" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Arbeiten</a>
+    <a class="vx-navlink" href="#leistungen" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Leistungen</a>
+    <a class="vx-navlink" href="#reviews" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Reviews</a>
+    <a class="vx-navlink" href="#pakete" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Pakete</a>
+    <a class="vx-navlink" href="#ueber-uns" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Studio</a>
+  </nav>
+  <a class="vx-btn-pill" href="mailto:alysenko@vivix-media.com?subject=Kontaktanfrage%20von%20der%20Website" style="font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;background:#ff1e2d;padding:9px 18px;border-radius:100px;transition:opacity .25s;">Kontakt</a>
+</header>
 
-                <a href="#packages" class="nav-link">Angebote</a>
-                <a href="about.html" class="nav-link">ABOUT US</a>
-            </nav>
+<!-- HERO — full-bleed image + aesthetic hook -->
+<section style="position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;">
+  <div data-parallax="0.06" style="position:absolute;inset:-7% 0;"><img src="assets/hero.jpg" alt="" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;animation:vxKen 16s ease-out forwards;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,8,.62) 0%,rgba(7,7,8,.15) 32%,rgba(7,7,8,.45) 66%,rgba(7,7,8,.94) 100%);"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(46% 50% at 22% 78%,rgba(255,30,45,.16),transparent 62%);mix-blend-mode:screen;"></div>
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px) clamp(56px,9vh,110px);">
+    <div data-reveal style="opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease;display:flex;align-items:center;gap:13px;margin-bottom:26px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ffb3b8;">VIVIX — Cinematic Content Studio</span></div>
+    <h1 style="margin:0;max-width:14ch;font-weight:600;font-size:clamp(36px,6.4vw,98px);line-height:1.0;letter-spacing:-.02em;color:#F6F4EF;">
+      <span data-reveal style="display:block;opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.7,.2,1),transform .85s cubic-bezier(.22,.7,.2,1);transition-delay:.08s;">Aufmerksamkeit</span>
+      <span data-reveal style="display:block;opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.7,.2,1),transform .85s cubic-bezier(.22,.7,.2,1);transition-delay:.18s;color:#C9C6BE;">ist flüchtig.</span>
+      <span data-reveal style="display:block;opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.7,.2,1),transform .85s cubic-bezier(.22,.7,.2,1);transition-delay:.3s;"><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;text-shadow:0 0 50px rgba(255,30,45,.55);padding-right:.08em;">Vertrauen</span> bleibt.</span>
+    </h1>
+    <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease .4s,transform .8s ease .4s;display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:clamp(26px,4vh,42px);">
+      <a class="vx-btn-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:15px;font-weight:600;text-decoration:none;padding:15px 28px;border-radius:100px;box-shadow:0 12px 40px rgba(255,30,45,.4);transition:transform .25s,box-shadow .25s;">Kostenloses Probe-Reel →</a>
+      <p style="margin:0;max-width:380px;font-size:14.5px;line-height:1.55;color:#BFBDB6;">Cinematische Reels, Ads &amp; Markenfilme für Personal Brands, Gastronomie &amp; Events.</p>
+    </div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;bottom:26px;right:clamp(16px,5vw,56px);font-size:10.5px;letter-spacing:.26em;color:rgba(243,240,233,.55);writing-mode:vertical-rl;">SCROLL ↓</div>
+</section>
 
-            <div class="menu-footer">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/vivix.media/" target="_blank" class="social-btn">Instagram</a>
-                    <a href="#" class="social-btn">YouTube</a>
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:info@vivix-media.com">info@vivix-media.com</a>
-                    <a href="https://wa.me/message/GJ5I257O4WGEP1" target="_blank">WhatsApp</a>
-                </div>
-                <a href="mailto:contact@vivix-media.com" class="studio-btn">Kontakt <span class="arrow">→</span></a>
-            </div>
-        </div>
+<!-- MARQUEE -->
+<section aria-hidden="true" style="background:#ff1e2d;color:#070708;padding:17px 0;overflow:hidden;">
+  <div style="display:flex;width:max-content;animation:vxMarq 30s linear infinite;">
+    <div style="display:flex;align-items:center;gap:32px;padding-right:32px;font-weight:800;font-size:clamp(20px,2.7vw,34px);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;"><span>Reels</span><span style="color:rgba(7,7,8,.5);">/</span><span>Ads</span><span style="color:rgba(7,7,8,.5);">/</span><span>Personal Brands</span><span style="color:rgba(7,7,8,.5);">/</span><span>Gastronomie</span><span style="color:rgba(7,7,8,.5);">/</span><span>Events</span><span style="color:rgba(7,7,8,.5);">/</span></div>
+    <div style="display:flex;align-items:center;gap:32px;padding-right:32px;font-weight:800;font-size:clamp(20px,2.7vw,34px);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;"><span>Reels</span><span style="color:rgba(7,7,8,.5);">/</span><span>Ads</span><span style="color:rgba(7,7,8,.5);">/</span><span>Personal Brands</span><span style="color:rgba(7,7,8,.5);">/</span><span>Gastronomie</span><span style="color:rgba(7,7,8,.5);">/</span><span>Events</span><span style="color:rgba(7,7,8,.5);">/</span></div>
+  </div>
+</section>
+
+<!-- WHITE MANIFEST -->
+<section style="background:#F3F0E9;color:#0B0B0C;padding:clamp(86px,14vh,170px) 0;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;display:flex;align-items:center;gap:12px;margin-bottom:38px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff1e2d;">Manifest</span></div>
+    <p data-reveal style="opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease;margin:0;max-width:1140px;font-weight:500;font-size:clamp(25px,3.6vw,50px);line-height:1.16;letter-spacing:-.018em;color:#1A1A1C;">
+      Wir bauen Marken, die man <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff1e2d;">fühlt</span>, bevor man sie googelt. Content, der nicht im Feed verschwindet — sondern im Kopf bleibt und aus Aufmerksamkeit <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff1e2d;">Umsatz</span> macht.
+    </p>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen" style="padding:clamp(80px,11vh,140px) 0;background:#070708;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;display:flex;align-items:center;gap:12px;margin-bottom:44px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Was wir bauen</span></div>
+    <div style="border-top:1px solid rgba(255,255,255,.12);">
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,5vw,72px);align-items:center;padding:clamp(24px,3.6vh,42px) 0;border-bottom:1px solid rgba(255,255,255,.12);">
+        <span style="font-size:13px;color:#ff1e2d;">01</span>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;"><h3 style="margin:0;font-weight:700;font-size:clamp(28px,4.2vw,60px);line-height:.96;letter-spacing:-.02em;color:#F3F0E9;">Viral-first <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Hooks</span></h3><p style="margin:0;max-width:380px;font-size:15px;line-height:1.55;color:#8E8C88;">Intros, die den Daumen stoppen. Psychologisch optimierte Haken für Watchtime und Reichweite.</p></div>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease .07s,transform .8s ease .07s;display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,5vw,72px);align-items:center;padding:clamp(24px,3.6vh,42px) 0;border-bottom:1px solid rgba(255,255,255,.12);">
+        <span style="font-size:13px;color:#ff1e2d;">02</span>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;"><h3 style="margin:0;font-weight:700;font-size:clamp(28px,4.2vw,60px);line-height:.96;letter-spacing:-.02em;color:#F3F0E9;">Authority <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Storytelling</span></h3><p style="margin:0;max-width:380px;font-size:15px;line-height:1.55;color:#8E8C88;">Inhalte, die Status und Vertrauen aufbauen — und Ihre Abschlussquote messbar erhöhen.</p></div>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease .14s,transform .8s ease .14s;display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,5vw,72px);align-items:center;padding:clamp(24px,3.6vh,42px) 0;border-bottom:1px solid rgba(255,255,255,.12);">
+        <span style="font-size:13px;color:#ff1e2d;">03</span>
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;"><h3 style="margin:0;font-weight:700;font-size:clamp(28px,4.2vw,60px);line-height:.96;letter-spacing:-.02em;color:#F3F0E9;">Conversion <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">Editing</span></h3><p style="margin:0;max-width:380px;font-size:15px;line-height:1.55;color:#8E8C88;">Schnitt, der verkauft — Rhythmus, Color und strategische CTAs, die Zuschauer zu Leads machen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIMARY REEL -->
+<section style="padding:clamp(78px,11vh,140px) 0;background:#070708;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(44% 50% at 70% 50%,rgba(255,30,45,.16),transparent 60%);pointer-events:none;"></div>
+  <div class="vx-split" style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);display:grid;grid-template-columns:1fr clamp(280px,32vw,420px);gap:clamp(28px,5vw,72px);align-items:center;">
+    <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Aktuelles Aushängeschild</span></div>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(36px,5.6vw,84px);line-height:.94;letter-spacing:-.025em;color:#F3F0E9;">Das eine Reel, das <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">alles</span> verändert.</h2>
+      <p style="margin:22px 0 0;max-width:440px;font-size:clamp(15px,1.2vw,17px);line-height:1.62;color:#9A9890;">Vom Hook bis zum letzten Frame durchkomponiert: Bildsprache, Schnitt und Sound, die in den ersten 3 Sekunden überzeugen — und bis zum CTA halten.</p>
+      <div style="display:flex;gap:30px;margin-top:30px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;">
+        <div><div style="font-weight:800;font-size:30px;color:#F3F0E9;">9:16</div><div style="font-size:12px;letter-spacing:.04em;color:#7C7C82;margin-top:5px;">Native Reels</div></div>
+        <div><div style="font-weight:800;font-size:30px;color:#F3F0E9;">3 Sek.</div><div style="font-size:12px;letter-spacing:.04em;color:#7C7C82;margin-top:5px;">Scroll-Stopp</div></div>
+        <div><div style="font-weight:800;font-size:30px;color:#ff2f3c;">4K</div><div style="font-size:12px;letter-spacing:.04em;color:#7C7C82;margin-top:5px;">Cinematic</div></div>
+      </div>
+    </div>
+    <div data-reveal class="vx-float" style="opacity:0;transition:opacity 1s ease;justify-self:center;width:100%;max-width:420px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid rgba(255,30,45,.4);box-shadow:0 0 0 1px rgba(255,30,45,.18),0 40px 110px rgba(255,30,45,.22),0 30px 80px rgba(0,0,0,.6);">
+      <video data-src="assets/vid-dorothea-ref.mp4" poster="assets/poster-dorothea-ref.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ARBEITEN — header + scatter -->
+<section id="arbeiten" style="padding:clamp(80px,11vh,140px) 0 clamp(78px,10vh,124px);background:#070708;position:relative;overflow:hidden;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(36px,6vh,64px);">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(40px,6.8vw,108px);line-height:.92;letter-spacing:-.025em;color:#F3F0E9;">Ausgewählte <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">Arbeiten</span></h2>
+      <span style="font-size:12px;line-height:1.7;letter-spacing:.06em;color:#6C6C72;text-transform:uppercase;max-width:34ch;">Gastro · Automotive · Nightlife · Brands · Imagefilme · Interviews · Podcasts · Personal Brands</span>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div class="vx-clamp" id="vx-works" data-rows="2">
+      <div class="vx-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:14px;">
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-joshua-leon.mp4" poster="assets/poster-joshua-leon.jpg" aria-label="Joshua x Leon" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-maybach-ceo-v2.mp4" poster="assets/poster-maybach-ceo-v2.jpg" aria-label="Maybach Luxury CEO" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-blacklisted-1.jpg" alt="Blacklisted" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-koffer-lightpainting.mp4" poster="assets/poster-koffer-lightpainting.jpg" aria-label="Light Painting — Koffer" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-zweifel.mp4" poster="assets/poster-zweifel.jpg" aria-label="Wie man mit Zweifeln umgeht" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-ivan-highlight.mp4" poster="assets/poster-ivan-highlight.jpg" aria-label="Ivan Gette — Highlight Reel" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-sonnenbrillen-2.mp4" poster="assets/poster-sonnenbrillen-2.jpg" aria-label="3 stylische Sonnenbrillen Pt. 2" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-arbeiter-unternehmer.mp4" poster="assets/poster-arbeiter-unternehmer.jpg" aria-label="Unternehmer vs. Angestellter" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-void-1.jpg" alt="Void Mykonos" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-dorothea-shake.mp4" poster="assets/poster-dorothea-shake.jpg" aria-label="Dorothéa — Shake" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-ivan-boards.mp4" poster="assets/poster-ivan-boards.jpg" aria-label="Ivan Gette — Boards" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-reel5.mp4" poster="assets/poster-reel5.jpg" aria-label="Reel #5" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-reel16.mp4" poster="assets/poster-reel16.jpg" aria-label="Reel #16" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-dorothea-cinematic.mp4" poster="assets/poster-dorothea-cinematic.jpg" aria-label="Dorothéa — Cinematic" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-drink.mp4" poster="assets/poster-drink.jpg" aria-label="Drink Close-Up" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-dorothea-rose.jpg" alt="Dorothéa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+    </div>
+    <div class="vx-more-wrap">
+      <button type="button" class="vx-more vx-btn-ghost" aria-controls="vx-works" aria-expanded="false" data-more="Mehr Arbeiten anzeigen" data-less="Weniger anzeigen">Mehr Arbeiten anzeigen</button>
+    </div>
+  </div>
+</section>
+
+<!-- KINO FÜR DEN FEED -->
+<section style="position:relative;height:clamp(440px,82vh,760px);overflow:hidden;">
+  <div data-parallax="0.05" style="position:absolute;inset:-12% 0;"><video data-src="assets/vid-drink.mp4" poster="assets/poster-drink.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,7,.55),rgba(6,6,7,.2) 45%,rgba(6,6,7,.85));"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(55% 60% at 50% 50%,rgba(255,30,45,.16),transparent 65%);mix-blend-mode:screen;"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;">
+    <span data-reveal style="opacity:0;transition:opacity 1s ease;font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#ff8089;margin-bottom:18px;">Premium-Look · Performance-Denken</span>
+    <h2 data-reveal style="opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease;margin:0;font-weight:700;font-size:clamp(44px,9vw,142px);line-height:.9;letter-spacing:-.025em;color:#F3F0E9;text-shadow:0 0 60px rgba(0,0,0,.5);">Kino für<br>den <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">Feed.</span></h2>
+  </div>
+</section>
+
+<!-- MEHR ARBEITEN — masonry -->
+<section style="padding:clamp(70px,10vh,130px) 0;background:#070708;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:36px;"><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Mehr aus dem Studio</span><span style="font-size:13px;color:#7C7C82;">10+ Produktionen / Monat</span></div>
+    <div class="vx-clamp" id="vx-gallery" data-rows="2">
+      <div class="vx-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;">
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-2.jpg" alt="John Dalia Eyewear — Fitting" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-koffer-1.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-dorothea-1.jpg" alt="Dorothéa — Fine Dining" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-moto.jpg" alt="BMW Motorrad" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-3.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-blacklisted-1.jpg" alt="Blacklisted" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-2.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-1.jpg" alt="BMW X5 — Olympiastadion" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-boards.jpg" alt="Ivan Gette — Board Serie" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-como-3.jpg" alt="Como Cocktails" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-1.jpg" alt="John Dalia Eyewear" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-3.jpg" alt="John Dalia Eyewear — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-koffer-2.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-1.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-2.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-4.jpg" alt="Sapphire Suitcases — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ushuaia.jpg" alt="Ushuaïa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-5.jpg" alt="BMW — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-void-1.jpg" alt="Void Mykonos" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-dj.jpg" alt="Live Set" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-1.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-2.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-3.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-1.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-3.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+    </div>
+    <div class="vx-more-wrap">
+      <button type="button" class="vx-more vx-btn-ghost" aria-controls="vx-gallery" aria-expanded="false" data-more="Mehr aus dem Studio anzeigen" data-less="Weniger anzeigen">Mehr aus dem Studio anzeigen</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section style="padding:clamp(80px,11vh,140px) 0;background:#0A0A0B;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:52px;">
+      <h2 style="margin:0;font-weight:700;font-size:clamp(34px,5.4vw,82px);line-height:.92;letter-spacing:-.025em;color:#F3F0E9;">Schnell. Sauber. <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">Planbar.</span></h2>
+      <p style="margin:0;max-width:280px;font-size:15px;line-height:1.55;color:#8A8A90;">Sie geben Input — wir liefern das fertige Ergebnis. 15–30 Minuten pro Woche genügen.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden;">
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;padding:34px 26px;background:#0C0C0D;">
+        <div style="font-weight:800;font-size:30px;color:#ff1e2d;margin-bottom:42px;">01</div>
+        <h3 style="margin:0 0 9px;font-weight:600;font-size:19px;color:#EEECE7;">Analyse &amp; Positionierung</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#82828A;">Zielgruppe, Angebot, Messaging, Content-Angles.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease .07s,transform .8s ease .07s;padding:34px 26px;background:#0C0C0D;">
+        <div style="font-weight:800;font-size:30px;color:#ff1e2d;margin-bottom:42px;">02</div>
+        <h3 style="margin:0 0 9px;font-weight:600;font-size:19px;color:#EEECE7;">Skripte &amp; Hook-System</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#82828A;">Klare Struktur: Hook → Story → CTA.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease .14s,transform .8s ease .14s;padding:34px 26px;background:#0C0C0D;">
+        <div style="font-weight:800;font-size:30px;color:#ff1e2d;margin-bottom:42px;">03</div>
+        <h3 style="margin:0 0 9px;font-weight:600;font-size:19px;color:#EEECE7;">Production</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#82828A;">Effizienter Dreh, Talking-Head + B-Roll, Premium Licht &amp; Audio.</p>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease .21s,transform .8s ease .21s;padding:34px 26px;background:#0C0C0D;">
+        <div style="font-weight:800;font-size:30px;color:#ff1e2d;margin-bottom:42px;">04</div>
+        <h3 style="margin:0 0 9px;font-weight:600;font-size:19px;color:#EEECE7;">Post &amp; Delivery</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#82828A;">Schnitt, Captions, Motion, Color + Formate &amp; Cutdowns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKETE -->
+<section id="pakete" style="padding:clamp(80px,11vh,140px) 0;background:#070708;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(38% 42% at 50% 0%,rgba(255,30,45,.09),transparent 60%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;text-align:center;max-width:760px;margin:0 auto 52px;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px;"><span style="width:26px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Pakete</span><span style="width:26px;height:1px;background:#ff1e2d;"></span></div>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(34px,5.2vw,72px);line-height:.95;letter-spacing:-.025em;color:#F3F0E9;">Pakete für <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">planbaren Output.</span></h2>
+      <p style="margin:18px 0 0;font-size:16px;line-height:1.6;color:#9A9890;">Jedes Paket ist ein Done-for-you System. 3 Monate Mindestlaufzeit.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;align-items:stretch;">
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">Essential</span>
+        <div style="margin:18px 0 4px;font-weight:800;font-size:42px;letter-spacing:-.025em;color:#F4F2ED;">2.500 €</div>
+        <span style="font-size:13px;color:#76767C;margin-bottom:24px;">pro Monat</span>
+        <div style="height:1px;background:rgba(255,255,255,.09);margin-bottom:22px;"></div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;flex:1;font-size:14.5px;color:#C0BEB8;">
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>8 Filme / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>1 Drehtag / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Marktrecherche &amp; Analyse</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pre-Production</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Postproduction</li>
+        </ul>
+        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Essential" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .07s,transform .8s ease .07s;position:relative;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,30,45,.5);border-radius:16px;background:linear-gradient(180deg,rgba(255,30,45,.08),rgba(255,30,45,.012));box-shadow:0 0 0 1px rgba(255,30,45,.14),0 30px 80px rgba(255,30,45,.13);">
+        <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:#ff1e2d;padding:5px 13px;border-radius:100px;box-shadow:0 6px 20px rgba(255,30,45,.5);">Beliebt</span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#ff7d85;">Professional</span>
+        <div style="margin:18px 0 4px;font-weight:800;font-size:42px;letter-spacing:-.025em;color:#fff;">4.000 €</div>
+        <span style="font-size:13px;color:#9A9890;margin-bottom:24px;">pro Monat</span>
+        <div style="height:1px;background:rgba(255,255,255,.12);margin-bottom:22px;"></div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;flex:1;font-size:14.5px;color:#E2E0DA;">
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>15 Filme / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>2 Drehtage / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Marktrecherche &amp; Analyse</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pro Pre-Production</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pro Postproduction</li>
+        </ul>
+        <a class="vx-btn-red-sm" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Professional" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#fff;padding:13px;border-radius:100px;background:#ff1e2d;box-shadow:0 10px 30px rgba(255,30,45,.42);transition:transform .25s,box-shadow .25s;">Anfragen</a>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .14s,transform .8s ease .14s;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">Premium</span>
+        <div style="margin:18px 0 4px;font-weight:800;font-size:42px;letter-spacing:-.025em;color:#F4F2ED;">8.000 €</div>
+        <span style="font-size:13px;color:#76767C;margin-bottom:24px;">pro Monat</span>
+        <div style="height:1px;background:rgba(255,255,255,.09);margin-bottom:22px;"></div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1;font-size:14.5px;color:#C0BEB8;">
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>15 Filme / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>2 Drehtage / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>30 Stories / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Social Media Management</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Ads Setup (optional)</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Pre- &amp; Postproduction</li>
+        </ul>
+        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Premium" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+      </div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .21s,transform .8s ease .21s;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);">
+        <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">AI UGC</span><span style="font-size:9.5px;font-weight:700;letter-spacing:.14em;color:#070708;background:#ff1e2d;padding:2px 7px;border-radius:5px;">NEW</span></div>
+        <div style="margin:18px 0 4px;font-weight:800;font-size:42px;letter-spacing:-.025em;color:#F4F2ED;">ab 2.500 €</div>
+        <span style="font-size:13px;color:#76767C;margin-bottom:24px;">pro Monat</span>
+        <div style="height:1px;background:rgba(255,255,255,.09);margin-bottom:22px;"></div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;flex:1;font-size:14.5px;color:#C0BEB8;">
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>5 AI UGC Filme / Monat</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Ads Setup (optional)</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Marktrecherche &amp; Analyse</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Production</li>
+          <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Postproduction</li>
+        </ul>
+        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20AI%20UGC" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+      </div>
     </div>
 
-    <main>
-        <section id="hero" class="scroll-section">
-            <!-- Lando Effect Canvas Container (Now Confined to Hero) -->
-            <div id="canvas-container"></div>
+    <!-- Add-on services -->
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;margin-top:clamp(48px,6vw,72px);">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:26px;"><span style="width:26px;height:1px;background:rgba(255,255,255,.2);"></span><span style="font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#76767C;">Zusätzliche Dienstleistungen</span><span style="width:26px;height:1px;background:rgba(255,255,255,.2);"></span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,22px);max-width:1240px;margin:0 auto;">
 
-            <div class="hero-container fade-in">
-                <h1 class="hero-title">VIVIX</h1>
-                <h2 class="hero-subtitle">Social Media, das planbar Kunden bringt</h2>
-                <p class="hero-subline">
-                    VIVIX produziert Premium-Reels & Ads, die Reichweite in Vertrauen verwandeln – und Vertrauen in
-                    qualifizierte Anfragen und Umsatz. Done for You, ohne internen Stress.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#probereel" class="studio-btn">
-                        <span class="btn-text">Kostenloses Probe-Reel anfragen</span>
-                        <span class="arrow">→</span>
-                    </a>
-                    <a href="#call" class="studio-btn">
-                        <span class="btn-text">Call buchen</span>
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- CONTENT REMOVED: Redesign Pending -->
-
-        <!-- Clients & Partners Section -->
-        <section id="clients-partners" class="scroll-section">
-            <div class="cp-header fade-in-up">
-                <h2>Kunden und Partner</h2>
-                <p class="cp-subline">Arbeiten auf Premium-Standard - unter anderem Projekte für Waldorf Astoria Berlin
-                    sowie Produktion für F1 und BMW.</p>
-            </div>
-
-            <!-- Clients Scroll (Left to Right) -->
-            <div class="logo-scroll-group">
-
-                <div class="marquee-wrapper">
-                    <div class="marquee-track" id="track-clients">
-                        <!-- Rendered via JS or statically? I'll put them statically for robustness -->
-                        <!-- Set 1 -->
-                        <img src="assets/images/clients/BMW logo.png" alt="BMW">
-                        <img src="assets/images/clients/arosalenzerheide logo.png" alt="Arosa">
-                        <img src="assets/images/clients/bentley logo.png" alt="Bentley">
-                        <img src="assets/images/clients/blacklisted logo.png" alt="Blacklisted">
-                        <img src="assets/images/clients/como logo.png" alt="Como">
-                        <img src="assets/images/clients/corner 33 logo.png" alt="Corner 33">
-                        <img src="assets/images/clients/evan luthra.png" alt="Evan Luthra">
-                        <img src="assets/images/clients/goldjunge logo.png" alt="Goldjunge">
-                        <img src="assets/images/clients/ivangette logo.png" alt="Ivan Gette">
-                        <img src="assets/images/clients/kolcapital logo.png" alt="Kol Capital">
-                        <img src="assets/images/clients/luciano logo.png" alt="Luciano">
-                        <img src="assets/images/clients/notagallery logo.png" alt="Nota Gallery">
-                        <img src="assets/images/clients/opendesci logo.png" alt="Open Desci">
-                        <img src="assets/images/clients/sapphire logo.png" alt="Sapphire">
-                        <img src="assets/images/clients/the door logo.png" alt="The Door">
-                        <img src="assets/images/clients/void logo.png" alt="Void">
-                        <img src="assets/images/clients/waldorf astoria logo.png" alt="Waldorf Astoria">
-                        <!-- Set 2 (Duplicate) -->
-                        <img src="assets/images/clients/BMW logo.png" alt="BMW">
-                        <img src="assets/images/clients/arosalenzerheide logo.png" alt="Arosa">
-                        <img src="assets/images/clients/bentley logo.png" alt="Bentley">
-                        <img src="assets/images/clients/blacklisted logo.png" alt="Blacklisted">
-                        <img src="assets/images/clients/como logo.png" alt="Como">
-                        <img src="assets/images/clients/corner 33 logo.png" alt="Corner 33">
-                        <img src="assets/images/clients/evan luthra.png" alt="Evan Luthra">
-                        <img src="assets/images/clients/goldjunge logo.png" alt="Goldjunge">
-                        <img src="assets/images/clients/ivangette logo.png" alt="Ivan Gette">
-                        <img src="assets/images/clients/kolcapital logo.png" alt="Kol Capital">
-                        <img src="assets/images/clients/luciano logo.png" alt="Luciano">
-                        <img src="assets/images/clients/notagallery logo.png" alt="Nota Gallery">
-                        <img src="assets/images/clients/opendesci logo.png" alt="Open Desci">
-                        <img src="assets/images/clients/sapphire logo.png" alt="Sapphire">
-                        <img src="assets/images/clients/the door logo.png" alt="The Door">
-                        <img src="assets/images/clients/void logo.png" alt="Void">
-                        <img src="assets/images/clients/waldorf astoria logo.png" alt="Waldorf Astoria">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Partners Scroll (Right to Left) -->
-            <div class="logo-scroll-group">
-
-                <div class="marquee-wrapper">
-                    <div class="marquee-track reverse" id="track-partners">
-                        <!-- Set 1 -->
-                        <img src="assets/images/partners/aparo logo.png" alt="Aparo">
-                        <img src="assets/images/partners/digitalfoto logo.png" alt="Digitalfoto">
-                        <img src="assets/images/partners/eirmai logo.png" alt="Eirmai">
-                        <img src="assets/images/partners/hollyland logo.png" alt="Hollyland">
-                        <img src="assets/images/partners/lexar logo.png" alt="Lexar">
-                        <img src="assets/images/partners/moft logo.png" alt="Moft">
-                        <img src="assets/images/partners/musso logo.png" alt="Musso">
-                        <img src="assets/images/partners/neewer logo.png" alt="Neewer">
-                        <img src="assets/images/partners/patona logo.png" alt="Patona">
-                        <img src="assets/images/partners/pgy tech logo.png" alt="PGY Tech">
-                        <img src="assets/images/partners/plaud ai logo.png" alt="Plaud AI">
-                        <img src="assets/images/partners/raubay logo.png" alt="Raubay">
-                        <img src="assets/images/partners/sharge logo.png" alt="Sharge">
-                        <img src="assets/images/partners/torras logo.png" alt="Torras">
-                        <img src="assets/images/partners/verbatim logo.png" alt="Verbatim">
-                        <!-- Set 2 -->
-                        <img src="assets/images/partners/aparo logo.png" alt="Aparo">
-                        <img src="assets/images/partners/digitalfoto logo.png" alt="Digitalfoto">
-                        <img src="assets/images/partners/eirmai logo.png" alt="Eirmai">
-                        <img src="assets/images/partners/hollyland logo.png" alt="Hollyland">
-                        <img src="assets/images/partners/lexar logo.png" alt="Lexar">
-                        <img src="assets/images/partners/moft logo.png" alt="Moft">
-                        <img src="assets/images/partners/musso logo.png" alt="Musso">
-                        <img src="assets/images/partners/neewer logo.png" alt="Neewer">
-                        <img src="assets/images/partners/patona logo.png" alt="Patona">
-                        <img src="assets/images/partners/pgy tech logo.png" alt="PGY Tech">
-                        <img src="assets/images/partners/plaud ai logo.png" alt="Plaud AI">
-                        <img src="assets/images/partners/raubay logo.png" alt="Raubay">
-                        <img src="assets/images/partners/sharge logo.png" alt="Sharge">
-                        <img src="assets/images/partners/torras logo.png" alt="Torras">
-                        <img src="assets/images/partners/verbatim logo.png" alt="Verbatim">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reality Check Section -->
-        <section id="reality-check" class="scroll-section">
-            <!-- Background Gradient Bubbles -->
-            <div class="reality-bg">
-                <div class="gradient-blob blob-red"></div>
-                <div class="gradient-blob blob-purple"></div>
-            </div>
-
-            <div class="reality-container">
-                <div class="reality-left fade-in-up">
-                    <span class="reality-tag">REALITY CHECK</span>
-                    <h2 class="reality-headline">Social Media ist für viele Unternehmen <span class="highlight-red">kein
-                            System</span> – sondern ein Nebenprojekt.</h2>
-                </div>
-                <div class="reality-right">
-                    <div class="pain-point-card fade-in-up delay-1">
-                        <div class="card-icon">01</div>
-                        <h3>Unregelmäßiger Output</h3>
-                        <p>Drei Wochen Funkstille, dann fünf Posts in zwei Tagen – weil intern einfach die Zeit fehlt.
-                        </p>
-                    </div>
-                    <div class="pain-point-card fade-in-up delay-2">
-                        <div class="card-icon">02</div>
-                        <h3>Content sieht „okay“ aus</h3>
-                        <p>Aber er verkauft nicht. Likes und Views zahlen keine Gehälter, wenn die Strategie fehlt.</p>
-                    </div>
-                    <div class="pain-point-card fade-in-up delay-3">
-                        <div class="card-icon">03</div>
-                        <h3>Zu viele Ideen, zu wenig Struktur</h3>
-                        <p>Man probiert alles mal aus – und am Ende bleibt nur die Hoffnung auf Viralität.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Value Proposition Section -->
-        <!-- Value Proposition Section (Mirrored Reality Check) -->
-        <!-- Value Proposition Section (3-Column Layout) -->
-        <section id="value-prop" class="scroll-section">
-            <div class="reality-bg">
-                <div class="gradient-blob blob-blue"></div>
-                <div class="gradient-blob blob-cyan"></div>
-            </div>
-
-            <div class="value-3-col">
-                <!-- Col 1: Cards -->
-                <div class="value-cards-col fade-in-up" style="display: flex; flex-direction: column; gap: 30px;">
-                    <div class="pain-point-card fade-in-up delay-1">
-                        <div class="card-icon" style="color: #0066ff; border-color: #0066ff;">→</div>
-                        <h3>Viral-first Hooks</h3>
-                        <p>Wir skripten Intros, die Scroll-Stopper sind. Psychologisch optimierte Haken für mehr
-                            Watchtime & Reichweite.</p>
-                    </div>
-                    <div class="pain-point-card fade-in-up delay-2">
-                        <div class="card-icon" style="color: #0066ff; border-color: #0066ff;">→</div>
-                        <h3>Authority Storytelling</h3>
-                        <p>Keine Hampelmann-Tänze. Inhalte, die Vertrauen aufbauen und Ihre Abschlussquote erhöhen.</p>
-                    </div>
-                    <div class="pain-point-card fade-in-up delay-3">
-                        <div class="card-icon" style="color: #0066ff; border-color: #0066ff;">→</div>
-                        <h3>Conversion Editing</h3>
-                        <p>Schnitt, der verkauft. Wir verwandeln Zuschauer in Leads durch strategisches Editing.</p>
-                    </div>
-                </div>
-
-                <!-- Col 2: Text -->
-                <div class="value-text-col fade-in-up delay-1">
-                    <span class="reality-tag" style="color: #00ccff;">THE SOLUTION</span>
-                    <h2 class="reality-headline">Wir bauen Ihre Video-Engine: <br><span class="highlight-blue">Viralität
-                            mit System.</span> Performance mit Premium-Look.</h2>
-                    <p class="value-subline" style="margin-top: 30px; line-height: 1.6; color: #ccc;">Unsere Videos sind
-                        so gebaut, dass sie Aufmerksamkeit halten, Vertrauen aufbauen und klar zur Handlung führen.</p>
-                </div>
-
-                <!-- Col 3: Image -->
-                <div class="value-image-col fade-in-up delay-2" style="display: flex; justify-content: flex-end;">
-                    <img src="assets/images/phones with video.png" alt="Video Engine on Phones"
-                        style="max-width: 120%; width: auto; max-height: 80vh; transform: translateX(10%);">
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section (Process Timeline) -->
-        <section id="how-it-works" class="scroll-section">
-            <div class="interactive-bg">
-                <div class="mouse-blob"></div>
-            </div>
-
-            <div class="process-container">
-                <div class="process-header fade-in-up">
-                    <span class="reality-tag">DER PROZESS</span>
-                    <h2 class="reality-headline">So läuft’s ab – <br>schnell, sauber, planbar.</h2>
-                </div>
-
-                <div class="process-timeline fade-in-up delay-1">
-                    <!-- Connecting Line -->
-                    <div class="process-line"></div>
-
-                    <!-- Step 1 -->
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <div class="step-icon">🎯</div> <!-- Placeholder Icon or SVG -->
-                        <h3>Analyse & Positionierung</h3>
-                        <p>Zielgruppe, Angebot, Messaging, Content-Angles</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <div class="step-icon">📝</div>
-                        <h3>Skripte & Hook-System</h3>
-                        <p>Videos mit klarer Struktur (Hook → Story → CTA)</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <div class="step-icon">🎥</div>
-                        <h3>Production</h3>
-                        <p>Effizienter Dreh (Talking Head + B-Roll), Premium Licht/Audio</p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <div class="step-icon">💻</div>
-                        <h3>Post & Delivery</h3>
-                        <p>Schnitt, Captions, Motion, Color + Formate/Cutdowns</p>
-                    </div>
-                </div>
-
-                <div class="process-footer fade-in-up delay-2">
-                    <p>Sie geben Input – wir liefern das fertige Ergebnis.</p>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Deliverables Section -->
-        <section id="deliverables" class="scroll-section">
-            <div class="interactive-bg">
-                <div class="mouse-blob"></div>
-            </div>
-
-            <div class="deliverables-container">
-                <div class="deliverables-header fade-in-up">
-                    <h2 class="reality-headline">Alles, was Sie brauchen – <br>aus einer Hand.</h2>
-                </div>
-
-                <div class="deliverables-split fade-in-up delay-1">
-                    <div class="deliverables-left">
-                        <div class="deliverables-grid">
-                            <div class="deliverable-item">
-                                <span class="check-icon">✓</span>
-                                <span class="deliverable-emoji">🔎</span>
-                                <h3>Marktrecherche & Messaging</h3>
-                            </div>
-                            <div class="deliverable-item">
-                                <span class="check-icon">✓</span>
-                                <span class="deliverable-emoji">🪝</span>
-                                <h3>Skripte, Hooks & CTAs</h3>
-                            </div>
-                            <div class="deliverable-item">
-                                <span class="check-icon">✓</span>
-                                <span class="deliverable-emoji">🎥</span>
-                                <h3>Talking-Head Produktion + B-Roll</h3>
-                            </div>
-                            <div class="deliverable-item">
-                                <span class="check-icon">✓</span>
-                                <span class="deliverable-emoji">💻</span>
-                                <h3>Schnitt, Captions, Motion, Sound, Color</h3>
-                            </div>
-                            <div class="deliverable-item">
-                                <span class="check-icon">✓</span>
-                                <span class="deliverable-emoji">📱</span>
-                                <h3>Formate für Reels/Ads + Cutdowns</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="deliverables-right">
-                        <img src="assets/images/hand_with_icons.png" alt="Alles aus einer Hand"
-                            class="deliverables-hand-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Packages Section -->
-        <section id="packages" class="scroll-section">
-            <div class="interactive-bg">
-                <div class="mouse-blob"></div>
-            </div>
-            <!-- Offer & Packages -->
-            <section id="packages" class="scroll-section">
-                <div class="container">
-                    <h2 class="centered-text fade-in-up">PAKETE FÜR PLANBAREN OUTPUT</h2>
-                    <div class="packages-grid-4">
-                        <!-- Essential -->
-                        <div class="package-card fade-in-up">
-                            <div class="package-header">
-                                <h3>Essential</h3>
-                            </div>
-                            <div class="price-block">
-                                <p class="price-main">NUR <span class="big-number">1500 €</span> <sup>*</sup></p>
-                                <p class="price-sub">STATT 3000 €</p>
-                            </div>
-                            <ul class="features-list">
-                                <li>8 Filme / Monat</li>
-                                <li>1 Drehtag / Monat</li>
-                                <li>Marktrecherche & Analyse</li>
-                                <li>Pre-Production</li>
-                                <li>Postproduction</li>
-                            </ul>
-                        </div>
-
-                        <!-- Professional -->
-                        <div class="package-card featured-blue fade-in-up delay-1">
-                            <div class="package-header">
-                                <h3>Professional</h3>
-                            </div>
-                            <div class="price-block">
-                                <p class="price-main">NUR <span class="big-number">4000 €</span> <sup>*</sup></p>
-                                <p class="price-sub">STATT 8000 €</p>
-                            </div>
-                            <ul class="features-list">
-                                <li>15 Filme / Monat</li>
-                                <li>2 Drehtage / Monat</li>
-                                <li>Marktrecherche & Analyse</li>
-                                <li>Pro Pre-Production</li>
-                                <li>Pro Postproduction</li>
-                            </ul>
-                        </div>
-
-                        <!-- Premium -->
-                        <div class="package-card fade-in-up delay-2">
-                            <div class="package-header">
-                                <h3>Premium</h3>
-                            </div>
-                            <div class="price-block">
-                                <p class="price-main">NUR <span class="big-number">6000 €</span> <sup>*</sup></p>
-                                <p class="price-sub">STATT 10000 €</p>
-                            </div>
-                            <ul class="features-list">
-                                <li>15 Filme / Monat</li>
-                                <li>2 Drehtage / Monat</li>
-                                <li>30 Stories / Monat</li>
-                                <li>Ads Setup (Optional)</li>
-                                <li>Social Media Management</li>
-                                <li>Marktrecherche & Analyse</li>
-                                <li>Premium Pre-Production</li>
-                                <li>Premium Production</li>
-                                <li>Premium Postproduction</li>
-                            </ul>
-                        </div>
-
-                        <!-- AI UGC -->
-                        <div class="package-card fade-in-up delay-3">
-                            <div class="package-header">
-                                <h3>AI UGC <span class="badge-new">NEW</span></h3>
-                            </div>
-                            <div class="price-block">
-                                <p class="price-main">NUR <span class="big-number">1000 €</span> <sup>*</sup></p>
-                                <p class="price-sub">STATT 2000 €</p>
-                            </div>
-                            <ul class="features-list">
-                                <li>5 AI UGC Filme / Monat</li>
-                                <li>Ads Setup (Optional)</li>
-                                <li>Marktrecherche & Analyse</li>
-                                <li>Premium Production</li>
-                                <li>Premium Postproduction</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="packages-footer centered-text fade-in-up delay-4">
-                        <p class="footer-bold">Jedes Paket ist ein Done-for-you System – Sie bleiben im Tagesgeschäft,
-                            wir liefern regelmäßig.</p>
-                        <p class="footer-small">* Alle Pakete beinhalten eine dreimonatige Mindestlaufzeit. Fairer Exit:
-                            bei wesentlicher Pflichtverletzung (nach schriftlicher Abmahnung + Nachfrist)</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Add-ons Section -->
-            <div class="addons-container fade-in-up delay-3">
-                <h3 class="addons-headline">ADD-ONS FÜR MEHR OUTPUT, MEHR SPEED, MEHR SKALIERUNG.</h3>
-                <div class="addons-grid">
-                    <div class="addon-card">
-                        <h4>Teleprompter & Camera Performance Coaching <span class="addon-emoji">🎬</span></h4>
-                    </div>
-                    <div class="addon-card">
-                        <h4>Priority Turnaround (Express) <span class="addon-emoji">⚡</span></h4>
-                    </div>
-                    <div class="addon-card">
-                        <h4>Stories Add-on <span class="addon-sub">(30 Stories/Monat)</span> <span
-                                class="addon-emoji">📱</span></h4>
-                    </div>
-                    <div class="addon-card">
-                        <h4>Ads Setup & Management <span class="addon-sub">(Ad Spend separat)</span> <span
-                                class="addon-emoji">🎯</span></h4>
-                    </div>
-                    <div class="addon-card">
-                        <h4>Multilingual Pack <span class="addon-emoji">🌐</span></h4>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Vivix Section -->
-            <section id="why-vivix" class="scroll-section">
-                <div class="why-container fade-in">
-                    <h2 class="why-headline">WARUM VIVIX STATT FREELANCER ODER INHOUSE?</h2>
-
-                    <div class="why-grid">
-                        <!-- Freelancer -->
-                        <div class="why-card">
-                            <h3>Freelancer <span class="card-icon">👤</span></h3>
-                            <ul class="why-list negative">
-                                <li><span class="li-icon">📉</span> schwankende Kapazität</li>
-                                <li><span class="li-icon">⚠️</span> Single Point of Failure</li>
-                                <li><span class="li-icon">🧩</span> selten Full-Stack</li>
-                            </ul>
-                        </div>
-
-                        <!-- Inhouse -->
-                        <div class="why-card">
-                            <h3>Inhouse <span class="card-icon">🏢</span></h3>
-                            <ul class="why-list negative">
-                                <li><span class="li-icon">💸</span> hohe Fixkosten</li>
-                                <li><span class="li-icon">🕵️</span> Recruiting/Skill-Gaps</li>
-                                <li><span class="li-icon">🐢</span> Output wird „Nebenjob“</li>
-                            </ul>
-                        </div>
-
-                        <!-- Vivix -->
-                        <div class="why-card vivix-highlight">
-                            <h3>Vivix <span class="card-icon">⚙️</span></h3>
-                            <ul class="why-list positive">
-                                <li><span class="li-icon">📅</span> planbarer Output</li>
-                                <li><span class="li-icon">👥</span> Team-System</li>
-                                <li><span class="li-icon">📹</span> Videos mit Lead-Struktur</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-bg-decoration"></div>
-            </section>
-
-            <!-- Portfolio Marquee Section -->
-            <section class="portfolio-loop">
-                <div class="portfolio-grid" id="portfolio-grid">
-                    <!-- Columns will be injected via JS -->
-                    <div class="col col-1"></div>
-                    <div class="col col-2"></div>
-                    <div class="col col-3"></div>
-                    <div class="col col-4"></div>
-                    <div class="col col-5"></div>
-                    <div class="col col-6"></div>
-                </div>
-                <div class="portfolio-overlay">
-                    <h1>PORTFOLIO</h1>
-                </div>
-            </section>
-
-
-
-
-
-            <section id="faq" class="scroll-section">
-                <!-- Decorative Elements for "High-End" feel if needed, but starting with transparency -->
-                <div class="faq-container">
-                    <div class="faq-header fade-in-up">
-                        <h2>FAQ</h2>
-                        <!-- Subtitle removed -->
-                    </div>
-
-                    <div class="faq-accordion fade-in-up delay-1">
-                        <!-- Q1 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>⏱️ Wie viel Zeit braucht unser Team pro Woche?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Minimal. Sie liefern uns einmalig Basisinfos (Angebot, Zielgruppe, Tonalität) und
-                                    geben kurze Freigaben. Alles andere (Ideen, Skripte, Produktion, Schnitt,
-                                    Auslieferung) übernehmen wir. Typisch: 15–30 Minuten pro Woche für Feedback.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q2 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>🔄 Wie läuft Freigabe & Feedback ab?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Sie bekommen die Videos in einem klaren Review-Prozess (Link + Timecodes). Sie
-                                    geben
-                                    Feedback gesammelt, wir setzen um. Jede Produktion hat definierte
-                                    Feedback-Runden,
-                                    damit es schnell bleibt und nicht „endlos“ wird.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q3 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>🎥 Können wir starten, auch wenn niemand gern vor die Kamera geht?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Ja. Wir führen Sie durch die Kameraperformance (auf Wunsch mit
-                                    Teleprompter/Coaching)
-                                    und bauen Formate, die sich natürlich anfühlen. Alternativ arbeiten wir mit
-                                    Voiceover/B-Roll oder einem Sprecher/UGC-Ansatz – je nachdem, was zu Ihrer Marke
-                                    passt.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q4 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>📝 Was müssen wir vorbereiten?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Fast nichts. Wir erstellen Themenplan, Skripte und Shotlist. Von Ihnen brauchen
-                                    wir
-                                    nur: Ihr Angebot + Zielkunden, 2–3 Referenzen (falls vorhanden) und No-Gos
-                                    (Wording,
-                                    Themen).</p>
-                            </div>
-                        </div>
-
-                        <!-- Q5 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>🚀 Wie schnell sehen wir Ergebnisse?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Das hängt von Branche und Ausgangslage ab. Oft gibt es erste Signale (Reichweite,
-                                    Klicks) früh. Planbare Ergebnisse entstehen durch Konsistenz über ca. 3 Monate.
-                                    Deshalb unsere 3-monatige Basis-Phase: Wir bauen das System, testen Hooks und
-                                    schaffen eine verlässliche Pipeline statt Zufallstreffer.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q6 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>📈 Können wir Ads später ergänzen?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Ja. Wir können organisch starten und später Ads als Booster hinzufügen. Vorteil:
-                                    Sie
-                                    haben bereits getestete Creatives, die wir als Ads skalieren können. (Ad-Budget
-                                    bleibt separat.)</p>
-                            </div>
-                        </div>
-
-                        <!-- Q7 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>🤝 Was unterscheidet Vivix von einem Freelancer?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Wir liefern ein System statt Einzeldeliverables: Strategie, Skripte, Produktion,
-                                    Performance-Editing, Delivery – zuverlässig und planbar. Zudem sind wir kein
-                                    Single
-                                    Point of Failure, sondern arbeiten im Team-Workflow.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q8 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>⚖️ Was, wenn wir spezielle Compliance-Prozesse haben (Kanzlei/Medizin/Finance)?
-                                </h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Kein Problem. Wir arbeiten mit klaren Formulierungen, Freigabe-Checklisten und
-                                    versionieren Inhalte. Sensible Branchen bekommen bei uns eine besonders saubere
-                                    Claim- und Wording-Struktur.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q9 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>📱 Können wir Inhalte für mehrere Plattformen nutzen?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Ja. Wir liefern in den passenden Formaten (Reels/Shorts/Stories/LinkedIn) und
-                                    erstellen auf Wunsch Cutdowns. So holen Sie maximalen Output aus einem Dreh.</p>
-                            </div>
-                        </div>
-
-                        <!-- Q10 -->
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h3>📅 Gibt es eine Mindestlaufzeit?</h3>
-                                <div class="faq-icon"></div>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Ja, in der Regel 3 Monate Testphase, weil das System über Konsistenz Wirkung
-                                    entfaltet. Danach kann skaliert oder angepasst werden.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> <!-- FAQ End -->
-
-            <!-- Final CTA Section (Premium Premium) -->
-            <section id="final-cta" class="scroll-section">
-                <div class="cta-premium-container fade-in-up">
-                    <div class="cta-grid">
-                        <!-- Left: Content -->
-                        <div class="cta-content">
-                            <h2>Wir wollen Ihnen das in einem Probe-Reel zeigen.</h2>
-                            <p class="cta-subline">Wir produzieren ein kostenloses Probe-Reel, damit Sie unseren
-                                Standard sehen – schnell, sauber, ohne Risiko.</p>
-
-                            <ul class="cta-features">
-                                <li><span class="check-icon">✓</span> Kurzer Dreh</li>
-                                <li><span class="check-icon">✓</span> Fertiger Schnitt inkl. Captions</li>
-                                <li><span class="check-icon">✓</span> Klare Botschaft</li>
-                                <li><span class="check-icon">✓</span> Brand-safe Premium Look</li>
-                            </ul>
-
-                            <div class="cta-buttons">
-                                <a href="mailto:contact@vivix-media.com?subject=Anfrage%20Probe-Reel"
-                                    class="btn-primary-glow">Kostenloses Probe-Reel anfragen</a>
-                                <a href="https://calendly.com/alysenko-vivix-media/30min" target="_blank"
-                                    rel="noopener noreferrer" class="btn-ghost">10-Minuten Call buchen <span
-                                        class="arrow">→</span></a>
-                            </div>
-
-                            <p class="cta-trust">Antwort in 24h • keine Verpflichtung • Testphase: 3 Monate (wenn Sie
-                                skalieren möchten)</p>
-                        </div>
-
-                        <!-- Right: Visual (Phone Mockup) -->
-                        <div class="cta-visual">
-                            <div class="phone-mockup-container">
-                                <div class="phone-frame">
-                                    <div class="phone-screen">
-                                        <!-- Dynamic abstract loop or placeholder for "High-End Production" -->
-                                        <div class="screen-content pulse-glow">
-                                            <div class="play-icon">▶</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="phone-glow-effect"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- End of Main Content -->
-    </main>
-
-    <!-- FOOTER: THE MAGNETIC VOID -->
-    <footer class="main-footer">
-        <div class="footer-glow"></div>
-
-        <!-- Level 1: Magnetic CTA -->
-        <div class="footer-level-1">
-            <h2 class="footer-question">Bereit für Wachstum?</h2>
-            <a href="mailto:contact@vivix-media.com" class="magnetic-btn-wrapper">
-                <div class="magnetic-btn">
-                    <span class="btn-text">KONTAKT</span>
-                </div>
-            </a>
+        <div style="display:flex;flex-direction:column;padding:32px 30px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(160deg,rgba(255,30,45,.06),rgba(255,255,255,.015));">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#ff7d85;">Performance Ads</span>
+            <span style="font-weight:800;font-size:30px;letter-spacing:-.02em;color:#F4F2ED;">ab 1.500 €</span>
+          </div>
+          <p style="margin:14px 0 20px;font-size:14.5px;line-height:1.6;color:#9A9890;">Meta &amp; TikTok Ads als Rundum-System — damit dein Content nicht nur schön ist, sondern verkauft.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Erstellung &amp; Dreh</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Schalten</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Verwaltung</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Optimierung</span>
+          </div>
+          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Performance%20Ads" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
         </div>
 
-        <!-- Level 2: Big Links -->
-        <div class="footer-level-2">
-            <div class="footer-col-left">
-                <a href="mailto:contact@vivix-media.com" class="big-mail-link">contact@vivix-media.com</a>
-            </div>
-            <div class="footer-col-right">
-                <a href="https://www.instagram.com/vivix.media/" target="_blank" class="big-social-link">INSTAGRAM ↗</a>
-            </div>
+        <div style="display:flex;flex-direction:column;padding:32px 30px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">Websites</span>
+            <span style="font-weight:800;font-size:30px;letter-spacing:-.02em;color:#F4F2ED;">ab 3.000 €</span>
+          </div>
+          <p style="margin:14px 0 20px;font-size:14.5px;line-height:1.6;color:#9A9890;">Maßgeschneiderte Websites, die deine Marke seriös inszenieren und aus Besuchern Anfragen machen.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Design</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Entwicklung</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Copywriting</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">SEO-Basis</span>
+          </div>
+          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Website" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
         </div>
 
-        <!-- Level 3: Legal -->
-        <div class="footer-level-3">
-            <span class="legal-left">© 2026 Vivix Media</span>
-            <div class="legal-right">
-                <a href="impressum.html" class="legal-link">Impressum</a>
-                <span class="legal-separator">|</span>
-                <a href="privacy.html" class="legal-link">Datenschutz</a>
-            </div>
+        <div style="display:flex;flex-direction:column;padding:32px 30px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">Imagefilm</span>
+            <span style="font-weight:800;font-size:30px;letter-spacing:-.02em;color:#F4F2ED;">ab 1.500 €</span>
+          </div>
+          <p style="margin:14px 0 20px;font-size:14.5px;line-height:1.6;color:#9A9890;">Der cineastische Imagefilm für Startups und Unternehmen — eine Geschichte, die zeigt, wofür ihr steht.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Konzept</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Drehbuch</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Dreh</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Schnitt &amp; Color</span>
+            <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Sounddesign</span>
+          </div>
+          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Imagefilm" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
         </div>
-    </footer>
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-    <!-- Three.js for Lando Effect -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    <!-- Content Configuration -->
-    <script src="assets/js/content.js"></script>
-    <!-- Existing Logic -->
-    <script src="assets/js/script.js"></script>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- STUDIO -->
+<section id="ueber-uns" style="padding:clamp(80px,11vh,140px) 0;background:#0A0A0B;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(38% 48% at 88% 28%,rgba(255,30,45,.08),transparent 62%);pointer-events:none;"></div>
+  <div class="vx-split" style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,80px);align-items:center;">
+    <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Das Studio</span></div>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(30px,4.6vw,64px);line-height:.96;letter-spacing:-.025em;color:#F3F0E9;">Cinematische <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">Handschrift.</span></h2>
+      <p style="margin:24px 0 0;font-size:clamp(15px,1.2vw,17.5px);line-height:1.66;color:#9A9890;">VIVIX ist ein Content- und Markenstudio, das Reichweite in Vertrauen verwandelt — und Vertrauen in qualifizierte Anfragen. Wir bauen Personal Brands auf Social Media und bringen dieselbe Präzision in die Welt von Gastronomie und Events.</p>
+      <p style="margin:18px 0 0;font-size:clamp(15px,1.2vw,17.5px);line-height:1.66;color:#9A9890;">Von Strategie über Skript und Dreh bis zum fertigen Film — alles aus einer Hand. Wir arbeiten mit seriösen Personal Brands ebenso wie mit Praxen, Kanzleien, Immobilienmaklern und anspruchsvollen Unternehmen.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;">
+        <span style="font-size:12px;letter-spacing:.04em;color:#D2D0CA;padding:9px 16px;border:1px solid rgba(255,255,255,.16);border-radius:100px;">Personal Brands</span>
+        <span style="font-size:12px;letter-spacing:.04em;color:#D2D0CA;padding:9px 16px;border:1px solid rgba(255,255,255,.16);border-radius:100px;">Gastronomie</span>
+        <span style="font-size:12px;letter-spacing:.04em;color:#D2D0CA;padding:9px 16px;border:1px solid rgba(255,255,255,.16);border-radius:100px;">Events</span>
+      </div>
+    </div>
+    <div class="vx-float" data-reveal style="opacity:0;transition:opacity 1s ease;position:relative;min-height:470px;height:54vh;max-height:600px;">
+      <div style="position:absolute;top:0;right:4%;width:72%;height:84%;animation:vxFloatA 11s ease-in-out infinite;"><div data-parallax="0.06" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 36px 90px rgba(0,0,0,.6);transform:rotate(-2deg);"><img src="assets/img-dorothea-2.jpg" alt="VIVIX Produktion" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div></div></div>
+      <div style="position:absolute;bottom:0;left:0;width:42%;aspect-ratio:9/16;animation:vxFloatB 9s ease-in-out infinite .4s;"><div data-parallax="0.13" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 28px 74px rgba(0,0,0,.6);transform:rotate(3deg);"><video data-src="assets/vid-reel5.mp4" poster="assets/poster-reel5.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div></div></div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // --- Portfolio Marquee Logic ---
-        (function initPortfolioLoop() {
-            const grid = document.getElementById('portfolio-grid');
-            if (!grid) return;
+<!-- REVIEWS -->
+<section id="reviews" style="padding:clamp(80px,11vh,140px) 0;background:#0A0A0B;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(40% 44% at 18% 30%,rgba(255,30,45,.08),transparent 62%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:26px;margin-bottom:46px;">
+      <div style="max-width:640px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#9A9890;">Bewertungen</span></div>
+        <h2 style="margin:0;font-weight:700;font-size:clamp(32px,5vw,68px);line-height:.96;letter-spacing:-.025em;color:#F3F0E9;">Was unsere <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2d3a;">Kunden</span> sagen</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:230px;">
+        <div style="display:flex;align-items:center;gap:8px;" role="img" aria-label="5 von 5 Sternen">
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;background:#ff1e2d;color:#fff;font-size:17px;">★</span>
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;background:#ff1e2d;color:#fff;font-size:17px;">★</span>
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;background:#ff1e2d;color:#fff;font-size:17px;">★</span>
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;background:#ff1e2d;color:#fff;font-size:17px;">★</span>
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:5px;background:#ff1e2d;color:#fff;font-size:17px;">★</span>
+        </div>
+        <div style="font-size:14px;color:#9A9890;"><strong style="color:#F3F0E9;font-weight:600;">4,9</strong> von 5 — basierend auf <strong style="color:#F3F0E9;font-weight:600;">38 Bewertungen</strong></div>
+      </div>
+    </div>
 
-            const columns = grid.querySelectorAll('.col');
-            const TOTAL_IMAGES = 60;
-            const IMAGES_PER_CHUNK = 10;
+    <div style="position:relative;">
+      <div id="vx-rev-track" style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:none;-ms-overflow-style:none;">
 
-            // 1. Master Array (Real Filenames)
-            const masterArray = [
-                "2695fd08-3b6d-4f8b-91e6-931806d2e9b8-image-12-1.PNG",
-                "34B2C16B-7908-4054-BF87-A5DAE294BAAF.JPG",
-                "B24C7495-12C7-4846-A77D-B08FFFC24ECB.JPG",
-                "C4365.00_47_13_57.Still001.jpg",
-                "Como Stories-53-heute offen 18-23.png",
-                "Como Stories-64-heute offen 18-23.jpeg",
-                "Como Stories-73-heute offen 18-23.jpeg",
-                "Como Stories-87-heute offen 18-23.jpeg",
-                "Como Stories-98-heute offen 18-23.jpeg",
-                "Como Stories-99.jpeg",
-                "DSC02533.JPG",
-                "DSC02558.JPG",
-                "DSC02597.JPG",
-                "DSC03247-Bearbeitet.jpg",
-                "DSC03324.jpg",
-                "DSC05033.JPG",
-                "DSC05167.JPG",
-                "DSC05253.JPG",
-                "DSC05651.JPG",
-                "DSC05688.JPG",
-                "David Reel.00_01_07_04.Still001.JPG",
-                "Eirmai .jpg",
-                "IMG_4957.JPG",
-                "Ivan Gette Koffer 1.jpg",
-                "Ivan Gette Koffer 2.jpg",
-                "Ivan Gette Paintings 14.10.2025-09931.jpg",
-                "Ivan Gette Skateboards 1jpg.jpg",
-                "Ivan Gette Skateboards 2.jpg",
-                "NOTAGALLERY DINNER ACE PHOTOS-08280.jpg",
-                "NOTAGALLERY DINNER ACE PHOTOS-08285.jpg",
-                "SS --6.jpg",
-                "SS --7.jpg",
-                "SS Film Check In and Bag.png",
-                "Sapphire Suitcases 2.jpg",
-                "Sapphire suitcases 1.jpg",
-                "Wein gehört zu como.00_00_24_15.Still001.jpg",
-                "all boards.jpg",
-                "blacklisted 1.jpg",
-                "blacklisted 2.jpg",
-                "bmw 1.jpg",
-                "bmw 2.jpg",
-                "bmw 3.jpg",
-                "bmw 4.jpg",
-                "bmw 5.jpg",
-                "bmw 6.jpg",
-                "como 1.jpg",
-                "como 2.jpg",
-                "como 3.jpg",
-                "como 4.jpg",
-                "como 5.jpg",
-                "como 6.png",
-                "corner 33.jpg",
-                "dubai.jpg",
-                "jaegermeister.jpg",
-                "sapphire suitcases 3.jpg",
-                "sharge 1.jpg",
-                "sharge 2.jpg",
-                "torras.jpg",
-                "ushuaya.jpg",
-                "void mykonos 1.jpg"
-            ].map(filename => `assets/images/portfolio/${filename}`);
+        <div data-rev-card data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;flex:0 0 clamp(280px,38vw,366px);scroll-snap-align:start;background:#101012;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:5px;" role="img" aria-label="5 von 5 Sternen">
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„VIVIX hat unsere Marke auf ein komplett neues Level gehoben. Die Reels sehen aus wie Kino — und die Verkäufe folgen."</p>
+          <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
+            <img src="assets/rev-joshua.jpg" alt="Joshua Gussmann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 20%;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Joshua Gussmann</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
+              <span style="font-size:12.5px;color:#9A9890;">Brilleninsider</span>
+            </div>
+          </div>
+        </div>
 
-            // 2. Shuffle Master Array (Fisher-Yates)
-            for (let i = masterArray.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [masterArray[i], masterArray[j]] = [masterArray[j], masterArray[i]];
-            }
+        <div data-rev-card data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .06s,transform .7s ease .06s;flex:0 0 clamp(280px,38vw,366px);scroll-snap-align:start;background:#101012;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:5px;" role="img" aria-label="5 von 5 Sternen">
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Endlich Content, der Vertrauen schafft. Unsere Objekte verkaufen sich schneller, seit VIVIX unsere Präsenz aufgebaut hat."</p>
+          <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
+            <img src="assets/rev-johannes.jpg" alt="Johannes Wiedemann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Johannes Wiedemann</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
+              <span style="font-size:12.5px;color:#9A9890;">CEO, Invenio Real Estate</span>
+            </div>
+          </div>
+        </div>
 
-            // 3. Distribute & Render
-            columns.forEach((col, index) => {
-                // Slice the chunk for this column
-                const start = index * IMAGES_PER_CHUNK;
-                const end = start + IMAGES_PER_CHUNK;
-                const chunk = masterArray.slice(start, end);
+        <div data-rev-card data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .12s,transform .7s ease .12s;flex:0 0 clamp(280px,38vw,366px);scroll-snap-align:start;background:#101012;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:5px;" role="img" aria-label="5 von 5 Sternen">
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Die verstehen Ästhetik. Jedes Video fühlt sich an wie ein Kunstwerk — genau das, was meine Galerie braucht."</p>
+          <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
+            <img src="assets/rev-ivan.jpg" alt="Ivan Gette" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Ivan Gette</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
+              <span style="font-size:12.5px;color:#9A9890;">Künstler &amp; Founder, Notagallery</span>
+            </div>
+          </div>
+        </div>
 
-                // Generate HTML for chunk
-                const chunkHTML = chunk.map(src => `
-                <a href="#" onclick="return false;">
-                    <img src="${src}" alt="Portfolio Project" loading="lazy">
-                </a>
-                `).join('');
+        <div data-rev-card data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .18s,transform .7s ease .18s;flex:0 0 clamp(280px,38vw,366px);scroll-snap-align:start;background:#101012;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:5px;" role="img" aria-label="4 von 5 Sternen">
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
+            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:rgba(255,255,255,.1);color:#5A5A60;font-size:14px;">★</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Professionell, schnell, kreativ. Die Zusammenarbeit war mühelos und das Ergebnis spricht für sich."</p>
+          <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
+            <img src="assets/rev-asry.jpg" alt="Asry" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Asry</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
+              <span style="font-size:12.5px;color:#9A9890;">Artist</span>
+            </div>
+          </div>
+        </div>
 
-                // 4. Duplicate for Infinite Loop (A + A)
-                col.innerHTML = chunkHTML + chunkHTML;
-            });
-        })();
-    </script>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:8px;">
+        <button id="vx-rev-prev" type="button" aria-label="Zurück" class="vx-arrow" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#F3F0E9;font-size:17px;cursor:pointer;transition:background .25s,border-color .25s;">←</button>
+        <button id="vx-rev-next" type="button" aria-label="Weiter" class="vx-arrow" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#F3F0E9;font-size:17px;cursor:pointer;transition:background .25s,border-color .25s;">→</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // --- Shader Code ---
-        const vertexShader = `
-            varying vec2 vUv;
-            void main() {
-                vUv = uv;
-                gl_Position = vec4(position, 1.0);
-            }
-        `;
+<!-- CTA -->
+<section id="kontakt" style="background:#ff1e2d;color:#070708;padding:clamp(80px,13vh,150px) 0;position:relative;overflow:hidden;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 clamp(16px,5vw,56px);text-align:center;">
+    <h2 data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;margin:0;font-weight:700;font-size:clamp(38px,7vw,116px);line-height:.9;letter-spacing:-.03em;">Sehen Sie unseren Standard — <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">kostenlos.</span></h2>
+    <p data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .8s ease .1s,transform .8s ease .1s;margin:24px auto 0;max-width:540px;font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:rgba(7,7,8,.78);">Kostenloses Probe-Reel — schnell, sauber, ohne Risiko. Fertiger Schnitt inkl. Captions, klare Botschaft, Brand-safe Premium-Look.</p>
+    <div data-reveal style="opacity:0;transition:opacity .8s ease .2s;display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:34px;">
+      <a class="vx-btn-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#070708;color:#F3F0E9;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;transition:transform .25s;">Probe-Reel anfragen →</a>
+      <a class="vx-btn-outline-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage%3A%2010-Min%20Call" style="display:inline-flex;align-items:center;gap:9px;background:transparent;color:#070708;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;border:1px solid rgba(7,7,8,.5);transition:background .25s;">10-Min Call buchen</a>
+    </div>
+    <p data-reveal style="opacity:0;transition:opacity .8s ease .3s;margin:22px 0 0;font-size:11.5px;font-weight:500;letter-spacing:.1em;color:rgba(7,7,8,.66);">ANTWORT IN 24H · KEINE VERPFLICHTUNG</p>
+  </div>
+</section>
 
-        const fragmentShader = `
-            uniform float uTime;
-            uniform vec2 uResolution;
-            uniform vec2 uMouse;
-            uniform float uClickTime; 
-            uniform vec2 uClickPos;   
-            varying vec2 vUv;
+<!-- FOOTER -->
+<footer style="background:#050506;border-top:1px solid rgba(255,255,255,.08);padding:clamp(54px,8vh,92px) 0 36px;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:clamp(38px,6vh,68px);border-bottom:1px solid rgba(255,255,255,.08);">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <svg viewBox="0 0 168 48" style="width:clamp(220px,44vw,520px);height:auto;overflow:visible;filter:drop-shadow(0 0 40px rgba(255,30,45,.22));" role="img" aria-label="VIVIX"><use href="#vx-wm" stroke-width="2.1" filter="url(#vx-rough)"/></svg>
+      </div>
+      <span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#6C6C72;text-align:right;">Cinematic Content Studio<br>Berlin — weltweit</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px;padding-top:clamp(34px,5vh,52px);">
+      <div>
+        <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#6C6C72;margin-bottom:16px;">Kontakt</div>
+        <a class="vx-foot-mail" href="mailto:alysenko@vivix-media.com?subject=Kontaktanfrage%20von%20der%20Website" style="display:block;font-size:17px;font-weight:600;color:#F0EEEA;text-decoration:none;transition:color .25s;">alysenko@vivix-media.com</a>
+        <a class="vx-foot-link" href="https://www.instagram.com/vivix.media/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:15px;font-weight:500;color:#C8C6C0;text-decoration:none;transition:color .25s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>@vivix.media ↗</a>
+      </div>
+      <div>
+        <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#6C6C72;margin-bottom:16px;">Navigation</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a class="vx-foot-link" href="#arbeiten" style="font-size:15px;color:#C8C6C0;text-decoration:none;transition:color .25s;">Arbeiten</a>
+          <a class="vx-foot-link" href="#leistungen" style="font-size:15px;color:#C8C6C0;text-decoration:none;transition:color .25s;">Leistungen</a>
+          <a class="vx-foot-link" href="#pakete" style="font-size:15px;color:#C8C6C0;text-decoration:none;transition:color .25s;">Pakete</a>
+          <a class="vx-foot-link" href="#ueber-uns" style="font-size:15px;color:#C8C6C0;text-decoration:none;transition:color .25s;">Studio</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#6C6C72;margin-bottom:16px;">Los geht’s</div>
+        <a class="vx-btn-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:14px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:100px;transition:transform .25s;">Kostenloses Probe-Reel →</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:clamp(38px,5vh,60px);font-size:11.5px;letter-spacing:.06em;color:#5C5C62;">
+      <span>© 2026 VIVIX Media</span>
+      <span style="display:flex;gap:20px;"><a class="vx-legal" href="impressum.html" style="color:#5C5C62;text-decoration:none;transition:color .25s;">Impressum</a><a class="vx-legal" href="datenschutz.html" style="color:#5C5C62;text-decoration:none;transition:color .25s;">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
 
-            // Noise functions
-            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-            vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-            vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+</div>
 
-            float snoise(vec2 v) {
-                const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
-                                    0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
-                                    -0.577350269189626, // -1.0 + 2.0 * C.x
-                                    0.024390243902439); // 1.0 / 41.0
-                vec2 i  = floor(v + dot(v, C.yy) );
-                vec2 x0 = v - i + dot(i, C.xx);
-                vec2 i1;
-                i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-                vec4 x12 = x0.xyxy + C.xxzz;
-                x12.xy -= i1;
-                i = mod289(i); 
-                vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-                    + i.x + vec3(0.0, i1.x, 1.0 ));
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-                m = m*m ;
-                m = m*m ;
-                vec3 x = 2.0 * fract(p * C.www) - 1.0;
-                vec3 h = abs(x) - 0.5;
-                vec3 ox = floor(x + 0.5);
-                vec3 a0 = x - ox;
-                m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
-                vec3 g;
-                g.x  = a0.x  * x0.x  + h.x  * x0.y;
-                g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-                return 130.0 * dot(m, g);
-            }
+  /* ---- intro curtain ---- */
+  var intro = document.getElementById('vx-intro');
+  if (intro) {
+    setTimeout(function () { intro.style.transform = 'translateY(-101%)'; }, reduce ? 300 : 1300);
+    setTimeout(function () { intro.style.display = 'none'; }, reduce ? 500 : 2300);
+  }
 
-            void main() {
-                vec2 st = gl_FragCoord.xy / uResolution.xy;
-                st.x *= uResolution.x / uResolution.y;
+  /* ---- reveal on scroll ---- */
+  var revealables = document.querySelectorAll('[data-reveal]');
+  function show(el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+  if (!('IntersectionObserver' in window)) {
+    revealables.forEach(show);
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        show(e.target);
+        revealObserver.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    revealables.forEach(function (el) { revealObserver.observe(el); });
+  }
 
-                // --- 1. Mouse Repulsion ---
-                // We keep the "Physics" but apply it to the coordinate space for lines
-                vec2 mouseRaw = uMouse / uResolution.xy;
-                mouseRaw.x *= uResolution.x / uResolution.y;
-                
-                float dist = distance(st, mouseRaw);
-                // Larger smooth radius for gentle push
-                float repulsionRadius = 0.6; 
-                float repulsionStrength = smoothstep(repulsionRadius, 0.0, dist); 
-                vec2 pushDir = normalize(st - mouseRaw);
-                
-                // Reduced force (0.05) and smoothed interaction
-                vec2 offsetSt = st - (pushDir * repulsionStrength * 0.06);
-
-                // --- 2. Click Ripple ---
-                float wave = 0.0;
-                if (uClickTime > 0.0) {
-                    float timeSinceClick = uTime - uClickTime;
-                    vec2 clickPosRaw = uClickPos / uResolution.xy;
-                    clickPosRaw.x *= uResolution.x / uResolution.y;
-                    
-                    float distClick = distance(st, clickPosRaw);
-                    float waveRadius = timeSinceClick * 0.4; // Slower wave
-                    float ringWidth = 0.15;
-                    float ring = smoothstep(ringWidth, 0.0, abs(distClick - waveRadius));
-                    float fade = smoothstep(3.0, 0.0, timeSinceClick); // Longer fade
-                    wave = ring * fade * 0.15; 
-                }
-                offsetSt -= (pushDir * wave); 
-
-                // --- 3. Noise for Contours ---
-                // VERY SLOW Time factor for "liquid" feel
-                float t = uTime * 0.05; 
-
-                // Minimalist Noise: Lower frequency for LARGER bubbles
-                float n1 = snoise(vec2(offsetSt.x * 0.7 + t, offsetSt.y * 0.7 - t * 0.3));
-                float n2 = snoise(vec2(offsetSt.x * 1.2 - t * 0.2, offsetSt.y * 1.2 + t * 0.5));
-                
-                float height = (n1 + n2 * 0.5) * 0.7;
-
-                // --- Contour Lines Generation ---
-                // Lower scale = Fewer lines / larger gaps
-                float scale = 6.0; 
-                
-                float df = fract(height * scale);
-                float lineWidth = 0.03; 
-                
-                // Create lines: 1.0 where line is, 0.0 elsewhere
-                float val = smoothstep(0.0, lineWidth, df) * smoothstep(2.0 * lineWidth, lineWidth, df);
-                float lines = val;
-
-                // --- Colors ---
-                vec3 black = vec3(0.0);
-                // Updated Color: #230064 (Dark Purple R:35 G:0 B:100 -> 0.137, 0.0, 0.392)
-                vec3 lineColor = vec3(0.137, 0.0, 0.392); 
-                
-                // Mix Black Background with Colored Lines
-                vec3 finalColor = mix(black, lineColor, lines);
-
-                // Blue glow REMOVED for pure black background as requested
-                // if (repulsionStrength > 0.0) {
-                //      finalColor += vec3(0.1, 0.1, 0.4) * repulsionStrength * lines; 
-                // }
-                
-                finalColor += vec3(wave * 0.5);
-
-                gl_FragColor = vec4(finalColor, 1.0);
-            }
-        `;
-
-        // --- Three.js Setup ---
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-
-        // Handle Pixel Ratio Correctly
-        const pixelRatio = Math.min(window.devicePixelRatio, 2);
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(pixelRatio);
-        container.appendChild(renderer.domElement);
-
-        const geometry = new THREE.PlaneGeometry(2, 2);
-        const uniforms = {
-            uTime: { value: 0 },
-            // Resolution must be PHYSICAL pixels to match gl_FragCoord
-            uResolution: { value: new THREE.Vector2(window.innerWidth * pixelRatio, window.innerHeight * pixelRatio) },
-            uMouse: { value: new THREE.Vector2(-9999, -9999) },
-            uClickTime: { value: -100.0 },
-            uClickPos: { value: new THREE.Vector2(0, 0) }
-        };
-
-        const material = new THREE.ShaderMaterial({
-            vertexShader: vertexShader,
-            fragmentShader: fragmentShader,
-            uniforms: uniforms
-        });
-
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        // Listeners
-        window.addEventListener('mousemove', (e) => {
-            // Update mouse coordinates to PHYSICAL pixels
-            uniforms.uMouse.value.x = e.clientX * pixelRatio;
-            uniforms.uMouse.value.y = (window.innerHeight - e.clientY) * pixelRatio;
-        });
-
-        window.addEventListener('click', (e) => {
-            uniforms.uClickTime.value = clock.getElapsedTime();
-            uniforms.uClickPos.value.x = e.clientX * pixelRatio;
-            uniforms.uClickPos.value.y = (window.innerHeight - e.clientY) * pixelRatio;
-        });
-
-        const clock = new THREE.Clock();
-        function animate() {
-            uniforms.uTime.value = clock.getElapsedTime();
-            renderer.render(scene, camera);
-            requestAnimationFrame(animate);
+  /* ---- videos: load + play only around the viewport, stay muted ---- */
+  var videos = Array.prototype.slice.call(document.querySelectorAll('video[data-src]'));
+  function keepMuted(v) {
+    v.muted = true; v.defaultMuted = true; v.volume = 0;
+    v.addEventListener('volumechange', function () { v.muted = true; v.volume = 0; });
+  }
+  videos.forEach(keepMuted);
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach(function (v) { v.src = v.dataset.src; v.play().catch(function () {}); });
+  } else {
+    var videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (!v.src) { v.src = v.dataset.src; }
+          var p = v.play();
+          if (p && p.catch) { p.catch(function () {}); }
+        } else if (!v.paused) {
+          v.pause();
         }
+      });
+    }, { rootMargin: '300px 0px' });
+    videos.forEach(function (v) { videoObserver.observe(v); });
+  }
 
-        animate();
+  /* ---- sticky header ---- */
+  var header = document.getElementById('vx-header');
+  function paintHeader() {
+    var on = (window.scrollY || document.documentElement.scrollTop || 0) > 24;
+    header.style.background = on ? 'rgba(7,7,8,0.72)' : 'transparent';
+    header.style.backdropFilter = on ? 'saturate(160%) blur(18px)' : 'none';
+    header.style.webkitBackdropFilter = on ? 'saturate(160%) blur(18px)' : 'none';
+    header.style.borderBottomColor = on ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0)';
+  }
 
-        window.addEventListener('resize', () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            // Update size and resolution
-            renderer.setSize(width, height);
-            uniforms.uResolution.value.set(width * pixelRatio, height * pixelRatio);
-        });
-    </script>
+  /* ---- parallax ---- */
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  function runParallax() {
+    var wh = window.innerHeight || 800;
+    parallaxEls.forEach(function (el) {
+      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.06;
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > wh + 200) return;
+      var center = r.top + r.height / 2 - wh / 2;
+      el.style.transform = 'translate3d(0,' + (center * -speed).toFixed(1) + 'px,0)';
+    });
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      paintHeader();
+      if (!reduce) { runParallax(); }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+
+  /* ---- work grids clamped to two rows ---- */
+  var clamps = Array.prototype.slice.call(document.querySelectorAll('.vx-clamp'));
+  function buttonFor(clamp) {
+    return document.querySelector('.vx-more[aria-controls="' + clamp.id + '"]');
+  }
+  function collapsedHeight(clamp) {
+    var grid = clamp.querySelector('.vx-grid');
+    var items = Array.prototype.slice.call(grid.children);
+    if (!items.length) return null;
+    var rows = parseInt(clamp.getAttribute('data-rows'), 10) || 2;
+    var tops = [];
+    items.forEach(function (el) {
+      var t = Math.round(el.offsetTop);
+      if (tops.indexOf(t) === -1) tops.push(t);
+    });
+    tops.sort(function (a, b) { return a - b; });
+    if (tops.length <= rows) return null;   // everything already fits
+    var gap = parseFloat(getComputedStyle(grid).rowGap) || 0;
+    return tops[rows] - tops[0] - gap;
+  }
+  function layoutClamps() {
+    clamps.forEach(function (c) {
+      var btn = buttonFor(c);
+      var h = collapsedHeight(c);
+      if (h === null) {
+        c.style.maxHeight = '';
+        c.removeAttribute('data-collapsed');
+        if (btn) btn.parentNode.style.display = 'none';
+        return;
+      }
+      if (btn) btn.parentNode.style.display = '';
+      if (btn && btn.getAttribute('aria-expanded') === 'true') {
+        c.style.maxHeight = '';
+        return;
+      }
+      c.style.maxHeight = h + 'px';
+      c.setAttribute('data-collapsed', '');
+    });
+  }
+  clamps.forEach(function (c) {
+    var btn = buttonFor(c);
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      if (btn.getAttribute('aria-expanded') === 'true') {
+        // pin the current height, flush layout, then animate down to two rows
+        c.style.maxHeight = c.scrollHeight + 'px';
+        void c.offsetHeight;
+        c.style.maxHeight = collapsedHeight(c) + 'px';
+        c.setAttribute('data-collapsed', '');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = btn.getAttribute('data-more');
+        if (btn.getBoundingClientRect().top < 80) {
+          c.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+        }
+      } else {
+        c.style.maxHeight = c.scrollHeight + 'px';
+        c.removeAttribute('data-collapsed');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = btn.getAttribute('data-less');
+        // drop the cap once the animation has landed, so later rows are never clipped
+        clearTimeout(c._uncap);
+        c._uncap = setTimeout(function () { c.style.maxHeight = ''; }, 700);
+      }
+    });
+  });
+  layoutClamps();
+  var relayout;
+  window.addEventListener('resize', function () {
+    clearTimeout(relayout);
+    relayout = setTimeout(layoutClamps, 150);
+  }, { passive: true });
+
+  /* ---- reviews carousel ---- */
+  var track = document.getElementById('vx-rev-track');
+  function scrollReviews(dir) {
+    var card = track.querySelector('[data-rev-card]');
+    var step = card ? card.getBoundingClientRect().width + 18 : 340;
+    track.scrollBy({ left: dir * step, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  document.getElementById('vx-rev-prev').addEventListener('click', function () { scrollReviews(-1); });
+  document.getElementById('vx-rev-next').addEventListener('click', function () { scrollReviews(1); });
+})();
+</script>
 </body>
-
 </html>

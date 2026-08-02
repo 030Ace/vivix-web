@@ -1,142 +1,149 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIVIX | Page Not Found</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap"
-        rel="stylesheet">
-    <style>
-        /* 404 Specific Inline Styles (moved to style.css for production later, but ensuring structure here) */
-        /* See style.css for implementation */
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Seite nicht gefunden | VIVIX</title>
+<meta name="description" content="Diese Seite gibt es nicht. Zurück zur VIVIX Website.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070708">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal.css">
+<style>
+body{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;}
+
+/* atmosphere: the hero's red bloom plus a fine grain pass */
+.nf-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(46% 44% at 20% 78%,rgba(255,30,45,.16),transparent 62%),
+    radial-gradient(38% 40% at 82% 14%,rgba(255,30,45,.10),transparent 60%);}
+.nf-grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+.nf-main{position:relative;z-index:2;flex:1;display:flex;align-items:center;
+  padding:clamp(48px,8vh,96px) clamp(16px,5vw,56px);}
+.nf-inner{width:100%;max-width:1080px;margin:0 auto;}
+
+/* the numeral, drawn as an outline — present but hollow */
+.nf-numwrap{position:relative;margin:0 0 clamp(20px,4vh,40px);}
+.nf-num{
+  margin:0;font-weight:900;font-size:clamp(112px,25vw,320px);line-height:.78;letter-spacing:-.045em;
+  color:transparent;-webkit-text-stroke:1.5px rgba(243,240,233,.5);
+  -webkit-user-select:none;user-select:none;
+}
+/* …and the edit point that removed it */
+.nf-cut{position:absolute;left:0;right:0;top:53%;height:1px;background:#ff1e2d;
+  box-shadow:0 0 24px rgba(255,30,45,.75);
+  transform:scaleX(0);transform-origin:left center;animation:nfCut 1.1s cubic-bezier(.76,0,.24,1) .25s forwards;}
+.nf-mark{position:absolute;left:64%;top:50%;width:9px;height:9px;background:#ff1e2d;
+  transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 18px rgba(255,30,45,.9);
+  opacity:0;animation:nfMark .5s ease 1.15s forwards;}
+@keyframes nfCut{to{transform:scaleX(1);}}
+@keyframes nfMark{to{opacity:1;}}
+
+.nf-tc{display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;letter-spacing:.16em;color:#7C7C82;
+  border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:7px 15px;}
+.nf-tc b{width:6px;height:6px;border-radius:50%;background:#ff1e2d;box-shadow:0 0 10px rgba(255,30,45,.9);}
+
+.nf-h1{margin:0;max-width:16ch;font-weight:700;font-size:clamp(32px,5.6vw,76px);
+  line-height:.96;letter-spacing:-.025em;color:#F3F0E9;}
+.nf-h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;
+  text-shadow:0 0 46px rgba(255,30,45,.5);}
+.nf-lead{margin:22px 0 0;max-width:46ch;font-size:clamp(15px,1.2vw,17.5px);line-height:1.62;color:#9A9890;}
+
+.nf-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:clamp(28px,4vh,40px);}
+.nf-btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;
+  text-decoration:none;padding:15px 28px;border-radius:100px;transition:transform .25s,box-shadow .25s,background .25s,border-color .25s;}
+.nf-btn-red{background:#ff1e2d;color:#fff;box-shadow:0 12px 40px rgba(255,30,45,.38);}
+.nf-btn-red:hover{color:#fff;transform:translateY(-2px);box-shadow:0 16px 52px rgba(255,30,45,.58);}
+.nf-btn-ghost{color:#F0EEEA;border:1px solid rgba(255,255,255,.18);}
+.nf-btn-ghost:hover{color:#F0EEEA;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.32);}
+
+.nf-jump{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:clamp(34px,5vh,52px);
+  padding-top:clamp(22px,3vh,30px);border-top:1px solid rgba(255,255,255,.1);}
+.nf-jump a{font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:#8E8C88;text-decoration:none;transition:color .25s;}
+.nf-jump a:hover{color:#ff1e2d;}
+
+@media(max-width:520px){
+  .nf-num{-webkit-text-stroke-width:1px;}
+  .nf-btn{flex:1 1 100%;justify-content:center;}
+}
+@media(prefers-reduced-motion:reduce){
+  .nf-cut{transform:scaleX(1);animation:none;}
+  .nf-mark{opacity:1;animation:none;}
+}
+</style>
 </head>
+<body>
 
-<body style="background-color: #000;">
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true" focusable="false"><defs>
+  <filter id="vx-rough" x="-15%" y="-40%" width="130%" height="180%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <g id="vx-wm" fill="none" stroke="#F3F0E9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9 C 7.5 8.6 8.5 11 11.5 17.5 L 20 37 C 21 39.4 23 39.4 24 37 L 32.5 17.5 C 35 11.5 36 9 38 9.3"/>
+    <path d="M50 9.5 C 49.8 18 49.9 30 50 38.6"/>
+    <path d="M62 9 C 63.5 8.6 64.5 11 67.5 17.5 L 76 37 C 77 39.4 79 39.4 80 37 L 88.5 17.5 C 91 11.5 92 9 94 9.3"/>
+    <path d="M106 9.5 C 105.8 18 105.9 30 106 38.6"/>
+    <path d="M120 9.8 C 122 10 125 14 131 21 C 137 28 143 34 149 38.8"/>
+    <path d="M150 9.8 C 148 10 145 14 139 21 C 133 28 127 34 121 38.8"/>
+  </g>
+</defs></svg>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot-outline"></div>
+<div class="nf-glow"></div>
+<div class="nf-grain"></div>
 
-    <!-- Header (Global) -->
-    <header>
-        <div class="logo">V I V I X</div>
-        <button class="hamburger-menu" aria-label="Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </header>
+<header class="lg-head" style="position:relative;z-index:3;">
+  <a href="/" aria-label="VIVIX — zur Startseite">
+    <svg viewBox="0 0 168 48" role="img" aria-label="VIVIX"><use href="#vx-wm" stroke-width="2.4" filter="url(#vx-rough)"/></svg>
+  </a>
+  <a class="lg-back" href="/">← Zurück zur Website</a>
+</header>
 
-    <!-- Menu Overlay (Global) -->
-    <div class="menu-overlay">
-        <div class="menu-left">
-            <div class="gallery-column col-down">
-            </div>
-            <div class="gallery-column col-up">
-            </div>
-        </div>
-        <div class="menu-right">
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link">Homepage</a>
-                <a href="vision.html" class="nav-link">Vision & Mission</a>
-                <!-- Referenzen removed in previous step -->
-                <a href="index.html#packages" class="nav-link">Angebote</a>
-                <a href="about.html" class="nav-link">ABOUT US</a>
-            </nav>
+<main class="nf-main">
+  <div class="nf-inner">
+    <span class="nf-tc"><b></b>TC 00:04:04:00 — NO SIGNAL</span>
 
-            <div class="menu-footer">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/vivix.media/" target="_blank" class="social-btn">Instagram</a>
-                    <a href="#" class="social-btn">YouTube</a>
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:info@vivix-media.com">info@vivix-media.com</a>
-                    <a href="https://wa.me/message/GJ5I257O4WGEP1" target="_blank">WhatsApp</a>
-                </div>
-                <a href="mailto:contact@vivix-media.com" class="studio-btn">Kontakt <span class="arrow">→</span></a>
-            </div>
-        </div>
+    <div class="nf-numwrap">
+      <p class="nf-num" aria-hidden="true">404</p>
+      <span class="nf-cut"><span class="nf-mark"></span></span>
     </div>
 
-    <!-- MAIN 404 CONTENT -->
-    <main>
-        <section class="not-found-section">
-            <div class="not-found-container">
-                <h1 class="error-code skew-up">404</h1>
-                <p class="error-text skew-up">PAGE NOT FOUND</p>
-                <div class="skew-up">
-                    <a href="index.html" class="btn-404">
-                        Back to Home
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+    <h1 class="nf-h1">Diese Szene wurde <em>geschnitten.</em></h1>
+    <p class="nf-lead">Die Seite, die Sie suchen, gibt es nicht — oder nicht mehr. Kein Drama: Das gute Material liegt eine Klick-Länge weiter.</p>
 
-    <!-- Global Footer -->
-    <footer class="main-footer">
-        <div class="footer-glow"></div>
+    <div class="nf-actions">
+      <a class="nf-btn nf-btn-red" href="/">Zur Startseite →</a>
+      <a class="nf-btn nf-btn-ghost" href="/#arbeiten">Arbeiten ansehen</a>
+    </div>
 
-        <!-- Level 1: Magnetic CTA -->
-        <div class="footer-level-1">
-            <h2 class="footer-question">Bereit für Wachstum?</h2>
-            <a href="mailto:contact@vivix-media.com" class="magnetic-btn-wrapper">
-                <div class="magnetic-btn">
-                    <span class="btn-text">KONTAKT</span>
-                </div>
-            </a>
-        </div>
+    <nav class="nf-jump" aria-label="Schnellzugriff">
+      <a href="/#arbeiten">Arbeiten</a>
+      <a href="/#leistungen">Leistungen</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#pakete">Pakete</a>
+      <a href="/#ueber-uns">Studio</a>
+      <a href="mailto:alysenko@vivix-media.com?subject=Kontaktanfrage%20von%20der%20Website">Kontakt</a>
+    </nav>
+  </div>
+</main>
 
-        <!-- Level 2: Big Links -->
-        <div class="footer-level-2">
-            <div class="footer-col-left">
-                <a href="mailto:contact@vivix-media.com" class="big-mail-link">contact@vivix-media.com</a>
-            </div>
-            <div class="footer-col-right">
-                <a href="https://www.instagram.com/vivix.media/" target="_blank" class="big-social-link">INSTAGRAM ↗</a>
-            </div>
-        </div>
+<footer class="lg-foot" style="position:relative;z-index:3;">
+  <div class="lg-foot-inner">
+    <span>© 2026 VIVIX Media</span>
+    <nav>
+      <a href="/">Startseite</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
 
-        <!-- Level 3: Legal -->
-        <div class="footer-level-3">
-            <span class="legal-left">© 2026 Vivix Media</span>
-            <div class="legal-right">
-                <a href="impressum.html" class="legal-link">Impressum</a>
-                <span class="legal-separator">|</span>
-                <a href="privacy.html" class="legal-link">Datenschutz</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="assets/js/content.js"></script> <!-- Reusing for menu population -->
-    <script src="assets/js/script.js"></script> <!-- Reusing for menu interaction -->
-
-    <script>
-        // Specific 404 Animation Script
-        document.addEventListener('DOMContentLoaded', () => {
-            // "The Reveal" - Skew Up Effect
-            // Start state is handled in CSS (opacity: 0, transform).
-            // We animate TO the final state.
-
-            gsap.to('.skew-up', {
-                y: 0,
-                opacity: 1,
-                rotateX: 0, // Optional slight unfold
-                skewY: 0,
-                duration: 1.2,
-                stagger: 0.15,
-                ease: "power4.out",
-                delay: 0.2
-                // Removed clearProps to prevent reverting to opacity: 0
-            });
-        });
-    </script>
 </body>
-
 </html>
