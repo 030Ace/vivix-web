@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Kundendemos — eigene Marken, sollen nicht als VIVIX-Inhalte indexiert werden
+Disallow: /aurelia-yachts.html
+Disallow: /automobil.html
+
+Sitemap: https://vivix-media.com/sitemap.xml

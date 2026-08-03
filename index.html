@@ -10,7 +10,25 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="VIVIX — Cinematic Content Studio">
 <meta property="og:description" content="Aufmerksamkeit ist flüchtig. Vertrauen bleibt. Cinematische Reels, Ads &amp; Markenfilme.">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:image" content="https://vivix-media.com/assets/images/hero.jpg">
+<meta property="og:url" content="https://vivix-media.com/">
+<meta property="og:site_name" content="VIVIX Media">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VIVIX — Cinematic Content Studio">
+<meta name="twitter:description" content="Aufmerksamkeit ist flüchtig. Vertrauen bleibt. Cinematische Reels, Ads &amp; Markenfilme.">
+<meta name="twitter:image" content="https://vivix-media.com/assets/images/hero.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VIVIX Media",
+  "url": "https://vivix-media.com/",
+  "description": "Content- und Markenstudio aus Berlin. Cinematische Reels, Ads und Markenfilme für Personal Brands, Gastronomie und Events.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" },
+  "areaServed": "Weltweit",
+  "sameAs": ["https://www.instagram.com/vivix.media/"]
+}
+</script>
 <meta property="og:locale" content="de_DE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +41,8 @@ img{display:block;}
 ::selection{background:#ff1e2d;color:#fff;}
 a{color:inherit;}
 @keyframes vxMarq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-#vx-rev-track::-webkit-scrollbar{display:none;}
+#vx-rev-track::-webkit-scrollbar,.vx-cats::-webkit-scrollbar{display:none;}
+.vx-cats{scrollbar-width:none;-ms-overflow-style:none;}
 @keyframes vxFloatA{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-18px) rotate(-.5deg);}}
 @keyframes vxFloatB{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(15px) rotate(.5deg);}}
 @keyframes vxKen{0%{transform:scale(1.04) translateY(0);}100%{transform:scale(1.14) translateY(-2%);}}
@@ -43,6 +62,35 @@ a{color:inherit;}
 .vx-legal:hover{color:#A8A8AE;}
 .vx-arrow:focus-visible,a:focus-visible,.vx-more:focus-visible{outline:2px solid #ff1e2d;outline-offset:3px;}
 
+/* ---- trust strip: clients + partners, one endless quiet line ---- */
+@keyframes vxLogoMarq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.vx-logos-sec{background:#070708;padding:clamp(30px,5vh,52px) 0 clamp(34px,6vh,60px);}
+.vx-logos-label{margin:0 0 clamp(20px,3vh,30px);text-align:center;font-size:11px;font-weight:500;
+  letter-spacing:.26em;text-transform:uppercase;color:#5C5C62;padding:0 clamp(16px,5vw,56px);}
+.vx-logos{overflow:hidden;
+  /* fade the ends instead of cutting them off */
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+.vx-logos-track{display:flex;width:max-content;animation:vxLogoMarq 80s linear infinite;}
+.vx-logos-track:hover{animation-play-state:paused;}
+.vx-logos-run{display:flex;align-items:center;gap:clamp(38px,5vw,72px);padding-right:clamp(38px,5vw,72px);}
+/* height + max-width together, so wide wordmarks and square emblems carry equal weight */
+.vx-logos-run img{height:26px;width:auto;max-width:112px;object-fit:contain;flex:none;
+  opacity:.34;transition:opacity .35s ease;}
+.vx-logos-run img:hover{opacity:.85;}
+@media(prefers-reduced-motion:reduce){.vx-logos-track{animation:none;}}
+
+/* ---- 360°-Tour in der Galerie: zwei Spalten breit, Höhe von der Zeile ---- */
+.vx-gal-tour{grid-column:span 2;}
+@media(max-width:620px){.vx-gal-tour{grid-column:1/-1;aspect-ratio:16/10;}}
+
+/* ---- landscape showreel tile: spans three portrait columns ----
+   3 columns + 2 gaps at 16:9 lands within a few px of one 9:16 row height,
+   so the row stays flush. Narrower viewports step it down. */
+.vx-wide{grid-column:span 3;aspect-ratio:16/9;}
+@media(max-width:1080px){.vx-wide{grid-column:span 2;}}
+@media(max-width:700px){.vx-wide{grid-column:1/-1;}}
+
 /* ---- work grids: two rows, rest behind a toggle ---- */
 /* the cap lands exactly on a row boundary, so no fade is needed — the button carries the affordance */
 /* max-height is the only property that can animate to a content-derived height here;
@@ -52,6 +100,12 @@ a{color:inherit;}
 .vx-more{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F0EEEA;background:transparent;padding:14px 32px;border-radius:100px;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .25s,border-color .25s;}
 
 /* ---- responsive ---- */
+/* On a portrait viewport `cover` only shows ~a quarter of the 16:9 hero, and the
+   centre of that frame is the camera rig. Shift the window onto the subject. */
+@media(max-aspect-ratio:1/1){
+  .vx-hero-img{object-position:65% center;}
+  .vx-scrollhint{display:none;}   /* would sit under the cookie reopener */
+}
 @media(max-width:880px){.vx-nav{display:none!important;}}
 @media(max-width:760px){
   .vx-float{display:none!important;}
@@ -63,6 +117,84 @@ a{color:inherit;}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
 }
 </style>
+
+<!-- Cookie consent (Silktide) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #FF1E2D;
+  --backgroundColor: #070708;
+  --textColor: #f3f0e9;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #070708;
+  --iconBackgroundColor: #FF1E2D;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: true
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Essential",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Essential consent type here');
+      }
+    },
+    {
+      id: "analytics",
+      label: "Analytics",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      defaultValue: true,
+      gtag: "analytics_storage"
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});
+</script>
 </head>
 <body>
 
@@ -101,12 +233,12 @@ a{color:inherit;}
     <a class="vx-navlink" href="#pakete" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Pakete</a>
     <a class="vx-navlink" href="#ueber-uns" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8C6C0;text-decoration:none;transition:color .25s;">Studio</a>
   </nav>
-  <a class="vx-btn-pill" href="mailto:alysenko@vivix-media.com?subject=Kontaktanfrage%20von%20der%20Website" style="font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;background:#ff1e2d;padding:9px 18px;border-radius:100px;transition:opacity .25s;">Kontakt</a>
+  <a class="vx-btn-pill" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Kontaktanfrage%20von%20der%20Website" style="font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#fff;text-decoration:none;background:#ff1e2d;padding:9px 18px;border-radius:100px;transition:opacity .25s;">Kontakt</a>
 </header>
 
 <!-- HERO — full-bleed image + aesthetic hook -->
 <section style="position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;">
-  <div data-parallax="0.06" style="position:absolute;inset:-7% 0;"><img src="assets/hero.jpg" alt="" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;animation:vxKen 16s ease-out forwards;"></div>
+  <div data-parallax="0.06" style="position:absolute;inset:-7% 0;"><img class="vx-hero-img" src="assets/images/hero.jpg" alt="" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;animation:vxKen 16s ease-out forwards;"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,8,.62) 0%,rgba(7,7,8,.15) 32%,rgba(7,7,8,.45) 66%,rgba(7,7,8,.94) 100%);"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(46% 50% at 22% 78%,rgba(255,30,45,.16),transparent 62%);mix-blend-mode:screen;"></div>
   <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px) clamp(56px,9vh,110px);">
@@ -117,11 +249,12 @@ a{color:inherit;}
       <span data-reveal style="display:block;opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.7,.2,1),transform .85s cubic-bezier(.22,.7,.2,1);transition-delay:.3s;"><span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;text-shadow:0 0 50px rgba(255,30,45,.55);padding-right:.08em;">Vertrauen</span> bleibt.</span>
     </h1>
     <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease .4s,transform .8s ease .4s;display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:clamp(26px,4vh,42px);">
-      <a class="vx-btn-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:15px;font-weight:600;text-decoration:none;padding:15px 28px;border-radius:100px;box-shadow:0 12px 40px rgba(255,30,45,.4);transition:transform .25s,box-shadow .25s;">Kostenloses Probe-Reel →</a>
+      <a class="vx-btn-red" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:15px;font-weight:600;text-decoration:none;padding:15px 28px;border-radius:100px;box-shadow:0 12px 40px rgba(255,30,45,.4);transition:transform .25s,box-shadow .25s;">Kostenloses Probe-Reel →</a>
       <p style="margin:0;max-width:380px;font-size:14.5px;line-height:1.55;color:#BFBDB6;">Cinematische Reels, Ads &amp; Markenfilme für Personal Brands, Gastronomie &amp; Events.</p>
     </div>
   </div>
-  <div aria-hidden="true" style="position:absolute;bottom:26px;right:clamp(16px,5vw,56px);font-size:10.5px;letter-spacing:.26em;color:rgba(243,240,233,.55);writing-mode:vertical-rl;">SCROLL ↓</div>
+  <div class="vx-aicredit" style="position:absolute;bottom:26px;left:clamp(16px,5vw,56px);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(243,240,233,.55);">AI generated</div>
+  <div class="vx-scrollhint" aria-hidden="true" style="position:absolute;bottom:26px;right:clamp(16px,5vw,56px);font-size:10.5px;letter-spacing:.26em;color:rgba(243,240,233,.55);writing-mode:vertical-rl;">SCROLL ↓</div>
 </section>
 
 <!-- MARQUEE -->
@@ -178,7 +311,78 @@ a{color:inherit;}
       </div>
     </div>
     <div data-reveal class="vx-float" style="opacity:0;transition:opacity 1s ease;justify-self:center;width:100%;max-width:420px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid rgba(255,30,45,.4);box-shadow:0 0 0 1px rgba(255,30,45,.18),0 40px 110px rgba(255,30,45,.22),0 30px 80px rgba(0,0,0,.6);">
-      <video data-src="assets/vid-dorothea-ref.mp4" poster="assets/poster-dorothea-ref.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video>
+      <video data-src="assets/images/vid-joshua-leon.mp4" poster="assets/images/poster-joshua-leon.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video>
+    </div>
+  </div>
+</section>
+
+<!-- VERTRAUENSLEISTE — Kunden & Partner -->
+<section class="vx-logos-sec" aria-label="Kunden und Partner">
+  <p class="vx-logos-label">Vertraut von</p>
+  <div class="vx-logos">
+    <div class="vx-logos-track">
+      <div class="vx-logos-run">
+        <img src="assets/images/logo-waldorf-astoria.png" alt="Waldorf Astoria" loading="lazy" decoding="async">
+        <img src="assets/images/logo-lexar.png" alt="Lexar" loading="lazy" decoding="async">
+        <img src="assets/images/logo-bmw.png" alt="BMW" loading="lazy" decoding="async">
+        <img src="assets/images/logo-hollyland.png" alt="Hollyland" loading="lazy" decoding="async">
+        <img src="assets/images/logo-bentley.png" alt="Bentley" loading="lazy" decoding="async">
+        <img src="assets/images/logo-moft.png" alt="MOFT" loading="lazy" decoding="async">
+        <img src="assets/images/logo-como.png" alt="Como" loading="lazy" decoding="async">
+        <img src="assets/images/logo-verbatim.png" alt="Verbatim" loading="lazy" decoding="async">
+        <img src="assets/images/logo-void.png" alt="Void Mykonos" loading="lazy" decoding="async">
+        <img src="assets/images/logo-torras.png" alt="Torras" loading="lazy" decoding="async">
+        <img src="assets/images/logo-blacklisted.png" alt="Blacklisted" loading="lazy" decoding="async">
+        <img src="assets/images/logo-neewer.png" alt="Neewer" loading="lazy" decoding="async">
+        <img src="assets/images/logo-notagallery.png" alt="Notagallery" loading="lazy" decoding="async">
+        <img src="assets/images/logo-plaud-ai.png" alt="Plaud AI" loading="lazy" decoding="async">
+        <img src="assets/images/logo-sapphire.png" alt="Sapphire" loading="lazy" decoding="async">
+        <img src="assets/images/logo-sharge.png" alt="Sharge" loading="lazy" decoding="async">
+        <img src="assets/images/logo-goldjunge.png" alt="Goldjunge" loading="lazy" decoding="async">
+        <img src="assets/images/logo-pgy-tech.png" alt="PGYTECH" loading="lazy" decoding="async">
+        <img src="assets/images/logo-arosalenzerheide.png" alt="Arosa Lenzerheide" loading="lazy" decoding="async">
+        <img src="assets/images/logo-patona.png" alt="Patona" loading="lazy" decoding="async">
+        <img src="assets/images/logo-the-door.png" alt="The Door" loading="lazy" decoding="async">
+        <img src="assets/images/logo-eirmai.png" alt="Eirmai" loading="lazy" decoding="async">
+        <img src="assets/images/logo-ivangette.png" alt="Ivan Gette" loading="lazy" decoding="async">
+        <img src="assets/images/logo-digitalfoto.png" alt="DigitalFoto" loading="lazy" decoding="async">
+        <img src="assets/images/logo-corner-33.png" alt="Corner 33" loading="lazy" decoding="async">
+        <img src="assets/images/logo-aparo.png" alt="Aparo" loading="lazy" decoding="async">
+        <img src="assets/images/logo-opendesci.png" alt="OpenDeSci" loading="lazy" decoding="async">
+        <img src="assets/images/logo-raubay.png" alt="Raubay" loading="lazy" decoding="async">
+        <img src="assets/images/logo-kolcapital.png" alt="KOL Capital" loading="lazy" decoding="async">
+      </div>
+      <div class="vx-logos-run" aria-hidden="true">
+        <img src="assets/images/logo-waldorf-astoria.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-lexar.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-bmw.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-hollyland.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-bentley.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-moft.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-como.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-verbatim.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-void.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-torras.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-blacklisted.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-neewer.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-notagallery.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-plaud-ai.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-sapphire.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-sharge.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-goldjunge.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-pgy-tech.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-arosalenzerheide.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-patona.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-the-door.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-eirmai.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-ivangette.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-digitalfoto.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-corner-33.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-aparo.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-opendesci.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-raubay.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/images/logo-kolcapital.png" alt="" loading="lazy" decoding="async">
+      </div>
     </div>
   </div>
 </section>
@@ -186,30 +390,34 @@ a{color:inherit;}
 <!-- ARBEITEN — header + scatter -->
 <section id="arbeiten" style="padding:clamp(80px,11vh,140px) 0 clamp(78px,10vh,124px);background:#070708;position:relative;overflow:hidden;">
   <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
-    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(36px,6vh,64px);">
+    <div data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;margin-bottom:clamp(36px,6vh,64px);">
       <h2 style="margin:0;font-weight:700;font-size:clamp(40px,6.8vw,108px);line-height:.92;letter-spacing:-.025em;color:#F3F0E9;">Ausgewählte <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;">Arbeiten</span></h2>
-      <span style="font-size:12px;line-height:1.7;letter-spacing:.06em;color:#6C6C72;text-transform:uppercase;max-width:34ch;">Gastro · Automotive · Nightlife · Brands · Imagefilme · Interviews · Podcasts · Personal Brands</span>
+      <div class="vx-cats" style="margin-top:clamp(18px,2.4vh,26px);font-size:12px;letter-spacing:.06em;color:#6C6C72;text-transform:uppercase;white-space:nowrap;overflow-x:auto;">Gastro · Automotive · Nightlife · Brands · Imagefilme · Interviews · Podcasts · Personal Brands</div>
     </div>
   </div>
   <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
     <div class="vx-clamp" id="vx-works" data-rows="2">
       <div class="vx-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:14px;">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-joshua-leon.mp4" poster="assets/poster-joshua-leon.jpg" aria-label="Joshua x Leon" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-maybach-ceo-v2.mp4" poster="assets/poster-maybach-ceo-v2.jpg" aria-label="Maybach Luxury CEO" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-blacklisted-1.jpg" alt="Blacklisted" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-koffer-lightpainting.mp4" poster="assets/poster-koffer-lightpainting.jpg" aria-label="Light Painting — Koffer" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-zweifel.mp4" poster="assets/poster-zweifel.jpg" aria-label="Wie man mit Zweifeln umgeht" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-ivan-highlight.mp4" poster="assets/poster-ivan-highlight.jpg" aria-label="Ivan Gette — Highlight Reel" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-sonnenbrillen-2.mp4" poster="assets/poster-sonnenbrillen-2.jpg" aria-label="3 stylische Sonnenbrillen Pt. 2" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-arbeiter-unternehmer.mp4" poster="assets/poster-arbeiter-unternehmer.jpg" aria-label="Unternehmer vs. Angestellter" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-void-1.jpg" alt="Void Mykonos" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-dorothea-shake.mp4" poster="assets/poster-dorothea-shake.jpg" aria-label="Dorothéa — Shake" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-ivan-boards.mp4" poster="assets/poster-ivan-boards.jpg" aria-label="Ivan Gette — Boards" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-reel5.mp4" poster="assets/poster-reel5.jpg" aria-label="Reel #5" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-reel16.mp4" poster="assets/poster-reel16.jpg" aria-label="Reel #16" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-dorothea-cinematic.mp4" poster="assets/poster-dorothea-cinematic.jpg" aria-label="Dorothéa — Cinematic" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/vid-drink.mp4" poster="assets/poster-drink.jpg" aria-label="Drink Close-Up" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><img src="assets/img-dorothea-rose.jpg" alt="Dorothéa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-drink.mp4" poster="assets/images/poster-drink.jpg" aria-label="Drink Close-Up" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-zweifel.mp4" poster="assets/images/poster-zweifel.jpg" aria-label="Wie man mit Zweifeln umgeht" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-ivan-highlight.mp4" poster="assets/images/poster-ivan-highlight.jpg" aria-label="Ivan Gette — Highlight Reel" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-asry-void.mp4" poster="assets/images/poster-asry-void.jpg" aria-label="Asry — VOID" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-como-wein.mp4" poster="assets/images/poster-como-wein.jpg" aria-label="Wein gehört zu Como" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-done2.mp4" poster="assets/images/poster-done2.jpg" aria-label="Reel #2" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-serenity.mp4" poster="assets/images/poster-serenity.jpg" aria-label="Serenity Bar — Rooftop Berlin" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-dorothea-ref6.mp4" poster="assets/images/poster-dorothea-ref6.jpg" aria-label="Dorothéa — Flambé" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-reel16.mp4" poster="assets/images/poster-reel16.jpg" aria-label="Reel #16" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-talkinghead-18.mp4" poster="assets/images/poster-talkinghead-18.jpg" aria-label="Johannes Wiedemann — Talking Head" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-ivan-boards.mp4" poster="assets/images/poster-ivan-boards.jpg" aria-label="Ivan Gette — Boards" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-como-kitchen.mp4" poster="assets/images/poster-como-kitchen.jpg" aria-label="Sounds of Como’s Kitchen" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-export-set.mp4" poster="assets/images/poster-export-set.jpg" aria-label="Shot on — Setup" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-sonnenbrillen-2.mp4" poster="assets/images/poster-sonnenbrillen-2.jpg" aria-label="3 stylische Sonnenbrillen Pt. 2" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-dorothea-ref.mp4" poster="assets/images/poster-dorothea-ref.jpg" aria-label="Dorothéa — Referenz" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-koffer-lightpainting.mp4" poster="assets/images/poster-koffer-lightpainting.jpg" aria-label="Light Painting — Koffer" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-vodka-pasta.mp4" poster="assets/images/poster-vodka-pasta.jpg" aria-label="Vodka Pasta" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-content-ideas.mp4" poster="assets/images/poster-content-ideas.jpg" aria-label="Woher Content-Ideen kommen" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-dorothea-shake.mp4" poster="assets/images/poster-dorothea-shake.jpg" aria-label="Dorothéa — Shake" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+      <div data-reveal class="vx-wide" style="opacity:0;transform:translateY(26px);transition:opacity .7s ease .1s,transform .7s ease .1s;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 44px rgba(0,0,0,.42);"><video data-src="assets/images/vid-signature.mp4" poster="assets/images/poster-signature.jpg" aria-label="Signature — Showreel" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
       </div>
     </div>
     <div class="vx-more-wrap">
@@ -220,7 +428,7 @@ a{color:inherit;}
 
 <!-- KINO FÜR DEN FEED -->
 <section style="position:relative;height:clamp(440px,82vh,760px);overflow:hidden;">
-  <div data-parallax="0.05" style="position:absolute;inset:-12% 0;"><video data-src="assets/vid-drink.mp4" poster="assets/poster-drink.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div>
+  <div data-parallax="0.05" style="position:absolute;inset:-12% 0;"><video data-src="assets/images/vid-drink.mp4" poster="assets/images/poster-drink.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,7,.55),rgba(6,6,7,.2) 45%,rgba(6,6,7,.85));"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(55% 60% at 50% 50%,rgba(255,30,45,.16),transparent 65%);mix-blend-mode:screen;"></div>
   <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;">
@@ -235,31 +443,31 @@ a{color:inherit;}
     <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:36px;"><span style="font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Mehr aus dem Studio</span><span style="font-size:13px;color:#7C7C82;">10+ Produktionen / Monat</span></div>
     <div class="vx-clamp" id="vx-gallery" data-rows="2">
       <div class="vx-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;">
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-2.jpg" alt="John Dalia Eyewear — Fitting" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-koffer-1.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-dorothea-1.jpg" alt="Dorothéa — Fine Dining" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-moto.jpg" alt="BMW Motorrad" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-3.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-blacklisted-1.jpg" alt="Blacklisted" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-2.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-1.jpg" alt="BMW X5 — Olympiastadion" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-boards.jpg" alt="Ivan Gette — Board Serie" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-como-3.jpg" alt="Como Cocktails" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-1.jpg" alt="John Dalia Eyewear" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-jgleon-3.jpg" alt="John Dalia Eyewear — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-koffer-2.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-1.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-2.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-sapphire-4.jpg" alt="Sapphire Suitcases — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ushuaia.jpg" alt="Ushuaïa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bmw-5.jpg" alt="BMW — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-void-1.jpg" alt="Void Mykonos" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-dj.jpg" alt="Live Set" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-1.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-2.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-bts-3.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-1.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/img-ivan-studio-3.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal class="vx-gal-tour" style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0b0b0c;"><iframe src="https://kuula.co/share/collection/7ZGjY?logo=1&amp;info=0&amp;logosize=43&amp;fs=1&amp;vr=1&amp;thumbs=3" title="360°-Rundgang — virtuelle Tour" loading="lazy" scrolling="no" allowfullscreen allow="xr-spatial-tracking; gyroscope; accelerometer" style="width:100%;height:100%;border:0;display:block;"></iframe></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-void-1.jpg" alt="Void Mykonos" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-koffer-1.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-dorothea-1.jpg" alt="Dorothéa — Fine Dining" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bmw-moto.jpg" alt="BMW Motorrad" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-sapphire-3.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-blacklisted-1.jpg" alt="Blacklisted" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-ivan-studio-2.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bmw-1.jpg" alt="BMW X5 — Olympiastadion" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-boards.jpg" alt="Ivan Gette — Board Serie" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-como-3.jpg" alt="Como Cocktails" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-jgleon-1.jpg" alt="John Dalia Eyewear" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-jgleon-3.jpg" alt="John Dalia Eyewear — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-koffer-2.jpg" alt="Ivan Gette — Custom Koffer" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-sapphire-1.jpg" alt="Sapphire Suitcases" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-sapphire-4.jpg" alt="Sapphire Suitcases — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-ushuaia.jpg" alt="Ushuaïa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bmw-5.jpg" alt="BMW — Detail" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-jgleon-2.jpg" alt="John Dalia Eyewear — Fitting" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-dj.jpg" alt="Live Set" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bts-1.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bts-2.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .05s,transform .7s ease .05s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-bts-3.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .1s,transform .7s ease .1s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-ivan-studio-1.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .15s,transform .7s ease .15s;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08);"><img src="assets/images/img-ivan-studio-3.jpg" alt="Ivan Gette im Atelier" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
     </div>
     <div class="vx-more-wrap">
@@ -322,7 +530,7 @@ a{color:inherit;}
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pre-Production</li>
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Postproduction</li>
         </ul>
-        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Essential" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+        <a class="vx-btn-ghost" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Paket%20Essential" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
       </div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .07s,transform .8s ease .07s;position:relative;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,30,45,.5);border-radius:16px;background:linear-gradient(180deg,rgba(255,30,45,.08),rgba(255,30,45,.012));box-shadow:0 0 0 1px rgba(255,30,45,.14),0 30px 80px rgba(255,30,45,.13);">
         <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:#ff1e2d;padding:5px 13px;border-radius:100px;box-shadow:0 6px 20px rgba(255,30,45,.5);">Beliebt</span>
@@ -337,7 +545,7 @@ a{color:inherit;}
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pro Pre-Production</li>
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Pro Postproduction</li>
         </ul>
-        <a class="vx-btn-red-sm" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Professional" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#fff;padding:13px;border-radius:100px;background:#ff1e2d;box-shadow:0 10px 30px rgba(255,30,45,.42);transition:transform .25s,box-shadow .25s;">Anfragen</a>
+        <a class="vx-btn-red-sm" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Paket%20Professional" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#fff;padding:13px;border-radius:100px;background:#ff1e2d;box-shadow:0 10px 30px rgba(255,30,45,.42);transition:transform .25s,box-shadow .25s;">Anfragen</a>
       </div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .14s,transform .8s ease .14s;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);">
         <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">Premium</span>
@@ -352,7 +560,7 @@ a{color:inherit;}
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Ads Setup (optional)</li>
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Pre- &amp; Postproduction</li>
         </ul>
-        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20Premium" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+        <a class="vx-btn-ghost" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Paket%20Premium" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
       </div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease .21s,transform .8s ease .21s;display:flex;flex-direction:column;padding:32px 28px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.02);">
         <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A2A09A;">AI UGC</span><span style="font-size:9.5px;font-weight:700;letter-spacing:.14em;color:#070708;background:#ff1e2d;padding:2px 7px;border-radius:5px;">NEW</span></div>
@@ -366,7 +574,7 @@ a{color:inherit;}
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Production</li>
           <li style="display:flex;gap:10px;"><span style="color:#ff1e2d;">✓</span>Premium Postproduction</li>
         </ul>
-        <a class="vx-btn-ghost" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Paket%20AI%20UGC" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
+        <a class="vx-btn-ghost" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Paket%20AI%20UGC" style="margin-top:26px;text-align:center;text-decoration:none;font-size:14.5px;font-weight:600;color:#F0EEEA;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;">Anfragen</a>
       </div>
     </div>
 
@@ -387,7 +595,7 @@ a{color:inherit;}
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Verwaltung</span>
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Optimierung</span>
           </div>
-          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Performance%20Ads" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
+          <a class="vx-link-red" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Performance%20Ads" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
         </div>
 
         <div style="display:flex;flex-direction:column;padding:32px 30px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));">
@@ -402,7 +610,10 @@ a{color:inherit;}
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Copywriting</span>
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">SEO-Basis</span>
           </div>
-          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Website" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin-top:24px;">
+            <a class="vx-link-red" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Website" style="text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
+            <a class="vx-link-red" href="beispielarbeiten.html" style="text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#A2A09A;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:3px;transition:color .25s,border-color .25s;">Beispielarbeiten →</a>
+          </div>
         </div>
 
         <div style="display:flex;flex-direction:column;padding:32px 30px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));">
@@ -418,7 +629,7 @@ a{color:inherit;}
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Schnitt &amp; Color</span>
             <span style="font-size:12px;color:#D2D0CA;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;">Sounddesign</span>
           </div>
-          <a class="vx-link-red" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Imagefilm" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
+          <a class="vx-link-red" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Imagefilm" style="margin-top:24px;align-self:flex-start;text-decoration:none;font-size:13.5px;font-weight:600;letter-spacing:.02em;color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;">Anfragen →</a>
         </div>
 
       </div>
@@ -442,8 +653,8 @@ a{color:inherit;}
       </div>
     </div>
     <div class="vx-float" data-reveal style="opacity:0;transition:opacity 1s ease;position:relative;min-height:470px;height:54vh;max-height:600px;">
-      <div style="position:absolute;top:0;right:4%;width:72%;height:84%;animation:vxFloatA 11s ease-in-out infinite;"><div data-parallax="0.06" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 36px 90px rgba(0,0,0,.6);transform:rotate(-2deg);"><img src="assets/img-dorothea-2.jpg" alt="VIVIX Produktion" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div></div></div>
-      <div style="position:absolute;bottom:0;left:0;width:42%;aspect-ratio:9/16;animation:vxFloatB 9s ease-in-out infinite .4s;"><div data-parallax="0.13" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 28px 74px rgba(0,0,0,.6);transform:rotate(3deg);"><video data-src="assets/vid-reel5.mp4" poster="assets/poster-reel5.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div></div></div>
+      <div style="position:absolute;top:0;right:4%;width:72%;height:84%;animation:vxFloatA 11s ease-in-out infinite;"><div data-parallax="0.06" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 36px 90px rgba(0,0,0,.6);transform:rotate(-2deg);"><img src="assets/images/img-dorothea-2.jpg" alt="VIVIX Produktion" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div></div></div>
+      <div style="position:absolute;bottom:0;left:0;width:42%;aspect-ratio:9/16;animation:vxFloatB 9s ease-in-out infinite .4s;"><div data-parallax="0.13" style="width:100%;height:100%;"><div style="width:100%;height:100%;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 28px 74px rgba(0,0,0,.6);transform:rotate(3deg);"><video data-src="assets/images/vid-reel5.mp4" poster="assets/images/poster-reel5.jpg" muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;"></video></div></div></div>
     </div>
   </div>
 </section>
@@ -482,7 +693,7 @@ a{color:inherit;}
           </div>
           <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„VIVIX hat unsere Marke auf ein komplett neues Level gehoben. Die Reels sehen aus wie Kino — und die Verkäufe folgen."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
-            <img src="assets/rev-joshua.jpg" alt="Joshua Gussmann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 20%;">
+            <img src="assets/images/rev-joshua.jpg" alt="Joshua Gussmann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 20%;">
             <div style="display:flex;flex-direction:column;gap:2px;">
               <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Joshua Gussmann</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
               <span style="font-size:12.5px;color:#9A9890;">Brilleninsider</span>
@@ -500,7 +711,7 @@ a{color:inherit;}
           </div>
           <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Endlich Content, der Vertrauen schafft. Unsere Objekte verkaufen sich schneller, seit VIVIX unsere Präsenz aufgebaut hat."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
-            <img src="assets/rev-johannes.jpg" alt="Johannes Wiedemann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <img src="assets/images/rev-johannes.jpg" alt="Johannes Wiedemann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
               <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Johannes Wiedemann</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
               <span style="font-size:12.5px;color:#9A9890;">CEO, Invenio Real Estate</span>
@@ -518,7 +729,7 @@ a{color:inherit;}
           </div>
           <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Die verstehen Ästhetik. Jedes Video fühlt sich an wie ein Kunstwerk — genau das, was meine Galerie braucht."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
-            <img src="assets/rev-ivan.jpg" alt="Ivan Gette" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <img src="assets/images/rev-ivan.jpg" alt="Ivan Gette" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
               <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Ivan Gette</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
               <span style="font-size:12.5px;color:#9A9890;">Künstler &amp; Founder, Notagallery</span>
@@ -536,7 +747,7 @@ a{color:inherit;}
           </div>
           <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Professionell, schnell, kreativ. Die Zusammenarbeit war mühelos und das Ergebnis spricht für sich."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
-            <img src="assets/rev-asry.jpg" alt="Asry" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
+            <img src="assets/images/rev-asry.jpg" alt="Asry" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
               <div style="display:flex;align-items:center;gap:7px;"><span style="font-size:15px;font-weight:600;color:#F3F0E9;">Asry</span><span style="color:#ff1e2d;font-size:13px;" title="Verifiziert">✔</span></div>
               <span style="font-size:12.5px;color:#9A9890;">Artist</span>
@@ -559,8 +770,8 @@ a{color:inherit;}
     <h2 data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;margin:0;font-weight:700;font-size:clamp(38px,7vw,116px);line-height:.9;letter-spacing:-.03em;">Sehen Sie unseren Standard — <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">kostenlos.</span></h2>
     <p data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .8s ease .1s,transform .8s ease .1s;margin:24px auto 0;max-width:540px;font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:rgba(7,7,8,.78);">Kostenloses Probe-Reel — schnell, sauber, ohne Risiko. Fertiger Schnitt inkl. Captions, klare Botschaft, Brand-safe Premium-Look.</p>
     <div data-reveal style="opacity:0;transition:opacity .8s ease .2s;display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:34px;">
-      <a class="vx-btn-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#070708;color:#F3F0E9;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;transition:transform .25s;">Probe-Reel anfragen →</a>
-      <a class="vx-btn-outline-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage%3A%2010-Min%20Call" style="display:inline-flex;align-items:center;gap:9px;background:transparent;color:#070708;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;border:1px solid rgba(7,7,8,.5);transition:background .25s;">10-Min Call buchen</a>
+      <a class="vx-btn-dark" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#070708;color:#F3F0E9;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;transition:transform .25s;">Probe-Reel anfragen →</a>
+      <a class="vx-btn-outline-dark" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage%3A%2010-Min%20Call" style="display:inline-flex;align-items:center;gap:9px;background:transparent;color:#070708;font-size:15px;font-weight:600;text-decoration:none;padding:16px 30px;border-radius:100px;border:1px solid rgba(7,7,8,.5);transition:background .25s;">10-Min Call buchen</a>
     </div>
     <p data-reveal style="opacity:0;transition:opacity .8s ease .3s;margin:22px 0 0;font-size:11.5px;font-weight:500;letter-spacing:.1em;color:rgba(7,7,8,.66);">ANTWORT IN 24H · KEINE VERPFLICHTUNG</p>
   </div>
@@ -578,7 +789,7 @@ a{color:inherit;}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px;padding-top:clamp(34px,5vh,52px);">
       <div>
         <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#6C6C72;margin-bottom:16px;">Kontakt</div>
-        <a class="vx-foot-mail" href="mailto:alysenko@vivix-media.com?subject=Kontaktanfrage%20von%20der%20Website" style="display:block;font-size:17px;font-weight:600;color:#F0EEEA;text-decoration:none;transition:color .25s;">alysenko@vivix-media.com</a>
+        <a class="vx-foot-mail" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Kontaktanfrage%20von%20der%20Website" style="display:block;font-size:17px;font-weight:600;color:#F0EEEA;text-decoration:none;transition:color .25s;" data-show>alysenko [at] vivix-media.com</a>
         <a class="vx-foot-link" href="https://www.instagram.com/vivix.media/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:15px;font-weight:500;color:#C8C6C0;text-decoration:none;transition:color .25s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>@vivix.media ↗</a>
       </div>
       <div>
@@ -592,7 +803,7 @@ a{color:inherit;}
       </div>
       <div>
         <div style="font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#6C6C72;margin-bottom:16px;">Los geht’s</div>
-        <a class="vx-btn-dark" href="mailto:alysenko@vivix-media.com?subject=Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:14px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:100px;transition:transform .25s;">Kostenloses Probe-Reel →</a>
+        <a class="vx-btn-dark" href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage:%20Kostenloses%20Probe-Reel" style="display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:14px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:100px;transition:transform .25s;">Kostenloses Probe-Reel →</a>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:clamp(38px,5vh,60px);font-size:11.5px;letter-spacing:.06em;color:#5C5C62;">
@@ -775,6 +986,20 @@ a{color:inherit;}
   }
   document.getElementById('vx-rev-prev').addEventListener('click', function () { scrollReviews(-1); });
   document.getElementById('vx-rev-next').addEventListener('click', function () { scrollReviews(1); });
+})();
+</script>
+
+<script>
+/* E-Mail-Adressen stehen nicht im Quelltext, sondern werden hier zusammengesetzt.
+   Harvester-Bots lesen das HTML statisch aus und finden dadurch nichts. */
+(function () {
+  document.querySelectorAll('a[data-u][data-d]').forEach(function (a) {
+    var adresse = a.getAttribute('data-u') + String.fromCharCode(64) + a.getAttribute('data-d');
+    var betreff = a.getAttribute('data-s');
+    a.setAttribute('href', 'mailto:' + adresse + (betreff ? '?subject=' + betreff : ''));
+    if (a.hasAttribute('data-show')) a.textContent = adresse;
+    a.removeAttribute('data-u'); a.removeAttribute('data-d'); a.removeAttribute('data-s');
+  });
 })();
 </script>
 </body>

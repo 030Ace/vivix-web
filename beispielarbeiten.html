@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beispielarbeiten — Websites | VIVIX</title>
+<meta name="description" content="Ausgewählte Website-Projekte von VIVIX — live ansehen statt beschreiben lassen.">
+<meta name="theme-color" content="#070708">
+<link rel="canonical" href="https://vivix-media.com/beispielarbeiten.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beispielarbeiten — Websites | VIVIX">
+<meta property="og:description" content="Ausgewählte Website-Projekte von VIVIX — live ansehen statt beschreiben lassen.">
+<meta property="og:url" content="https://vivix-media.com/beispielarbeiten.html">
+<meta property="og:image" content="https://vivix-media.com/assets/images/hero.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/legal.css">
+<style>
+.bw-main{max-width:1320px;margin:0 auto;padding:clamp(48px,8vh,92px) clamp(16px,5vw,56px) clamp(64px,10vh,120px);}
+.bw-h1{margin:0;font-weight:700;font-size:clamp(36px,6.4vw,84px);line-height:.94;letter-spacing:-.025em;color:#F3F0E9;}
+.bw-h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#ff2f3c;}
+.bw-lead{margin:22px 0 0;max-width:52ch;font-size:clamp(15px,1.2vw,17.5px);line-height:1.62;color:#9A9890;}
+
+.bw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(20px,3vw,34px);
+  margin-top:clamp(40px,7vh,72px);}
+
+.bw-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02);
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;}
+.bw-card:hover{transform:translateY(-4px);border-color:rgba(255,30,45,.45);
+  box-shadow:0 26px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,30,45,.18);}
+
+/* live preview: the real page, rendered at desktop width and scaled into the card */
+.bw-shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b0b0c;}
+.bw-shot iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;
+  transform-origin:top left;pointer-events:none;}
+.bw-shot::after{content:"Live ansehen";position:absolute;inset:auto 0 0 0;padding:34px 20px 16px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F3F0E9;
+  background:linear-gradient(180deg,transparent,rgba(7,7,8,.9));opacity:0;transition:opacity .3s ease;}
+.bw-card:hover .bw-shot::after{opacity:1;}
+
+.bw-meta{padding:22px 24px 26px;}
+.bw-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.bw-tags span{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#9A9890;
+  border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:5px 12px;}
+.bw-name{margin:0;font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.015em;color:#F3F0E9;}
+.bw-desc{margin:9px 0 0;font-size:14.5px;line-height:1.6;color:#8E8C88;}
+/* Transparenzhinweis — als Randnotiz abgesetzt, nicht als Fließtext der Beschreibung */
+.bw-note{margin:14px 0 0;padding-left:13px;border-left:1px solid rgba(255,30,45,.5);
+  font-size:12.5px;line-height:1.55;color:#76767C;}
+.bw-open{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:13.5px;font-weight:600;
+  color:#F0EEEA;border-bottom:1px solid #ff1e2d;padding-bottom:3px;transition:color .25s;}
+.bw-card:hover .bw-open{color:#ff5560;}
+
+.bw-cta{margin-top:clamp(48px,8vh,84px);padding-top:clamp(30px,4vh,44px);border-top:1px solid rgba(255,255,255,.1);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+.bw-cta p{margin:0;max-width:46ch;font-size:15.5px;line-height:1.6;color:#9A9890;}
+.bw-cta a{display:inline-flex;align-items:center;gap:9px;background:#ff1e2d;color:#fff;font-size:15px;
+  font-weight:600;text-decoration:none;padding:15px 28px;border-radius:100px;
+  box-shadow:0 12px 40px rgba(255,30,45,.38);transition:transform .25s,box-shadow .25s;}
+.bw-cta a:hover{color:#fff;transform:translateY(-2px);box-shadow:0 16px 52px rgba(255,30,45,.58);}
+
+@media(prefers-reduced-motion:reduce){.bw-card:hover{transform:none;}}
+</style>
+
+<!-- Cookie consent (Silktide) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #FF1E2D;
+  --backgroundColor: #070708;
+  --textColor: #f3f0e9;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #070708;
+  --iconBackgroundColor: #FF1E2D;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: true
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Essential",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Essential consent type here');
+      }
+    },
+    {
+      id: "analytics",
+      label: "Analytics",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      defaultValue: true,
+      gtag: "analytics_storage"
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});
+</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true" focusable="false"><defs>
+  <filter id="vx-rough" x="-15%" y="-40%" width="130%" height="180%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <g id="vx-wm" fill="none" stroke="#F3F0E9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9 C 7.5 8.6 8.5 11 11.5 17.5 L 20 37 C 21 39.4 23 39.4 24 37 L 32.5 17.5 C 35 11.5 36 9 38 9.3"/>
+    <path d="M50 9.5 C 49.8 18 49.9 30 50 38.6"/>
+    <path d="M62 9 C 63.5 8.6 64.5 11 67.5 17.5 L 76 37 C 77 39.4 79 39.4 80 37 L 88.5 17.5 C 91 11.5 92 9 94 9.3"/>
+    <path d="M106 9.5 C 105.8 18 105.9 30 106 38.6"/>
+    <path d="M120 9.8 C 122 10 125 14 131 21 C 137 28 143 34 149 38.8"/>
+    <path d="M150 9.8 C 148 10 145 14 139 21 C 133 28 127 34 121 38.8"/>
+  </g>
+</defs></svg>
+
+<header class="lg-head">
+  <a href="/" aria-label="VIVIX — zur Startseite">
+    <svg viewBox="0 0 168 48" role="img" aria-label="VIVIX"><use href="#vx-wm" stroke-width="2.4" filter="url(#vx-rough)"/></svg>
+  </a>
+  <a class="lg-back" href="/#pakete">← Zurück zu den Leistungen</a>
+</header>
+
+<main class="bw-main">
+  <div class="lg-kicker"><span></span><span>Websites</span></div>
+  <h1 class="bw-h1">Beispiel<em>arbeiten.</em></h1>
+  <p class="bw-lead">Jede Seite unten läuft live — klicken Sie sich durch, statt sich Screenshots anzusehen. Alle Projekte sind von uns konzipiert, gestaltet und gebaut.</p>
+
+  <div class="bw-grid">
+
+    <a class="bw-card" href="/aurelia-yachts.html" target="_blank" rel="noopener">
+      <div class="bw-shot">
+        <iframe src="/aurelia-yachts.html" title="Vorschau: Aurelia Yachts" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+      </div>
+      <div class="bw-meta">
+        <div class="bw-tags"><span>Yacht Brokerage</span><span>Monaco</span><span>Luxury</span></div>
+        <h2 class="bw-name">Aurelia Yachts</h2>
+        <p class="bw-desc">Brokerage für außergewöhnliche Yachten. Zurückhaltende Typografie, viel Schwarz, Gold als einziger Akzent — und eine animierte Partikel-Küste im Header.</p>
+        <span class="bw-open">Live ansehen →</span>
+      </div>
+    </a>
+
+    <a class="bw-card" href="/automobil.html" target="_blank" rel="noopener">
+      <div class="bw-shot">
+        <iframe src="/automobil.html" title="Vorschau: Oktan Automobile" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+      </div>
+      <div class="bw-meta">
+        <div class="bw-tags"><span>Automotive</span><span>Hypercars</span><span>Sourcing</span></div>
+        <h2 class="bw-name">Oktan Automobile</h2>
+        <p class="bw-desc">Privathaus für kuratierte Automobile ab 300.000 €. Editorialer Aufbau, kinematische Übergänge und eine Kollektion, die sich beim Scrollen aufblättert.</p>
+        <p class="bw-note">Sämtliche Bilder dieser Seite sind KI-generiert. Das Projekt ist eine Demo und dient allein dazu, die technischen Möglichkeiten zu zeigen.</p>
+        <span class="bw-open">Live ansehen →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="bw-cta">
+    <p>Ihre Marke verdient dasselbe. Erzählen Sie uns, was Sie vorhaben — wir melden uns innerhalb von 24 Stunden.</p>
+    <a href="#kontakt" data-u="alysenko" data-d="vivix-media.com" data-s="Anfrage%3A%20Website">Website anfragen →</a>
+  </div>
+</main>
+
+<footer class="lg-foot">
+  <div class="lg-foot-inner">
+    <span>© 2026 VIVIX Media</span>
+    <nav>
+      <a href="/">Startseite</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  // the previews render at a fixed 1440px so the layout matches the desktop design,
+  // then get scaled down to whatever width the card actually has
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.bw-shot'));
+  function fit() {
+    shots.forEach(function (shot) {
+      var frame = shot.querySelector('iframe');
+      if (!frame) return;
+      frame.style.transform = 'scale(' + (shot.clientWidth / 1440) + ')';
+    });
+  }
+  fit();
+  window.addEventListener('resize', fit, { passive: true });
+  window.addEventListener('load', fit);
+
+  // Both previews open with an intro counter. A backgrounded iframe throttles
+  // requestAnimationFrame, so that counter can sit at "00" forever and the card
+  // stays black. Same origin, so settle the intro from here instead of waiting.
+  shots.forEach(function (shot) {
+    var frame = shot.querySelector('iframe');
+    if (!frame) return;
+    frame.addEventListener('load', function () {
+      setTimeout(function () {
+        try {
+          var d = frame.contentDocument;
+          if (!d) return;
+          d.querySelectorAll('[class*=preload],[id*=preload],[class*=loader],[id*=loader]')
+            .forEach(function (el) { el.style.display = 'none'; });
+          d.querySelectorAll('body *').forEach(function (el) {
+            var cs = frame.contentWindow.getComputedStyle(el);
+            if (cs.opacity === '0') el.style.opacity = '1';
+            if (cs.visibility === 'hidden') el.style.visibility = 'visible';
+          });
+          d.documentElement.style.overflow = 'hidden';
+        } catch (e) { /* preview only — never let this break the page */ }
+      }, 1600);
+    });
+  });
+})();
+</script>
+
+<script>
+/* E-Mail-Adressen stehen nicht im Quelltext, sondern werden hier zusammengesetzt.
+   Harvester-Bots lesen das HTML statisch aus und finden dadurch nichts. */
+(function () {
+  document.querySelectorAll('a[data-u][data-d]').forEach(function (a) {
+    var adresse = a.getAttribute('data-u') + String.fromCharCode(64) + a.getAttribute('data-d');
+    var betreff = a.getAttribute('data-s');
+    a.setAttribute('href', 'mailto:' + adresse + (betreff ? '?subject=' + betreff : ''));
+    if (a.hasAttribute('data-show')) a.textContent = adresse;
+    a.removeAttribute('data-u'); a.removeAttribute('data-d'); a.removeAttribute('data-s');
+  });
+})();
+</script>
+</body>
+</html>
