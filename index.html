@@ -99,11 +99,27 @@ a{color:inherit;}
 .vx-more-wrap{display:flex;justify-content:center;margin-top:clamp(22px,3vh,34px);}
 .vx-more{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F0EEEA;background:transparent;padding:14px 32px;border-radius:100px;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .25s,border-color .25s;}
 
+/* Review-Zitate: auf vier Zeilen begrenzt, damit eine lange Bewertung nicht alle
+   Karten in die Höhe zieht (die Reihe richtet sich an der längsten aus). Der
+   Verlauf blendet den Anschnitt aus; der Schalter wird nur dort eingehängt, wo
+   tatsächlich etwas abgeschnitten ist. */
+.vx-rev-q{position:relative;max-height:6.48em;overflow:hidden;transition:max-height .45s ease;}
+.vx-rev-q[data-clip]::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3.1em;
+  background:linear-gradient(to bottom,rgba(16,16,18,0),#101012 88%);pointer-events:none;}
+[data-rev-card][data-open] .vx-rev-q{max-height:44em;}
+[data-rev-card][data-open] .vx-rev-q::after{opacity:0;}
+.vx-rev-more{align-self:flex-start;margin:-4px 0 0;padding:0;border:0;background:none;cursor:pointer;
+  font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.03em;color:#ff2f3c;transition:opacity .25s;}
+.vx-rev-more:hover{opacity:.72;}
+@media(prefers-reduced-motion:reduce){.vx-rev-q{transition:none;}}
+
 /* ---- responsive ---- */
-/* On a portrait viewport `cover` only shows ~a quarter of the 16:9 hero, and the
-   centre of that frame is the camera rig. Shift the window onto the subject. */
+/* On a portrait viewport `cover` shows only ~26% of the 16:9 hero's width, and the
+   centre of that window lands on the camera rig. Shift it onto the person being
+   filmed — they sit left of frame in the current hero, hence 30%. Re-check this
+   value whenever the hero image is swapped; the old one needed 65%. */
 @media(max-aspect-ratio:1/1){
-  .vx-hero-img{object-position:65% center;}
+  .vx-hero-img{object-position:30% center;}
   .vx-scrollhint{display:none;}   /* would sit under the cookie reopener */
 }
 @media(max-width:880px){.vx-nav{display:none!important;}}
@@ -684,7 +700,7 @@ window.silktideConsentManager.init({
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
           </div>
-          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„VIVIX hat unsere Marke auf ein komplett neues Level gehoben. Die Reels sehen aus wie Kino — und die Verkäufe folgen."</p>
+          <p class="vx-rev-q" style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Wir arbeiten bereits seit vielen Monaten eng zusammen – stets professionell, zuverlässig und auf höchstem Niveau. Von der Planung über die Produktion bis zum fertigen Video ist alles perfekt organisiert, kreativ umgesetzt und immer am Puls der Zeit. Besonders schätze ich die eigenen Ideen, die hohe Eigeninitiative und das Gespür für aktuellen Content. Eine klare Empfehlung für alle, die professionelle und moderne Videoproduktion suchen!"</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
             <img src="assets/images/rev-joshua.jpg" alt="Joshua Gussmann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 20%;">
             <div style="display:flex;flex-direction:column;gap:2px;">
@@ -702,7 +718,7 @@ window.silktideConsentManager.init({
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
           </div>
-          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Endlich Content, der Vertrauen schafft. Unsere Objekte verkaufen sich schneller, seit VIVIX unsere Präsenz aufgebaut hat."</p>
+          <p class="vx-rev-q" style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Termine sitzen, jedes Mal. Dazu kommen eigene Ideen, auf die wir selbst nicht gekommen wären, und eine Geschwindigkeit in der Umsetzung, die man selten sieht. Unsere Marke hat davon in kurzer Zeit sichtbar profitiert."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
             <img src="assets/images/rev-johannes.jpg" alt="Johannes Wiedemann" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
@@ -720,7 +736,7 @@ window.silktideConsentManager.init({
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
           </div>
-          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Richtig gute Zusammenarbeit. Vom Konzept bis zur Visualisierung top — und ich musste nie lang erklären, was ich meine."</p>
+          <p class="vx-rev-q" style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Richtig gute Zusammenarbeit. Vom Konzept bis zur Visualisierung top — und ich musste nie lang erklären, was ich meine."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
             <img src="assets/images/rev-ivan.jpg" alt="Ivan Gette" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
@@ -738,7 +754,7 @@ window.silktideConsentManager.init({
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:#ff1e2d;color:#fff;font-size:14px;">★</span>
             <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:4px;background:rgba(255,255,255,.1);color:#5A5A60;font-size:14px;">★</span>
           </div>
-          <p style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Professionell, schnell, kreativ. Die Zusammenarbeit war mühelos und das Ergebnis spricht für sich."</p>
+          <p class="vx-rev-q" style="margin:0;font-size:16px;line-height:1.62;color:#E7E5DF;flex:1;">„Professionell, schnell, kreativ. Die Zusammenarbeit war mühelos und das Ergebnis spricht für sich."</p>
           <div style="display:flex;align-items:center;gap:13px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);">
             <img src="assets/images/rev-asry.jpg" alt="Asry" loading="lazy" style="width:46px;height:46px;border-radius:50%;object-fit:cover;">
             <div style="display:flex;flex-direction:column;gap:2px;">
@@ -993,6 +1009,35 @@ window.silktideConsentManager.init({
     if (a.hasAttribute('data-show')) a.textContent = adresse;
     a.removeAttribute('data-u'); a.removeAttribute('data-d'); a.removeAttribute('data-s');
   });
+})();
+</script>
+
+<script>
+/* Blendet lange Review-Zitate ab und hängt einen Aufklappen-Schalter ein —
+   aber nur bei den Karten, deren Text die vier Zeilen wirklich überschreitet. */
+(function () {
+  function init() {
+    document.querySelectorAll('[data-rev-card]').forEach(function (karte) {
+      var p = karte.querySelector('.vx-rev-q');
+      if (!p || p.scrollHeight <= p.clientHeight + 2) return;
+      p.setAttribute('data-clip', '');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'vx-rev-more';
+      btn.textContent = 'Mehr lesen';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var offen = karte.hasAttribute('data-open');
+        if (offen) { karte.removeAttribute('data-open'); p.setAttribute('data-clip', ''); }
+        else       { karte.setAttribute('data-open', ''); p.removeAttribute('data-clip'); }
+        btn.textContent = offen ? 'Mehr lesen' : 'Weniger anzeigen';
+        btn.setAttribute('aria-expanded', String(!offen));
+      });
+      p.insertAdjacentElement('afterend', btn);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
 </script>
 </body>
