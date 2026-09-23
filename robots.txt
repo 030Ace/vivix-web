@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Kundendemos — eigene Marken, sollen nicht als VIVIX-Inhalte indexiert werden
-Disallow: /aurelia-yachts.html
-Disallow: /automobil.html
+# Die Kundendemos (aurelia-yachts.html, automobil.html) tragen im HTML ein
+# noindex. Sie werden hier bewusst NICHT gesperrt: Googlebot muss die Seiten
+# abrufen dürfen, sonst liest er das noindex nie und lässt sie unbestimmt lange
+# als "gefunden, zurzeit nicht indexiert" stehen.
 
 Sitemap: https://vivix-media.com/sitemap.xml
