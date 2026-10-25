@@ -1,4 +1,4 @@
-:HL["/ivan-gette/_next/static/chunks/39hj5qcrzue93.css","style"]
+:HL["/ivan-gette/_next/static/chunks/0bff9qoeru9y3.css","style"]
 :HL["/ivan-gette/_next/static/media/068feab4deafcd0f-s.p.0_kz_z3o_slvt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ivan-gette/_next/static/media/2ff936f45a7b5918-s.p.0bgqpv90abx9d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ivan-gette/_next/static/media/61e56fd33ece1ad8-s.p.0op912u62qdhl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -9,4 +9,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"meeting-lewis-hamilton-the-ferrari-team-and-pierre-aubameyang-in-bahrain","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"journal","h":64,"c":"$Q2"}]]
-0:{"b":"l0FGoWwNmBTiAYonLlyDe","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"hZJjuRrvfPJzIr20q19xb","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
