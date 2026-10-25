@@ -1,0 +1,21 @@
+# Ivan Gette — preview build (2026-10-25)
+DirectoryIndex index.html
+Options -Indexes
+ErrorDocument 404 /ivan-gette/404.html
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# Optional password: create a .htpasswd OUTSIDE the web root (e.g. with
+# "htpasswd -c /home/USER/.htpasswd-ivan NAME"), then remove the # below.
+# AuthType Basic
+# AuthName "Ivan Gette preview"
+# AuthUserFile /home/USER/.htpasswd-ivan
+# Require valid-user

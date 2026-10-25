@@ -1,0 +1,29 @@
+2:"$Sreact.fragment"
+3:"/ivan-gette/_next/static/chunks/3dn31f08yi4cf.js"
+4:"/ivan-gette/_next/static/chunks/3ee_er2notdl3.js"
+5:"/ivan-gette/_next/static/chunks/1513226aeu-53.js"
+6:"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js"
+7:"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js"
+8:I[39756,["$3","$4","$5","$6","$7"],"default"]
+9:I[37457,["$3","$4","$5","$6","$7"],"default"]
+e:I[97367,["$3","$4","$5","$6","$7"],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[97367,["$3","$4","$5","$6","$7"],"$12"]
+14:"MetadataBoundary"
+15:I[97367,["$3","$4","$5","$6","$7"],"$14"]
+16:I[27201,["$3","$4","$5","$6","$7"],"IconMark"]
+b:X
+b:C
+c:X
+d:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","main",null,{"className":"gutter pt-[calc(var(--header-h)+8vh)] pb-[14vh]","children":["$","div",null,{"className":"grid grid-cols-12 gap-x-6 gap-y-10","children":[["$","p",null,{"className":"label col-span-12 text-ink-soft md:col-span-2","children":"Legal"}],["$","div",null,{"className":"col-span-12 max-w-2xl md:col-span-8","children":[["$","h1",null,{"className":"wide text-4xl font-light uppercase tracking-tight","children":"Privacy"}],["$","p",null,{"className":"mt-10 leading-relaxed text-ink-soft","children":"The privacy policy for the new website is being prepared and will be published here before launch."}]]}]]}]}],null,["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$c"}}]]
+1:[["children",{"s":"privacy","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@a","v":"$b","s":"$c"},"c":"$Qd"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f5f3ee"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Privacy — Ivan Gette"}],["$","meta","1",{"name":"description","content":"Ivan Gette is a Berlin-based abstract painter whose work embodies rare emotional depth and refined sophistication. Original works on request."}],["$","meta","2",{"name":"robots","content":"noindex"}],["$","meta","3",{"property":"og:title","content":"Privacy — Ivan Gette"}],["$","meta","4",{"property":"og:description","content":"Ivan Gette is a Berlin-based abstract painter whose work embodies rare emotional depth and refined sophistication. Original works on request."}],["$","meta","5",{"property":"og:site_name","content":"Ivan Gette"}],["$","meta","6",{"property":"og:locale","content":"en_GB"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary"}],["$","meta","9",{"name":"twitter:title","content":"Privacy — Ivan Gette"}],["$","meta","10",{"name":"twitter:description","content":"Ivan Gette is a Berlin-based abstract painter whose work embodies rare emotional depth and refined sophistication. Original works on request."}],["$","link","11",{"rel":"icon","href":"/ivan-gette/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L16","12",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":null,"s":"$c"}},"a":"$@18","u":"$@19","b":"l0FGoWwNmBTiAYonLlyDe"}
+10:null
+19:true
+c:300
+c:C
+18:0
+a:"$undefined"
+17:"$undefined"
+11:"$undefined"
