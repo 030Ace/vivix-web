@@ -1,32 +1,42 @@
-2:"$Sreact.fragment"
-3:"/ivan-gette/_next/static/chunks/1sorqzbuct9o4.js"
-4:"/ivan-gette/_next/static/chunks/24giycl-nngm8.js"
-5:"/ivan-gette/_next/static/chunks/1e3_635u46q2q.js"
-6:"/ivan-gette/_next/static/chunks/1513226aeu-53.js"
-7:"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js"
-8:"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js"
-9:I[39756,["$3","$4","$5","$6","$7","$8"],"default"]
-a:I[37457,["$3","$4","$5","$6","$7","$8"],"default"]
-f:I[73456,["$3","$4","$5","$6","$7","$8"],"RisingWord"]
-10:I[41911,["$3","$4","$5","$6","$7","$8"],"InquiryForm"]
-11:I[97367,["$3","$4","$5","$6","$7","$8"],"OutletBoundary"]
-12:"$Sreact.suspense"
-15:"ViewportBoundary"
-16:I[97367,["$3","$4","$5","$6","$7","$8"],"$15"]
-17:"MetadataBoundary"
-18:I[97367,["$3","$4","$5","$6","$7","$8"],"$17"]
-19:I[27201,["$3","$4","$5","$6","$7","$8"],"IconMark"]
-c:X
-c:C
-d:X
-e:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","main",null,{"className":"pt-[calc(var(--header-h)+6vh)]","children":["$","section",null,{"className":"gutter grid grid-cols-12 gap-x-6 gap-y-12 pb-[12vh]","children":[["$","p",null,{"className":"label col-span-12 text-ink-soft md:col-span-2","children":"Contact"}],["$","div",null,{"className":"col-span-12 md:col-span-10","children":["$","div",null,{"className":"@container","children":["$","$Lf",null,{"as":"h1","text":"Contact","className":"wordmark block text-[calc(100cqw/6.04)]"}]}]}],["$","div",null,{"className":"col-span-12 md:col-span-6 md:col-start-3","children":[["$","p",null,{"className":"max-w-xl text-xl leading-snug","children":"For inquiries about original works, limited editions, prints, collaborations or press, please use the form below. Ivan or his team will get back to you as soon as possible."}],["$","div",null,{"className":"mt-12","children":["$","$L10",null,{"subject":"Original Works"}]}]]}],["$","aside",null,{"className":"col-span-12 grid content-start gap-10 md:col-span-3 md:col-start-10","children":[["$","span",null,{"className":"relative block overflow-hidden bg-cover bg-center","style":{"backgroundImage":"url(data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADwBACdASoUABUAPu1srFEppaQiqAqpMB2JbACsMoABl29xuW808roCK11XbVuoqiAA/t7sdpLTwHaGVJTlT22PQSQrstgjKGaF937p55lhDaYgsRoAqXVobjOguZXUro9twVqOwBmagj/DvIG1JF/IQ1rIuPR5GFXx/aR/+GYvZwl9FpCIw2uJ9Vi4I0+LzzaC672NQvezmErqlm4jk4qL64qSuypozhx7bzdpNt0m1AXuAAA=)","aspectRatio":"1271 / 1315"},"children":["$","img",null,{"src":"/ivan-gette/media/site/visitor-1271.webp","srcSet":"/ivan-gette/media/site/visitor-800.webp 800w, /ivan-gette/media/site/visitor-1271.webp 1271w","sizes":"(min-width: 768px) 25vw, 92vw","width":1271,"height":1315,"alt":"A visitor in front of a painting by Ivan Gette","loading":"lazy","decoding":"async","draggable":false,"className":"absolute inset-0 size-full select-none object-cover"}]}],["$","dl",null,{"className":"grid gap-6 text-sm","children":[["$","div",null,{"children":[["$","dt",null,{"className":"label text-ink-soft","children":"E-mail"}],["$","dd",null,{"className":"mt-1","children":["$","a",null,{"href":"mailto:ivan.gette01@gmail.com","className":"hover:underline","children":"ivan.gette01@gmail.com"}]}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"label text-ink-soft","children":"Phone"}],["$","dd",null,{"className":"mt-1","children":["$","a",null,{"href":"tel:+4915116329114","className":"hover:underline","children":"+49 151 16329114"}]}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"label text-ink-soft","children":"Instagram"}],["$","dd",null,{"className":"mt-1","children":["$","a",null,{"href":"https://www.instagram.com/ivangette_art","target":"_blank","rel":"noreferrer","className":"hover:underline","children":"@ivangette_art"}]}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"label text-ink-soft","children":"LinkedIn"}],["$","dd",null,{"className":"mt-1","children":"@ivangette"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"label text-ink-soft","children":"Studio"}],["$","dd",null,{"className":"mt-1","children":["Based in ","Berlin, Germany"]}]]}]]}]]}]]}]}],null,["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}],"p":"$@14","v":null,"s":"$d"}}]]
-1:[["children",{"s":"contact","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L9",null,{"parallelRouterKey":"children","template":["$","$La",null,{}]}]]}],"p":"$@b","v":"$c","s":"$d"},"c":"$Qe"}]]
-0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#f6f4f1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Contact — Ivan Gette"}],["$","meta","1",{"name":"description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","meta","3",{"property":"og:title","content":"Contact — Ivan Gette"}],["$","meta","4",{"property":"og:description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","meta","5",{"property":"og:site_name","content":"Ivan Gette"}],["$","meta","6",{"property":"og:locale","content":"en_GB"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary"}],["$","meta","9",{"name":"twitter:title","content":"Contact — Ivan Gette"}],["$","meta","10",{"name":"twitter:description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","link","11",{"rel":"icon","href":"/ivan-gette/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L19","12",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1a","v":null,"s":"$d"}},"a":"$@1b","u":"$@1c","b":"hZJjuRrvfPJzIr20q19xb"}
-13:null
-1c:true
-d:300
-d:C
-1b:0
-b:"$undefined"
+1:"$Sreact.fragment"
+2:"/ivan-gette/_next/static/chunks/42onvq6nokjl2.js"
+3:"/ivan-gette/_next/static/chunks/0zw-7bunxjo9-.js"
+4:"/ivan-gette/_next/static/chunks/1d5f6h74fxz4c.js"
+5:"/ivan-gette/_next/static/chunks/1513226aeu-53.js"
+6:"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js"
+7:"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js"
+8:I[48737,["$2","$3","$4","$5","$6","$7"],"Providers"]
+9:I[84456,["$2","$3","$4","$5","$6","$7"],"IntroProvider"]
+a:I[80322,["$2","$3","$4","$5","$6","$7"],"Header"]
+b:I[39756,["$2","$3","$4","$5","$6","$7"],"default"]
+c:I[37457,["$2","$3","$4","$5","$6","$7"],"default"]
+d:I[91441,["$2","$3","$4","$5","$6","$7"],"Link"]
+e:I[53296,["$2","$3","$4","$5","$6","$7"],"Footer"]
+15:I[73456,["$2","$3","$4","$5","$6","$7"],"RisingWord"]
+16:I[41911,["$2","$3","$4","$5","$6","$7"],"InquiryForm"]
+1b:"ViewportBoundary"
+1c:I[97367,["$2","$3","$4","$5","$6","$7"],"$1b"]
+1d:"MetadataBoundary"
+1e:I[97367,["$2","$3","$4","$5","$6","$7"],"$1d"]
+1f:"$Sreact.suspense"
+20:I[27201,["$2","$3","$4","$5","$6","$7"],"IconMark"]
+:HL["/ivan-gette/_next/static/chunks/2esb19b4996q0.css","style"]
+10:X
+13:X
+13:C
+14:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"pt-[calc(var(--header-h)+8vh)]","children":["$","section",null,{"className":"gutter grid grid-cols-12 gap-x-6 gap-y-12 pb-[14vh]","children":[["$","p",null,{"className":"label col-span-12 text-ink-soft md:col-span-2","children":"Contact"}],["$","div",null,{"className":"col-span-12 md:col-span-6","children":[["$","$L15",null,{"as":"h1","text":"Contact","className":"wide block text-[clamp(2.4rem,6vw,5.6rem)] font-light uppercase leading-[0.95] tracking-tight"}],["$","p",null,{"className":"mt-8 max-w-lg text-lg leading-snug text-ink-soft","children":"For inquiries about original works, limited editions, prints, collaborations or press, please use the form below. Ivan or his team will get back to you as soon as possible."}],["$","div",null,{"className":"mt-12","children":["$","$L16",null,{"subject":"Original Works"}]}]]}],["$","aside",null,{"className":"col-span-12 grid content-start gap-8 text-sm md:col-span-3 md:col-start-10 md:pt-3","children":[["$","div",null,{"children":[["$","p",null,{"className":"label text-ink-soft","children":"Follow"}],["$","ul",null,{"className":"flex items-center gap-2 mt-3","children":[["$","li","Instagram",{"children":["$","a",null,{"href":"https://www.instagram.com/ivangette_art","target":"_blank","rel":"noreferrer","aria-label":"Instagram @ivangette_art","className":"grid size-11 place-items-center rounded-full border border-current/20 transition-colors hover:border-current hover:bg-current/10","children":["$","svg",null,{"viewBox":"0 0 24 24","className":"size-[1.15rem]","fill":"none","stroke":"currentColor","strokeWidth":"1.5","strokeLinecap":"round","strokeLinejoin":"round","aria-hidden":true,"children":[["$","rect",null,{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"5"}],["$","circle",null,{"cx":"12","cy":"12","r":"3.8"}],["$","circle",null,{"cx":"17.2","cy":"6.8","r":"0.9","fill":"currentColor","stroke":"none"}]]}]}]}],["$","li","YouTube",{"children":["$","a",null,{"href":"https://www.youtube.com/@ivangette_art","target":"_blank","rel":"noreferrer","aria-label":"YouTube @ivangette_art","className":"grid size-11 place-items-center rounded-full border border-current/20 transition-colors hover:border-current hover:bg-current/10","children":"$L17"}]}]]}]]}],"$L18"]}]]}]}],null,"$L19"]}],"p":"$@1a","v":null,"s":"$10"}}]]
+11:[["children",{"s":"contact","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}]}]]}],"p":"$@12","v":"$13","s":"$10"},"c":"$Q14"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/ivan-gette/_next/static/chunks/2esb19b4996q0.css","precedence":"next"}],["$","script","script-0",{"src":"/ivan-gette/_next/static/chunks/42onvq6nokjl2.js","async":true}],["$","script","script-1",{"src":"/ivan-gette/_next/static/chunks/0zw-7bunxjo9-.js","async":true}],["$","script","script-2",{"src":"/ivan-gette/_next/static/chunks/1d5f6h74fxz4c.js","async":true}],["$","script","script-3",{"src":"/ivan-gette/_next/static/chunks/1513226aeu-53.js","async":true}],["$","script","script-4",{"src":"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js","async":true}],["$","script","script-5",{"src":"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js","async":true}]],["$","html",null,{"lang":"en","className":"DU0h8W_variable","style":{"--signature":"url(/ivan-gette/media/site/signature.png)"},"children":["$","body",null,{"className":"min-h-svh","children":["$","$L8",null,{"children":["$","$L9",null,{"children":[["$","$La",null,{}],["$","div",null,{"className":"relative z-10 bg-paper","children":["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}],"notFound":[["$","main",null,{"className":"gutter grid min-h-[90svh] content-center pt-[var(--header-h)]","children":["$","div",null,{"className":"grid items-center gap-x-[clamp(2rem,5vw,5rem)] gap-y-8 md:grid-cols-[auto_1fr]","children":[["$","p",null,{"className":"wordmark tabular text-[clamp(7rem,24vw,22rem)]","aria-label":"Error 404","children":"404"}],["$","div",null,{"className":"max-w-xl md:border-l md:border-ink/15 md:pl-[clamp(2rem,5vw,5rem)]","children":[["$","p",null,{"className":"label text-ink-soft","children":"Page not found"}],["$","h1",null,{"className":"mt-5 text-[clamp(2.2rem,4.4vw,4.4rem)] font-light leading-[1.02]","children":"Tutto passa. This page has passed, too."}],["$","$Ld",null,{"href":"/works","className":"label group mt-10 flex items-center gap-2","children":["Back to the works ",["$","span",null,{"className":"transition-transform duration-500 group-hover:translate-x-1","children":"→"}]]}]]}]]}]}],[]]}]}],["$","$Le",null,{}]]}]}]}]}]]}],"p":"$@f","v":null,"s":"$10"},"c":"$Q11"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1c",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#f6f4f1"}]]}],["$","$L1e",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Contact — Ivan Gette"}],["$","meta","1",{"name":"description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","meta","3",{"property":"og:title","content":"Contact — Ivan Gette"}],["$","meta","4",{"property":"og:description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","meta","5",{"property":"og:site_name","content":"Ivan Gette"}],["$","meta","6",{"property":"og:locale","content":"en_GB"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary"}],["$","meta","9",{"name":"twitter:title","content":"Contact — Ivan Gette"}],["$","meta","10",{"name":"twitter:description","content":"For inquiries about original works, limited editions, prints, collaborations or press."}],["$","link","11",{"rel":"icon","href":"/ivan-gette/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L20","12",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@21","v":null,"s":"$10"}},"a":"$@22","u":"$@23","b":"k6tzuAjKN6srm_FnsQ1sG"}
+24:I[97367,["$2","$3","$4","$5","$6","$7"],"OutletBoundary"]
+17:["$","svg",null,{"viewBox":"0 0 24 24","className":"size-[1.15rem]","fill":"none","stroke":"currentColor","strokeWidth":"1.5","strokeLinecap":"round","strokeLinejoin":"round","aria-hidden":true,"children":[["$","rect",null,{"x":"2.5","y":"5.5","width":"19","height":"13","rx":"4"}],["$","path",null,{"d":"M10.2 9.4 15 12l-4.8 2.6z","fill":"currentColor","stroke":"none"}]]}]
+18:["$","div",null,{"children":[["$","p",null,{"className":"label text-ink-soft","children":"Studio"}],["$","p",null,{"className":"mt-3","children":["Based in ","Berlin, Germany"]}]]}]
+19:["$","$L24",null,{"children":["$","$1f",null,{"name":"Next.MetadataOutlet","children":"$@25"}]}]
+10:300
+25:null
+23:true
+10:C
+22:0
+12:"$undefined"
+f:"$undefined"
+21:"$undefined"
 1a:"$undefined"
-14:"$undefined"

@@ -1,4 +1,4 @@
-:HL["/ivan-gette/_next/static/chunks/0bff9qoeru9y3.css","style"]
+:HL["/ivan-gette/_next/static/chunks/2esb19b4996q0.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
-0:{"b":"hZJjuRrvfPJzIr20q19xb","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
+0:{"b":"k6tzuAjKN6srm_FnsQ1sG","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

@@ -1,12 +1,8 @@
-:HL["/ivan-gette/_next/static/chunks/0bff9qoeru9y3.css","style"]
+:HL["/ivan-gette/_next/static/chunks/2esb19b4996q0.css","style"]
 :HL["/ivan-gette/_next/static/media/068feab4deafcd0f-s.p.0_kz_z3o_slvt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/_next/static/media/2ff936f45a7b5918-s.p.0bgqpv90abx9d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/_next/static/media/61e56fd33ece1ad8-s.p.0op912u62qdhl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/_next/static/media/c24fec3b421fd73c-s.p.3szkwhi_rfrst.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/_next/static/media/cf9a11b6772b9533-s.p.1elj1f4z6aq4a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ivan-gette/_next/static/media/db545dba463279ae-s.p.1cp9-4nby68jc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ivan-gette/media/journal/tutto-passa-solo-exhibition-berlin-2026/00-20260904-akgalerie-preopening-dinner-ang-1600.webp","image",{"imageSrcSet":"/ivan-gette/media/journal/tutto-passa-solo-exhibition-berlin-2026/00-20260904-akgalerie-preopening-dinner-ang-720.webp 720w, /ivan-gette/media/journal/tutto-passa-solo-exhibition-berlin-2026/00-20260904-akgalerie-preopening-dinner-ang-1600.webp 1600w","imageSizes":"100vw","fetchPriority":"high"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"tutto-passa-solo-exhibition-berlin-2026","s":[]},"h":96,"c":"$Q3"}]]
-1:[["children",{"s":"journal","h":64,"c":"$Q2"}]]
-0:{"b":"hZJjuRrvfPJzIr20q19xb","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+1:[["children",{"s":"journal","h":96,"c":"$Q2"}]]
+0:{"b":"k6tzuAjKN6srm_FnsQ1sG","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
