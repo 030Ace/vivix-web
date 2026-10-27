@@ -1,0 +1,47 @@
+1:"$Sreact.fragment"
+2:"/ivan-gette/_next/static/chunks/42onvq6nokjl2.js"
+3:"/ivan-gette/_next/static/chunks/3gin49o09ugcv.js"
+4:"/ivan-gette/_next/static/chunks/0j5v6-334sx3c.js"
+5:"/ivan-gette/_next/static/chunks/1513226aeu-53.js"
+6:"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js"
+7:"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js"
+8:I[48737,["$2","$3","$4","$5","$6","$7"],"Providers"]
+9:I[84456,["$2","$3","$4","$5","$6","$7"],"IntroProvider"]
+a:I[80322,["$2","$3","$4","$5","$6","$7"],"Header"]
+b:I[39756,["$2","$3","$4","$5","$6","$7"],"default"]
+c:I[37457,["$2","$3","$4","$5","$6","$7"],"default"]
+d:I[91441,["$2","$3","$4","$5","$6","$7"],"Link"]
+e:I[53296,["$2","$3","$4","$5","$6","$7"],"Footer"]
+15:"/ivan-gette/_next/static/chunks/44l7s1gd0qspp.js"
+16:I[73456,["$2","$3","$4","$5","$6","$7","$15"],"RisingWord"]
+1e:"ViewportBoundary"
+1f:I[97367,["$2","$3","$4","$5","$6","$7"],"$1e"]
+20:"MetadataBoundary"
+21:I[97367,["$2","$3","$4","$5","$6","$7"],"$20"]
+22:"$Sreact.suspense"
+23:I[27201,["$2","$3","$4","$5","$6","$7"],"IconMark"]
+:HL["/ivan-gette/_next/static/chunks/3kox-irbd1tz5.css","style"]
+10:X
+13:X
+13:C
+14:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-svh bg-night pt-[calc(var(--header-h)+8vh)] text-night-ink","data-tone":"night","children":["$","div",null,{"className":"gutter grid grid-cols-12 gap-x-6 gap-y-14 pb-[14vh]","children":[["$","p",null,{"className":"label col-span-12 text-night-ink/50 md:col-span-2","children":"Collector Circle"}],["$","div",null,{"className":"col-span-12 md:col-span-6","children":[["$","$L16",null,{"as":"h1","text":"Collector Circle","className":"wide block text-[clamp(2.4rem,6vw,5.6rem)] font-light uppercase leading-[0.95] tracking-tight"}],["$","p",null,{"className":"mt-8 max-w-xl text-[clamp(1.2rem,1.8vw,1.6rem)] font-light leading-snug text-night-ink/85","children":"First access to new works, private previews and invitations from the studio. A few letters a year, no spam."}],["$","ol",null,{"className":"mt-12 grid border-t border-night-ink/15","children":[["$","li","Private Viewing Room",{"className":"grid grid-cols-[3rem_1fr] items-baseline border-b border-night-ink/15 py-5","children":[["$","span",null,{"className":"label tabular text-night-ink/50","children":"01"}],["$","span",null,{"children":[["$","span",null,{"className":"block text-lg","children":"Private Viewing Room"}],["$","span",null,{"className":"mt-1 block text-night-ink/65","children":"New works about two weeks before they are shown publicly, by a link in the letter only."}]]}]]}],["$","li","Editions & prints",{"className":"grid grid-cols-[3rem_1fr] items-baseline border-b border-night-ink/15 py-5","children":[["$","span",null,{"className":"label tabular text-night-ink/50","children":"02"}],["$","span",null,{"children":[["$","span",null,{"className":"block text-lg","children":"Editions & prints"}],["$","span",null,{"className":"mt-1 block text-night-ink/65","children":"The first word on editions and prints, if and when there are any."}]]}]]}],["$","li","Invitations",{"className":"grid grid-cols-[3rem_1fr] items-baseline border-b border-night-ink/15 py-5","children":["$L17","$L18"]}]]}],"$L19"]}],"$L1a"]}]}],["$L1b"],"$L1c"]}],"p":"$@1d","v":null,"s":"$10"}}]]
+11:[["children",{"s":"collector-circle","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}]}]]}],"p":"$@12","v":"$13","s":"$10"},"c":"$Q14"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/ivan-gette/_next/static/chunks/3kox-irbd1tz5.css","precedence":"next"}],["$","script","script-0",{"src":"/ivan-gette/_next/static/chunks/42onvq6nokjl2.js","async":true}],["$","script","script-1",{"src":"/ivan-gette/_next/static/chunks/3gin49o09ugcv.js","async":true}],["$","script","script-2",{"src":"/ivan-gette/_next/static/chunks/0j5v6-334sx3c.js","async":true}],["$","script","script-3",{"src":"/ivan-gette/_next/static/chunks/1513226aeu-53.js","async":true}],["$","script","script-4",{"src":"/ivan-gette/_next/static/chunks/1n56n5dc0h3ft.js","async":true}],["$","script","script-5",{"src":"/ivan-gette/_next/static/chunks/1xptstq1ddqlf.js","async":true}]],["$","html",null,{"lang":"en","className":"DU0h8W_variable","style":{"--signature":"url(/ivan-gette/media/site/signature.png)"},"children":["$","body",null,{"className":"min-h-svh","children":["$","$L8",null,{"children":["$","$L9",null,{"children":[["$","$La",null,{}],["$","div",null,{"className":"relative z-10 bg-paper","children":["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}],"notFound":[["$","main",null,{"className":"gutter grid min-h-[90svh] content-center pt-[var(--header-h)]","children":["$","div",null,{"className":"grid items-center gap-x-[clamp(2rem,5vw,5rem)] gap-y-8 md:grid-cols-[auto_1fr]","children":[["$","p",null,{"className":"wordmark tabular text-[clamp(7rem,24vw,22rem)]","aria-label":"Error 404","children":"404"}],["$","div",null,{"className":"max-w-xl md:border-l md:border-ink/15 md:pl-[clamp(2rem,5vw,5rem)]","children":[["$","p",null,{"className":"label text-ink-soft","children":"Page not found"}],["$","h1",null,{"className":"mt-5 text-[clamp(2.2rem,4.4vw,4.4rem)] font-light leading-[1.02]","children":"Tutto passa. This page has passed, too."}],["$","$Ld",null,{"href":"/works","className":"label group mt-10 flex items-center gap-2","children":["Back to the works ",["$","span",null,{"className":"transition-transform duration-500 group-hover:translate-x-1","children":"→"}]]}]]}]]}]}],[]]}]}],["$","$Le",null,{}]]}]}]}]}]]}],"p":"$@f","v":null,"s":"$10"},"c":"$Q11"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1f",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#f6f4f1"}]]}],["$","$L21",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$22",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Collector Circle — Ivan Gette"}],["$","meta","1",{"name":"description","content":"First access to new works, private previews and invitations from the studio. A few letters a year, no spam."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","meta","3",{"property":"og:title","content":"Collector Circle — Ivan Gette"}],["$","meta","4",{"property":"og:description","content":"First access to new works, private previews and invitations from the studio. A few letters a year, no spam."}],["$","meta","5",{"property":"og:site_name","content":"Ivan Gette"}],["$","meta","6",{"property":"og:locale","content":"en_GB"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary"}],["$","meta","9",{"name":"twitter:title","content":"Collector Circle — Ivan Gette"}],["$","meta","10",{"name":"twitter:description","content":"First access to new works, private previews and invitations from the studio. A few letters a year, no spam."}],["$","link","11",{"rel":"icon","href":"/ivan-gette/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L23","12",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@24","v":null,"s":"$10"}},"a":"$@25","u":"$@26","b":"8xfv6nfbu2xhVF5hFOdqn"}
+27:I[87821,["$2","$3","$4","$5","$6","$7","$15"],"NewsletterForm"]
+28:I[30433,["$2","$3","$4","$5","$6","$7","$15"],"FadeIn"]
+29:I[97367,["$2","$3","$4","$5","$6","$7"],"OutletBoundary"]
+17:["$","span",null,{"className":"label tabular text-night-ink/50","children":"03"}]
+18:["$","span",null,{"children":[["$","span",null,{"className":"block text-lg","children":"Invitations"}],["$","span",null,{"className":"mt-1 block text-night-ink/65","children":"Openings and evenings in the studio in Berlin."}]]}]
+19:["$","$L27",null,{"variant":"full","source":"collector-circle","className":"mt-12 max-w-lg"}]
+1a:["$","$L28",null,{"className":"col-span-12 md:col-span-3 md:col-start-10 md:pt-24","children":[["$","span",null,{"className":"relative block overflow-hidden bg-cover bg-center","style":{"backgroundImage":"url(data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JaQAAUTP+R7ddyKIZGR4A/sb0pZHZsx+DZ1qPXPKctDD7GU94ZtqZULxkBbXxhFZQvB+snHHLMKGPOTXUvoMrp+rLD48Fd8FHemVQ2raJFkA6qSJpbtC2CmDvt3z9pH07+N8AAAA=)","aspectRatio":"4096 / 2736"},"children":["$","img",null,{"src":"/ivan-gette/media/about/gallery-visitors-1600.webp","srcSet":"/ivan-gette/media/about/gallery-visitors-800.webp 800w, /ivan-gette/media/about/gallery-visitors-1600.webp 1600w, /ivan-gette/media/about/gallery-visitors-2400.webp 2400w","sizes":"(min-width: 768px) 25vw, 92vw","width":4096,"height":2736,"alt":"Guests at an opening, seen from above","loading":"lazy","decoding":"async","draggable":false,"className":"absolute inset-0 size-full select-none object-cover"}]}],["$","p",null,{"className":"mt-3 text-xs text-night-ink/50","children":"Photo: Dennis Hardt"}]]}]
+1b:["$","script","script-0",{"src":"/ivan-gette/_next/static/chunks/44l7s1gd0qspp.js","async":true}]
+1c:["$","$L29",null,{"children":["$","$22",null,{"name":"Next.MetadataOutlet","children":"$@2a"}]}]
+10:300
+2a:null
+26:true
+10:C
+25:0
+12:"$undefined"
+f:"$undefined"
+24:"$undefined"
+1d:"$undefined"

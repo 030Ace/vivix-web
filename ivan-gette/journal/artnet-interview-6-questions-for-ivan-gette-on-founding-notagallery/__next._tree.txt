@@ -1,8 +1,0 @@
-:HL["/ivan-gette/_next/static/chunks/2esb19b4996q0.css","style"]
-:HL["/ivan-gette/_next/static/media/068feab4deafcd0f-s.p.0_kz_z3o_slvt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/_next/static/media/db545dba463279ae-s.p.1cp9-4nby68jc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/ivan-gette/media/journal/artnet-interview-6-questions-for-ivan-gette-on-founding-notagallery/00-00-titelbild-2-57544225-c774-4d86-b1e1-1-1080.webp","image",{"imageSrcSet":"/ivan-gette/media/journal/artnet-interview-6-questions-for-ivan-gette-on-founding-notagallery/00-00-titelbild-2-57544225-c774-4d86-b1e1-1-720.webp 720w, /ivan-gette/media/journal/artnet-interview-6-questions-for-ivan-gette-on-founding-notagallery/00-00-titelbild-2-57544225-c774-4d86-b1e1-1-1080.webp 1080w","imageSizes":"100vw","fetchPriority":"high"}]
-3:[["children",{"s":"__PAGE__","h":160}]]
-2:[["children",{"s":{"n":"slug","t":"d","k":"artnet-interview-6-questions-for-ivan-gette-on-founding-notagallery","s":[]},"h":96,"c":"$Q3"}]]
-1:[["children",{"s":"journal","h":96,"c":"$Q2"}]]
-0:{"b":"k6tzuAjKN6srm_FnsQ1sG","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

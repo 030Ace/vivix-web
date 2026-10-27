@@ -1,4 +1,4 @@
-# Ivan Gette — preview build (2026-10-25)
+# Ivan Gette — preview build (2026-10-27)
 DirectoryIndex index.html
 Options -Indexes
 ErrorDocument 404 /ivan-gette/404.html
@@ -8,7 +8,7 @@ ErrorDocument 404 /ivan-gette/404.html
   <FilesMatch "\.(js|css|woff2)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(webp|png|jpg|ico)$">
+  <FilesMatch "\.(webp|png|jpg|ico|mp4|webm)$">
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 </IfModule>

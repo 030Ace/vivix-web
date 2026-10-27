@@ -1,0 +1,8 @@
+:HL["/ivan-gette/_next/static/chunks/3kox-irbd1tz5.css","style"]
+:HL["/ivan-gette/_next/static/media/068feab4deafcd0f-s.p.0_kz_z3o_slvt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ivan-gette/_next/static/media/db545dba463279ae-s.p.1cp9-4nby68jc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ivan-gette/media/journal/positions-berlin-art-fair-2026/00-20260910-akgalerie-positionsartfair-ange-1600.webp","image",{"imageSrcSet":"/ivan-gette/media/journal/positions-berlin-art-fair-2026/00-20260910-akgalerie-positionsartfair-ange-720.webp 720w, /ivan-gette/media/journal/positions-berlin-art-fair-2026/00-20260910-akgalerie-positionsartfair-ange-1600.webp 1600w","imageSizes":"100vw","fetchPriority":"high"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"positions-berlin-2026","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"exhibitions","h":96,"c":"$Q2"}]]
+0:{"b":"8xfv6nfbu2xhVF5hFOdqn","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
