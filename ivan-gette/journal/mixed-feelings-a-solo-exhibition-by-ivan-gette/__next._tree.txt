@@ -1,0 +1,8 @@
+:HL["/ivan-gette/_next/static/chunks/0pe00fe28hv84.css","style"]
+:HL["/ivan-gette/_next/static/media/068feab4deafcd0f-s.p.0_kz_z3o_slvt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ivan-gette/_next/static/media/db545dba463279ae-s.p.1cp9-4nby68jc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ivan-gette/media/journal/mixed-feelings-a-solo-exhibition-by-ivan-gette/00-00-titelbild-300124-notagallery-14-7869d-1600.webp","image",{"imageSrcSet":"/ivan-gette/media/journal/mixed-feelings-a-solo-exhibition-by-ivan-gette/00-00-titelbild-300124-notagallery-14-7869d-720.webp 720w, /ivan-gette/media/journal/mixed-feelings-a-solo-exhibition-by-ivan-gette/00-00-titelbild-300124-notagallery-14-7869d-1600.webp 1600w","imageSizes":"100vw","fetchPriority":"high"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"mixed-feelings-a-solo-exhibition-by-ivan-gette","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"journal","h":96,"c":"$Q2"}]]
+0:{"b":"GL7yB5tqHP2GEwJeu2Tj0","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
