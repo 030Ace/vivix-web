@@ -4,4 +4,4 @@
 :HL["/ivan-gette/media/site/installation-1600.webp","image",{"imageSrcSet":"/ivan-gette/media/site/installation-800.webp 800w, /ivan-gette/media/site/installation-1600.webp 1600w, /ivan-gette/media/site/installation-1750.webp 1750w","imageSizes":"(min-width: 768px) 66vw, 92vw","fetchPriority":"high"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"works","h":64,"c":"$Q2"}]]
-0:{"b":"tdyWKUXlfsFp8FVw_aW9w","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"qTSsJCBBAuQSoB0ln0FD3","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
