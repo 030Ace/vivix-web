@@ -183,6 +183,13 @@ a{color:inherit;}
 /* max-height is the only property that can animate to a content-derived height here;
    it runs once per click, so the layout cost is acceptable */
 .vx-clamp{position:relative;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1);}
+/* "Unsere Websites": screenshot cards linking out to live client sites */
+.vx-sites{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(18px,2.6vw,30px);}
+.vx-site{display:flex;flex-direction:column;text-decoration:none;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;}
+.vx-site:hover{transform:translateY(-4px);border-color:rgba(255,30,45,.45);box-shadow:0 26px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,30,45,.18);}
+.vx-site img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid rgba(255,255,255,.08);transition:transform .6s ease;}
+.vx-site:hover img{transform:scale(1.03);}
+.vx-site-shot{overflow:hidden;}
 .vx-more-wrap{display:flex;justify-content:center;margin-top:clamp(22px,3vh,34px);}
 .vx-more{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F0EEEA;background:transparent;padding:14px 32px;border-radius:100px;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .25s,border-color .25s;}
 
@@ -541,6 +548,34 @@ window.silktideConsentManager.init({
     </div>
     <div class="vx-more-wrap">
       <button type="button" class="vx-more vx-btn-ghost" aria-controls="vx-gallery" aria-expanded="false" data-more="Mehr anzeigen" data-less="Weniger anzeigen">Mehr anzeigen</button>
+    </div>
+  </div>
+</section>
+
+<!-- UNSERE WEBSITES -->
+<section id="websites" style="padding:clamp(70px,10vh,130px) 0;background:#070708;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,5vw,56px);">
+    <div data-reveal style="opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;display:flex;align-items:center;gap:12px;margin-bottom:26px;"><span style="width:40px;height:1px;background:#ff1e2d;"></span><span style="font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#ff5560;">Webdesign</span></div>
+    <h2 data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;margin:0 0 clamp(34px,5vh,56px);font-weight:700;font-size:clamp(28.5px,4.53vw,68.8px);line-height:1.22;letter-spacing:-.025em;color:#F3F0E9;">Unsere<span style="margin-right:.235em;"></span> <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.38em;line-height:0;letter-spacing:.02em;color:#ff2f3c;">Websites</span></h2>
+    <div class="vx-sites">
+      <a class="vx-site" data-reveal href="https://ivangette.com/" target="_blank" rel="noopener" style="opacity:0;transform:translateY(24px);transition:opacity .7s ease 0s,transform .7s ease 0s;">
+        <div class="vx-site-shot"><img src="assets/images/site-ivangette.jpg" alt="Startseite von ivangette.com" width="1200" height="750" loading="lazy"></div>
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Kunst</span><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Berlin</span><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Portfolio</span></div>
+          <h3 style="margin:0;font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;color:#F3F0E9;">Ivan Gette</h3>
+          <p style="margin:0;max-width:52ch;font-size:15px;line-height:1.55;color:#8E8C88;">Portfolio für den Berliner Maler Ivan Gette. Werke, Ausstellungen und Journal in einem ruhigen, editorialen Layout — die Bilder bekommen den ganzen Raum</p>
+          <span style="margin-top:4px;font-size:13.5px;font-weight:600;color:#ff5560;">ivangette.com ↗</span>
+        </div>
+      </a>
+      <a class="vx-site" data-reveal href="https://gmi-invest.com/" target="_blank" rel="noopener" style="opacity:0;transform:translateY(24px);transition:opacity .7s ease .08s,transform .7s ease .08s;">
+        <div class="vx-site-shot"><img src="assets/images/site-gmi-invest.jpg" alt="Startseite von gmi-invest.com" width="1200" height="750" loading="lazy"></div>
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Investment</span><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Sachwerte</span><span style="font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8E8C88;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 10px;">Dreisprachig</span></div>
+          <h3 style="margin:0;font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;color:#F3F0E9;">GMI Invest</h3>
+          <p style="margin:0;max-width:52ch;font-size:15px;line-height:1.55;color:#8E8C88;">Website für GMI Invest, das nachhaltige und zukunftsfähige Konzepte für Sachwerte entwickelt. Großformatige Bildsprache, klare Struktur, auf Englisch, Deutsch und Griechisch</p>
+          <span style="margin-top:4px;font-size:13.5px;font-weight:600;color:#ff5560;">gmi-invest.com ↗</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
